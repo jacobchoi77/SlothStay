@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SlothStay</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="home">HOME</string>
+    <string name="my_reservation">MyReservation</string>
+
+    <string name="mileage">Mileage</string>
+    <string name="membership">Membership</string>
+
+    <string name="more">More</string>
+    <string name="popular">Popular hotels near</string>
+
+    <string name="rate_desc"> of 5 - guest rating</string>
+
+    <!-- Network-->
+    <string name="what_home">home</string>
+</resources>
