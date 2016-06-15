@@ -8,8 +8,14 @@
     <color name="colorButton">#004d7c</color>
     <color name="colorButton_darker">#002e4a</color>
 
+    <color name="colorButton_highlight">#153e5d</color>
+
     <color name="colorRate">#222222</color>
 
     <color name="colorTranslucent">#64000000</color>
+
+    <color name="colorMyReservation">#212527</color>
+
+    <color name="colorMyReservationText">#525556</color>
 
 </resources>

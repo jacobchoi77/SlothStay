@@ -53,7 +53,7 @@ public class Utils {
             String name;
             while (jsonReader.hasNext()) {
                 name = jsonReader.nextName();
-                if (name.equals("success")) {
+                if (name.equals(Constants.JSON_SUCCESS)) {
                     return jsonReader.nextBoolean();
                 }
             }
