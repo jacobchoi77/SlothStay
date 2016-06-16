@@ -1,65 +1,72 @@
-{
-  "success": true,
-  "data": [
-    {
-      "name": "호텔 스카이파크 킹스타운 동대문",
-      "rate": 4.9,
-      "price": "69,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/00.jpg"
-    },
-    {
-      "name": "호텔투게더",
-      "rate": 3.2,
-      "price": "69,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-    },
-    {
-      "name": "임피리얼 팰리스 서울",
-      "rate": 4.5,
-      "price": "139,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-    },
-    {
-      "name": "강남 648호텔",
-      "rate": 3.4,
-      "price": "69,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-    },
-    {
-      "name": "신라스테이 광화문",
-      "rate": 4.6,
-      "price": "129,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-    },
-    {
-      "name": "호텔투게더2",
-      "rate": 3.2,
-      "price": "69,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-    },
-    {
-      "name": "임피리얼 팰리스 서울2",
-      "rate": 4.5,
-      "price": "139,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-    },
-    {
-      "name": "강남 648호텔2",
-      "rate": 3.4,
-      "price": "69,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-    },
-    {
-      "name": "신라스테이 광화문2",
-      "rate": 4.6,
-      "price": "129,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-    },
-    {
-      "name": "호텔 스카이파크 킹스타운 동대문2",
-      "rate": 4.9,
-      "price": "69,900원",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/00.jpg"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "호텔 스카이파크 킹스타운 동대문",
+    "rate": 4.9,
+    "price": "69,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
+  },
+  {
+    "id": 2,
+    "name": "호텔투게더",
+    "rate": 3.2,
+    "price": "69,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
+  },
+  {
+    "id": 3,
+    "name": "임피리얼 팰리스 서울",
+    "rate": 4.5,
+    "price": "139,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
+  },
+  {
+    "id": 4,
+    "name": "강남 648호텔",
+    "rate": 3.4,
+    "price": "69,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
+  },
+  {
+    "id": 5,
+    "name": "신라스테이 광화문",
+    "rate": 4.6,
+    "price": "129,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "쉐라톤 그랜드 워커힐",
+    "rate": 3.2,
+    "price": "69,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
+  },
+  {
+    "id": 7,
+    "name": "베니키아 프리미어 호텔 동대문",
+    "rate": 4.5,
+    "price": "139,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
+  },
+  {
+    "id": 8,
+    "name": "그린그래스호텔",
+    "rate": 3.4,
+    "price": "69,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
+  },
+  {
+    "id": 9,
+    "name": "호텔 카푸치노",
+    "rate": 4.6,
+    "price": "129,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
+  },
+  {
+    "id": 10,
+    "name": "InterContinental Grand Seoul Parnas",
+    "rate": 4.9,
+    "price": "69,900원",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
+  }
+]

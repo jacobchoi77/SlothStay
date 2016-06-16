@@ -68,31 +68,32 @@ public class HomeFragment extends Fragment {
 
         mAdapter = new HomeAdapter(homeHotels, getContext());
         mRecyclerView.setAdapter(mAdapter);
-        mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
-        mMainButtonLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-            @Override
-            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                if (MAX_MAIN_BUTTON_LAYOUT_HEIGHT == 0) {
-                    MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
-                    MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT - Constants.MAIN_BUTTON_LAYOUT_DIFF;
-                    currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                    mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
-                        @Override
-                        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                            super.onScrolled(recyclerView, dx, dy);
-                            currentMainButtonLayoutHeight -= dy;
-                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT)
-                                currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
-                            else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT)
-                                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                            ViewGroup.LayoutParams layoutParams = mMainButtonLayout.getLayoutParams();
-                            layoutParams.height = currentMainButtonLayoutHeight;
-                            mMainButtonLayout.setLayoutParams(layoutParams);
-                        }
-                    });
-                }
-            }
-        });
+//        mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
+//        mMainButtonLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+//            @Override
+//            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+//                if (MAX_MAIN_BUTTON_LAYOUT_HEIGHT == 0) {
+//                    MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
+//                    MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT - Constants.MAIN_BUTTON_LAYOUT_DIFF;
+//                    currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
+//                    mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+//                        @Override
+//                        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                            super.onScrolled(recyclerView, dx, dy);
+//                            currentMainButtonLayoutHeight -= dy;
+//                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT)
+//                                currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
+//                            else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT)
+//                                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
+//                            ViewGroup.LayoutParams layoutParams = mMainButtonLayout.getLayoutParams();
+//                            layoutParams.height = currentMainButtonLayoutHeight;
+//                            mMainButtonLayout.setLayoutParams(layoutParams);
+//                        }
+//                    });
+//                }
+//            }
+//        });
+
     }
 
     @Override
@@ -123,7 +124,8 @@ public class HomeFragment extends Fragment {
         protected List<HomeHotel> doInBackground(Void... params) {
             HomeFragment homeFragment = homeFragmentWeakReference.get();
             if (homeFragment != null)
-                return HomeHotel.fromJsonReader(Utils.getJsonReader(homeFragment.getContext(), R.string.what_home));
+                return HomeHotel.fromJsonReader(Utils.getJsonReader(homeFragment.getContext(),
+                        homeFragment.getString(R.string.what_home)));
             return null;
         }
 

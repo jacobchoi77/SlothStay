@@ -1,0 +1,127 @@
+{
+  "id": 2,
+  "name": "호텔투게더",
+  "grade": 3,
+  "discount": 25,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.2,
+  "review_count": 153,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining"
+  ],
+  "desc": "새로운 디자인을 체험하고, 일상에서 벗어나 감성을 충전할 수 있는 공간. 독창적인 디자인 및 공간 연출, 차별화된 서비스로 내 집에서 쉬는듯한 편한함을 느낄 수 있는 곳",
+  "latitude": 37.528626,
+  "longitude": 126.920098,
+  "pictures": [
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/02.jpg",
+      "desc": "스탠다드 더블"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/03.jpg",
+      "desc": "스탠다드 더블"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/04.jpg",
+      "desc": "스탠다드 싱글+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/05.jpg",
+      "desc": "스탠다드 싱글+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/06.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/07.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/08.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/09.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/10.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/11.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/12.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/13.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/14.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/15.jpg",
+      "desc": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Blooming 스카이파크 1",
+      "price": "16만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg"
+    },
+    {
+      "name": "Blooming 스카이파크 2",
+      "price": "12만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg"
+    },
+    {
+      "name": "마운틴뷰",
+      "price": "19만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg"
+    },
+    {
+      "name": "Deluxe 싱글 + 싱글 (마운틴뷰)",
+      "price": "24만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg"
+    }
+  ]
+}

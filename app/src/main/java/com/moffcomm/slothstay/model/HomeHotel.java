@@ -15,15 +15,25 @@ import java.util.List;
 
 public class HomeHotel {
 
-    public static final String JSON_NAME = "name";
-    public static final String JSON_RATE = "rate";
-    public static final String JSON_PRICE = "price";
-    public static final String JSON_IMAGE_URL = "image_url";
+    public static final String CONST_ID = "id";
+    public static final String CONST_NAME = "name";
+    public static final String CONST_RATE = "rate";
+    public static final String CONST_PRICE = "price";
+    public static final String CONST_IMAGE_URL = "image_url";
 
+    private int id;
     private String name;
     private double rate;
     private String price;
     private String imageUrl;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -60,12 +70,6 @@ public class HomeHotel {
 
     public static List<HomeHotel> fromJsonReader(JsonReader jsonReader) {
         try {
-            jsonReader.beginObject();
-            if (Utils.isSuccess(jsonReader) == false)
-                return null;
-            if (jsonReader.nextName().equals(Constants.JSON_DATA) == false) {
-                return null;
-            }
             jsonReader.beginArray();
             List<HomeHotel> homeHotels = new ArrayList<>();
             while (jsonReader.hasNext()) {
@@ -74,13 +78,15 @@ public class HomeHotel {
                 String name;
                 while (jsonReader.hasNext()) {
                     name = jsonReader.nextName();
-                    if (name.equals(JSON_NAME)) {
+                    if (name.equals(CONST_ID)) {
+                        homeHotel.setId(jsonReader.nextInt());
+                    } else if (name.equals(CONST_NAME)) {
                         homeHotel.setName(jsonReader.nextString());
-                    } else if (name.equals(JSON_RATE)) {
+                    } else if (name.equals(CONST_RATE)) {
                         homeHotel.setRate(jsonReader.nextDouble());
-                    } else if (name.equals(JSON_PRICE)) {
+                    } else if (name.equals(CONST_PRICE)) {
                         homeHotel.setPrice(jsonReader.nextString());
-                    } else if (name.equals(JSON_IMAGE_URL)) {
+                    } else if (name.equals(CONST_IMAGE_URL)) {
                         homeHotel.setImageUrl(jsonReader.nextString());
                     }
                 }
@@ -88,7 +94,6 @@ public class HomeHotel {
                 homeHotels.add(homeHotel);
             }
             jsonReader.endArray();
-            jsonReader.endObject();
             return homeHotels;
         } catch (IOException e) {
             e.printStackTrace();

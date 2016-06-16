@@ -1,6 +1,7 @@
 package com.moffcomm.slothstay.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.HomeHotel;
+import com.moffcomm.slothstay.ui.HotelActivity;
 
 import java.util.List;
 
@@ -46,11 +48,10 @@ public class HomeAdapter extends HeaderRecyclerViewAdapter {
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
-
-                    Snackbar.make(v, "Click detected on item " + position,
-                            Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-
+                    HomeHotel hotel = homeHotels.get(position);
+                    Intent intent = new Intent(mContext, HotelActivity.class);
+                    intent.putExtra(HomeHotel.CONST_ID, hotel.getId());
+                    mContext.startActivity(intent);
                 }
             });
         }

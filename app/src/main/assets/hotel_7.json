@@ -1,0 +1,134 @@
+{
+  "id": 7,
+  "name": "베니키아 프리미어 호텔 동대문",
+  "grade": 2,
+  "discount": 40,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 4.5,
+  "review_count": 194,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center",
+    "hot_tub"
+  ],
+  "desc": "Benikea Premier Hotel Dongdaemun  베니키아 프리미어 호텔 동대문",
+  "latitude": 37.573671,
+  "longitude": 127.020379,
+  "pictures": [
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/19.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg",
+      "desc": "스탠다드 더블"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg",
+      "desc": "스탠다드 더블"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg",
+      "desc": "스탠다드 싱글+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg",
+      "desc": "스탠다드 싱글+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/24.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/25.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/26.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/27.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/28.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/29.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/30.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/31.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/32.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/33.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/34.jpg",
+      "desc": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Blooming 스카이파크 1",
+      "price": "16만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg"
+    },
+    {
+      "name": "Blooming 스카이파크 2",
+      "price": "12만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg"
+    },
+    {
+      "name": "마운틴뷰",
+      "price": "19만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg"
+    },
+    {
+      "name": "Deluxe 싱글 + 싱글 (마운틴뷰)",
+      "price": "24만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg"
+    }
+  ]
+}

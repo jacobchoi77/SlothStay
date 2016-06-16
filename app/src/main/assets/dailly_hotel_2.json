@@ -1,0 +1,324 @@
+{
+  "msg": "Request success!",
+  "data": {
+    "address": "서울특별시 강남구 논현동 248-7",
+    "grade": "special",
+    "isSingleStay": null,
+    "category": null,
+    "adjustCode": null,
+    "way": null,
+    "parking": null,
+    "pool": null,
+    "fitness": null,
+    "hotelBenefit": null,
+    "isOverseas": false,
+    "hotelName": "임피리얼 팰리스 서울",
+    "latitude": 37.514021,
+    "longitude": 127.035881,
+    "imgPath": {
+      "dir_imperialpalace/": [
+        {
+          "description": "",
+          "name": "00.jpg"
+        },
+        {
+          "description": "",
+          "name": "00_1.jpg"
+        },
+        {
+          "description": "신관",
+          "name": "01_1.jpg"
+        },
+        {
+          "description": "신관",
+          "name": "01_2.jpg"
+        },
+        {
+          "description": "신관",
+          "name": "01_3.jpg"
+        },
+        {
+          "description": "신관",
+          "name": "01_4.jpg"
+        },
+        {
+          "description": "신관",
+          "name": "01_5.jpg"
+        },
+        {
+          "description": "본관",
+          "name": "02_1.jpg"
+        },
+        {
+          "description": "본관",
+          "name": "02_2.jpg"
+        },
+        {
+          "description": "본관",
+          "name": "02_3.jpg"
+        },
+        {
+          "description": "본관",
+          "name": "02_5.jpg"
+        },
+        {
+          "description": "본관",
+          "name": "02_6.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_01.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_02.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_03.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_04.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_05.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_06.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_07.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_08.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_09.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_10.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_11.jpg"
+        },
+        {
+          "description": "스위트",
+          "name": "03_12.jpg"
+        },
+        {
+          "description": "",
+          "name": "06.jpg"
+        },
+        {
+          "description": "",
+          "name": "07.jpg"
+        },
+        {
+          "description": "",
+          "name": "08.jpg"
+        },
+        {
+          "description": "",
+          "name": "09.jpg"
+        },
+        {
+          "description": "",
+          "name": "10.jpg"
+        },
+        {
+          "description": "",
+          "name": "11.jpg"
+        },
+        {
+          "description": "",
+          "name": "12.jpg"
+        },
+        {
+          "description": "",
+          "name": "13.jpg"
+        },
+        {
+          "description": "",
+          "name": "14.jpg"
+        }
+      ]
+    },
+    "imgUrl": "http://s3.dailyhotel.kr/resources/images/",
+    "rating": "85%(3,050명 평가)",
+    "detail": [
+      {
+        "데일리's comment": [
+          "앤티크 가구와 화려한 샹들리에, 그리고 예술품으로 가득 찬 눈부신 로비를 둘러보세요.",
+          "매주 토요일 로비에서 펼쳐지는 작은 음악회 등 품격 높은 특급 서비스가 펼쳐집니다.",
+          "강남구청역과 학동역 사이에 위치하여 접근성이 좋고 실내수영장과 휘트니스 센터를 무료로 이용할 수 있어요!"
+        ]
+      },
+      {
+        "호텔정보": [
+          "체크인 : 14:00 | 체크아웃 : 12:00",
+          "430 객실",
+          "무료 wifi",
+          "무료 주차",
+          "Bath Amenity 구비"
+        ]
+      },
+      {
+        "확인사항": [
+          "'체크인 시 배정'의 경우 특정 객실과 베드타입을 보장하지 않습니다.",
+          "상기 이미지와 다른 객실로 배정될 수 있습니다.",
+          "외국인 투숙 고객님께서는 예약 전 연락 부탁드립니다."
+        ]
+      }
+    ],
+    "detailMore": [
+      {
+        "Summer PKG 1": [
+          "웰컴 기프트 선착순 제공 (헤라 선 메이트 바디 스프레이 + 선 메이트 에센스 젤 제공)",
+          "야외 수영장 50% 할인권 1매 제공 (투숙 중 미사용 시, 2016년 폐장일 전까지 사용 가능)",
+          "야외 수영장 썬베드 수량 한정으로, 선착순 입장 (적용 인원: 성인 2인)",
+          "이용 시간: (비수기) 6/13~7/15, 11:00~18:00 / (성수기) 7/16~8/31, 09:00~17:30, 19:00~23:00"
+        ]
+      },
+      {
+        "Summer PKG 2, 3": [
+          "조식 2인 + 룸서비스 프라이드 치킨 제공 (주문 가능 시간: 12:00~01:30 / 딜리버리 약 25분 소요) + ARK Beer 2병 제공 (Hug Me, Black Swan) + 웰컴 기프트 선착순 제공 (헤라 선 메이트 바디 스프레이+선 메이트 에센스 젤 제공)",
+          "야외 수영장 50% 할인권 1매 제공 (투숙 중 미사용 시, 2016년 폐장일 전까지 사용 가능)",
+          "야외 수영장 썬베드 수량 한정으로, 선착순 입장 (적용 인원: 성인 2인)",
+          "이용 시간: (비수기) 6/13~7/15, 11:00~18:00 / (성수기) 7/16~8/31, 09:00~17:30, 19:00~23:00"
+        ]
+      },
+      {
+        "스위트 객실": [
+          "상황에따라 코너 스위트 또는 복층으로 랜덤배정",
+          "클럽 라운지에서 익스프레스 체크인, 아웃 서비스 제공",
+          "클럽 라운지 무료 이용 (6:30~22:00)",
+          "라운지 이용 정보 (1) : 2인 조식",
+          "라운지 이용 정보 (2) : 각종 다과 및 음료(10:30~18:00)",
+          "라운지 이용 정보 (3) : Happy Hour | 각종 주류와 스낵(18:00~21:00)",
+          "라운지 이용 정보 (4) : 클럽 라운지에서 노트북 30분 무료 이용",
+          "투숙객 이외에는 클럽 라운지 출입 제한됩니다."
+        ]
+      },
+      {
+        "인원 정보": [
+          "인원추가요금은 없으나 객실이 좁을 수 있습니다.",
+          "Extra Bed 및 침구 추가가 불가합니다."
+        ]
+      },
+      {
+        "부대시설 정보": [
+          "부대시설 : 휘트니스 클럽, 수영장, 비즈니스센터, 아케이드, 골프장 등",
+          "휘트니스 센터 및 실내수영장 : 무료 이용 / 만 18세 이상만 이용 가능 (매월 첫째 주 화요일 Fitness 휴무)",
+          "실외수영장(하절기운영)",
+          "골프장 : 40분 이용시 13,200원 / 70분 이용시 22,000원",
+          "식음시설 : 일식, 중식, 뷔페레스토랑 등 6곳"
+        ]
+      },
+      {
+        "조식정보": [
+          "성인 : 1인 44,000원 현장결제",
+          "만4세~만12세 : 1인 22,000원 현장결제",
+          "만 4세 미만 무료"
+        ]
+      },
+      {
+        "취소 및 환불 규정": [
+          "체크인 3일 전 17시 ~ 당일 : 0% 환불",
+          "체크인 3일 전 17시까지 : 100% 환불"
+        ]
+      }
+    ],
+    "hotelRoomDetail": [
+      {
+        "roomName": "Summer PKG 1, 비즈니스 더블",
+        "price": 0,
+        "roomBenefit": "웰컴 기프트 + 수영장 50% 할인권",
+        "discountTotal": 218800,
+        "discountAvg": 218800,
+        "description1": "28.0m²(8평) / 2인 기준 / 최대 2인",
+        "description2": "",
+        "roomIdx": 131849
+      },
+      {
+        "roomName": "Summer PKG 1, 비즈니스 싱글 + 싱글",
+        "price": 0,
+        "roomBenefit": "웰컴 기프트 + 수영장 50% 할인권",
+        "discountTotal": 218800,
+        "discountAvg": 218800,
+        "description1": "28.0m²(8평) / 2인 기준 / 최대 2인",
+        "description2": "",
+        "roomIdx": 131850
+      },
+      {
+        "roomName": "Summer PKG 1, 디럭스 더블",
+        "price": 0,
+        "roomBenefit": "웰컴 기프트 + 수영장 50% 할인권",
+        "discountTotal": 218800,
+        "discountAvg": 218800,
+        "description1": "37.0m²(11평) / 2인 기준 / 최대 2인",
+        "description2": "",
+        "roomIdx": 131851
+      },
+      {
+        "roomName": "Summer PKG 1, 디럭스 더블 + 싱글",
+        "price": 0,
+        "roomBenefit": "웰컴 기프트 + 수영장 50% 할인권",
+        "discountTotal": 218800,
+        "discountAvg": 218800,
+        "description1": "37.0m²(11평) / 2인 기준 / 최대 2인",
+        "description2": "",
+        "roomIdx": 131852
+      },
+      {
+        "roomName": "조식 2인, Summer PKG 2, 디럭스 더블",
+        "price": 0,
+        "roomBenefit": "웰컴 기프트+수영장 할인권+룸서비스 치킨+ARK Beer 2병",
+        "discountTotal": 276900,
+        "discountAvg": 276900,
+        "description1": "37.0m²(11평) / 2인 기준 / 최대 2인",
+        "description2": "조식 2인 포함",
+        "roomIdx": 131855
+      },
+      {
+        "roomName": "조식 2인, Summer PKG 2, 디럭스 더블 + 싱글",
+        "price": 0,
+        "roomBenefit": "웰컴 기프트+수영장 할인권+룸서비스 치킨+ARK Beer 2병",
+        "discountTotal": 276900,
+        "discountAvg": 276900,
+        "description1": "37.0m²(11평) / 2인 기준 / 최대 2인",
+        "description2": "조식 2인 포함",
+        "roomIdx": 131856
+      },
+      {
+        "roomName": "조식 2인, Summer PKG 3, 클럽디럭스 더블",
+        "price": 0,
+        "roomBenefit": "클럽 베네핏 2인+웰컴 기프트+수영장 할인권+룸서비스 치킨+ARK Beer 2병 제공",
+        "discountTotal": 325300,
+        "discountAvg": 325300,
+        "description1": "37.0m²(11평) / 2인 기준 / 최대 2인",
+        "description2": "조식 2인 포함",
+        "roomIdx": 131853
+      },
+      {
+        "roomName": "조식 2인, Summer PKG 3, 클럽디럭스 더블 + 싱글",
+        "price": 0,
+        "roomBenefit": "클럽 베네핏 2인+웰컴 기프트+수영장 할인권+룸서비스 치킨+ARK Beer 2병 제공",
+        "discountTotal": 325300,
+        "discountAvg": 325300,
+        "description1": "37.0m²(11평) / 2인 기준 / 최대 2인",
+        "description2": "조식 2인 포함",
+        "roomIdx": 131854
+      }
+    ]
+  },
+  "msgCode": 100,
+  "msg_code": 100
+}

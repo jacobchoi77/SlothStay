@@ -16,10 +16,10 @@ import java.util.List;
  */
 public class Utils {
 
-    public static JsonReader getJsonReader(Context context, final int what) {
+    public static JsonReader getJsonReader(Context context, final String what) {
         if (Constants.DATA_FROM_ASSETS) {
             try {
-                InputStream inputStream = context.getAssets().open(context.getString(what) + ".json");
+                InputStream inputStream = context.getAssets().open(what + ".json");
                 return new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
             } catch (IOException e) {
             }

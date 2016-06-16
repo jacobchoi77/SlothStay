@@ -1,0 +1,130 @@
+{
+  "id": 4,
+  "name": "강남 648호텔",
+  "grade": 4,
+  "discount": 50,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.4,
+  "review_count": 51,
+  "service": [
+    "internet",
+    "breakfast"
+  ],
+  "desc": "Within 7 minutes' walk of the Yeoksam and Gangnam subway stations, this stylish, laid-back hotel is a 15-minute metro ride from Seoul Arts Center. Featuring wood floors and chandeliers, the chic rooms come with free Wi-Fi, flat-screen TVs and balconies. Upgraded rooms add sofas and/or in-room whirlpool tubs, and 1 has a billiard room. Breakfast and parking are free.",
+  "latitude": 37.499938,
+  "longitude": 127.031853,
+  "pictures": [
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/19.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg",
+      "desc": "스탠다드 더블"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg",
+      "desc": "스탠다드 더블"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg",
+      "desc": "스탠다드 싱글+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg",
+      "desc": "스탠다드 싱글+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/24.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/25.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/26.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/27.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/28.jpg",
+      "desc": "디럭스 더블+싱글"
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/29.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/30.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/31.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/32.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/33.jpg",
+      "desc": ""
+    },
+    {
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/34.jpg",
+      "desc": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Blooming 스카이파크 1",
+      "price": "16만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg"
+    },
+    {
+      "name": "Blooming 스카이파크 2",
+      "price": "12만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg"
+    },
+    {
+      "name": "마운틴뷰",
+      "price": "19만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg"
+    },
+    {
+      "name": "Deluxe 싱글 + 싱글 (마운틴뷰)",
+      "price": "24만원",
+      "etc": [
+        "1 double bed",
+        "Includes free wireless internet",
+        "Non-refundable"
+      ],
+      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함"
+      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg"
+    }
+  ]
+}
