@@ -14,5 +14,6 @@
     <!--Hotel-->
     <string name="select_room">방 선택하기</string>
     <string name="hotel_date_format">M월 dd</string>
+    <string name="per_night">/1박</string>
 
 </resources>

@@ -27,5 +27,9 @@
     <string name="hotel_date_format">MMM dd</string>
     <string name="hotel_date_guest">%1$s - %2$s,%3$d Guests</string>
     <string name="view">VIEW %1$s REVIEWS</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="per_night">/night</string>
+    <string name="book">Book</string>
+    <string name="view_room">View Room</string>
 
 </resources>

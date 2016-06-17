@@ -2,6 +2,8 @@ package com.moffcomm.slothstay.model;
 
 import android.util.JsonReader;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -162,6 +164,10 @@ public class Hotel {
 
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
+    }
+
+    public LatLng getLatLng() {
+        return new LatLng(Double.valueOf(latitude), Double.valueOf(longitude));
     }
 
     public static Hotel fromJsonReader(JsonReader jsonReader) {

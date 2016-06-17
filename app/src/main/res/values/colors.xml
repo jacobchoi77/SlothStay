@@ -24,4 +24,7 @@
 
     <color name="darkerGray">#767676</color>
 
+    <color name="gray_divider">#cacaca</color>
+    <color name="gray_divider_light">#e2e2e2</color>
+
 </resources>

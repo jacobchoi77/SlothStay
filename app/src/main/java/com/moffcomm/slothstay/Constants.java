@@ -11,9 +11,6 @@ public class Constants {
 
     public static final double RATE_BASE = 3.5;
 
-    public static final String JSON_DATA = "data";
-    public static final String JSON_SUCCESS = "success";
-
-    public static final String FORMAT_DATE3 = "MMdd";
+    public static final float HOTEL_ZOOM = 13f;
 
 }

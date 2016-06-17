@@ -12,4 +12,9 @@
     <dimen name="padding_contents">15dp</dimen>
 
     <dimen name="hotel_row_height">65dp</dimen>
+
+    <dimen name="hotel_map_height">160dp</dimen>
+
+    <dimen name="room_image_height">120dp</dimen>
+
 </resources>

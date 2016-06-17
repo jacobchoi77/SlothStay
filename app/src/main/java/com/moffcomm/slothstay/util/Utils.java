@@ -50,21 +50,6 @@ public class Utils {
         }
     }
 
-    public static boolean isSuccess(JsonReader jsonReader) {
-        try {
-            String name;
-            while (jsonReader.hasNext()) {
-                name = jsonReader.nextName();
-                if (name.equals(Constants.JSON_SUCCESS)) {
-                    return jsonReader.nextBoolean();
-                }
-            }
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-        return false;
-    }
-
     public static String getDateString(Date date, String format) {
         if (date == null)
             return "";
