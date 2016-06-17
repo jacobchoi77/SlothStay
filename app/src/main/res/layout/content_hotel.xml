@@ -8,8 +8,42 @@
     tools:context="com.moffcomm.slothstay.ui.HotelActivity"
     tools:showIn="@layout/activity_hotel">
 
-    <android.support.v4.view.ViewPager
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"></android.support.v4.view.ViewPager>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_contents">
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIP"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="11sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="20px"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </android.support.v4.widget.NestedScrollView>

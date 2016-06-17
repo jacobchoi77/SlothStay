@@ -75,19 +75,24 @@ public class HomeHotel {
             while (jsonReader.hasNext()) {
                 jsonReader.beginObject();
                 HomeHotel homeHotel = new HomeHotel();
-                String name;
                 while (jsonReader.hasNext()) {
-                    name = jsonReader.nextName();
-                    if (name.equals(CONST_ID)) {
-                        homeHotel.setId(jsonReader.nextInt());
-                    } else if (name.equals(CONST_NAME)) {
-                        homeHotel.setName(jsonReader.nextString());
-                    } else if (name.equals(CONST_RATE)) {
-                        homeHotel.setRate(jsonReader.nextDouble());
-                    } else if (name.equals(CONST_PRICE)) {
-                        homeHotel.setPrice(jsonReader.nextString());
-                    } else if (name.equals(CONST_IMAGE_URL)) {
-                        homeHotel.setImageUrl(jsonReader.nextString());
+                    final String name = jsonReader.nextName();
+                    switch (name) {
+                        case CONST_ID:
+                            homeHotel.setId(jsonReader.nextInt());
+                            break;
+                        case CONST_NAME:
+                            homeHotel.setName(jsonReader.nextString());
+                            break;
+                        case CONST_RATE:
+                            homeHotel.setRate(jsonReader.nextDouble());
+                            break;
+                        case CONST_PRICE:
+                            homeHotel.setPrice(jsonReader.nextString());
+                            break;
+                        case CONST_IMAGE_URL:
+                            homeHotel.setImageUrl(jsonReader.nextString());
+                            break;
                     }
                 }
                 jsonReader.endObject();

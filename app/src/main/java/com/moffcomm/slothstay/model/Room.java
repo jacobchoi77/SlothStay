@@ -66,25 +66,31 @@ public class Room {
     public static Room fromJsonReader(JsonReader jsonReader) {
         try {
             Room room = new Room();
-            String name;
             while (jsonReader.hasNext()) {
-                name = jsonReader.nextName();
-                if (name.equals(CONST_NAME)) {
-                    room.setName(jsonReader.nextString());
-                } else if (name.equals(CONST_PRICE)) {
-                    room.setPrice(jsonReader.nextString());
-                } else if (name.equals(CONST_ETC)) {
-                    jsonReader.beginArray();
-                    ArrayList<String> etcList = new ArrayList<>();
-                    while (jsonReader.hasNext()) {
-                        etcList.add(jsonReader.nextString());
-                    }
-                    room.setEtc(etcList);
-                    jsonReader.endArray();
-                } else if (name.equals(CONST_DETAIL)) {
-                    room.setDetail(jsonReader.nextString());
-                } else if (name.equals(CONST_IMAGE_URL)) {
-                    room.setImageUrl(jsonReader.nextString());
+                final String name = jsonReader.nextName();
+                switch (name) {
+                    case CONST_NAME:
+                        room.setName(jsonReader.nextString());
+                        break;
+                    case CONST_PRICE:
+                        room.setPrice(jsonReader.nextString());
+                        break;
+                    case CONST_ETC:
+                        jsonReader.beginArray();
+                        ArrayList<String> etcList = new ArrayList<>();
+                        while (jsonReader.hasNext()) {
+                            etcList.add(jsonReader.nextString());
+                        }
+                        room.setEtc(etcList);
+                        jsonReader.endArray();
+                        break;
+                    case CONST_DETAIL:
+                        room.setDetail(jsonReader.nextString());
+                        break;
+                    case CONST_IMAGE_URL:
+                        room.setImageUrl(jsonReader.nextString());
+                        break;
+
                 }
             }
             return room;

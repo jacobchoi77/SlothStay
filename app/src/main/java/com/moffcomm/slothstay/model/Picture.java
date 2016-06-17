@@ -33,13 +33,15 @@ public class Picture {
     public static Picture fromJsonReader(JsonReader jsonReader) {
         try {
             Picture picture = new Picture();
-            String name;
             while (jsonReader.hasNext()) {
-                name = jsonReader.nextName();
-                if (name.equals(CONST_IMAGE_URL)) {
-                    picture.setImageUrl(jsonReader.nextString());
-                } else if (name.equals(CONST_DESCRIPTION)) {
-                    picture.setDescription(jsonReader.nextString());
+                final String name = jsonReader.nextName();
+                switch (name) {
+                    case CONST_IMAGE_URL:
+                        picture.setImageUrl(jsonReader.nextString());
+                        break;
+                    case CONST_DESCRIPTION:
+                        picture.setDescription(jsonReader.nextString());
+                        break;
                 }
             }
             return picture;

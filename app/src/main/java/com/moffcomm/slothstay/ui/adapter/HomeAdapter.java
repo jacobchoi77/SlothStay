@@ -47,7 +47,7 @@ public class HomeAdapter extends HeaderRecyclerViewAdapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = getAdapterPosition();
+                    int position = getAdapterPosition() - 1;
                     HomeHotel hotel = homeHotels.get(position);
                     Intent intent = new Intent(mContext, HotelActivity.class);
                     intent.putExtra(HomeHotel.CONST_ID, hotel.getId());
