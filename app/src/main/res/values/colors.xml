@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#004d7c</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorTabIndicator">#7baed4</color>
@@ -17,5 +17,11 @@
     <color name="colorMyReservation">#212527</color>
 
     <color name="colorMyReservationText">#525556</color>
+
+    <color name="colorPrimaryDarkMore">#00253c</color>
+
+    <color name="colorBg">#eeeeee</color>
+
+    <color name="darkerGray">#767676</color>
 
 </resources>

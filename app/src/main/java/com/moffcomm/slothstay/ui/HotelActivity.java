@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.Hotel;
@@ -14,6 +15,8 @@ import com.moffcomm.slothstay.ui.adapter.HotelPictureAdapter;
 import com.moffcomm.slothstay.util.Utils;
 
 import java.lang.ref.WeakReference;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class HotelActivity extends AppCompatActivity {
 
@@ -68,6 +71,14 @@ public class HotelActivity extends AppCompatActivity {
         hotelPictureAdapter = new HotelPictureAdapter(this, hotel.getPictures());
         pictureViewPager.setAdapter(hotelPictureAdapter);
         collapsing_container.setTitle(hotel.getName());
+        ((TextView) findViewById(R.id.priceTextView)).setText(hotel.getRooms().get(0).getPrice());
+        final String checkIn = Utils.getDateString(hotel.getCheckInDate(), getString(R.string.hotel_date_format));
+        final String checkOut = Utils.getDateString(hotel.getCheckOutDate(), getString(R.string.hotel_date_format));
+        final int guest = hotel.getGuestCount();
+        final String total = getString(R.string.hotel_date_guest, checkIn, checkOut, guest);
+        ((TextView) findViewById(R.id.dayGuestTextView)).setText(total);
+        final String view = NumberFormat.getNumberInstance().format(hotel.getReviewCount());
+        ((TextView) findViewById(R.id.reviewTextView)).setText(getString(R.string.view, view));
     }
 
     private static class GetHotelAsyncTask extends AsyncTask<Integer, Void, Hotel> {

@@ -10,4 +10,9 @@
 
     <!-- My Reservation-->
     <string name="no_reservation">예약이 없습니다.</string>
+
+    <!--Hotel-->
+    <string name="select_room">방 선택하기</string>
+    <string name="hotel_date_format">M월 dd</string>
+
 </resources>

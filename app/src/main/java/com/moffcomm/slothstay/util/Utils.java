@@ -9,6 +9,8 @@ import com.moffcomm.slothstay.model.HomeHotel;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,6 +63,13 @@ public class Utils {
             ioe.printStackTrace();
         }
         return false;
+    }
+
+    public static String getDateString(Date date, String format) {
+        if (date == null)
+            return "";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+        return simpleDateFormat.format(date);
     }
 
 }
