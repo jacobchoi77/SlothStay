@@ -5,7 +5,6 @@ package com.moffcomm.slothstay;
  */
 public class Constants {
     public static final int GRID_SPAN_COUNT = 2;
-    public static final int MAIN_BUTTON_LAYOUT_DIFF = 30;
 
     public static final boolean DATA_FROM_ASSETS = true;
 

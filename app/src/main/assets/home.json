@@ -4,6 +4,8 @@
     "name": "호텔 스카이파크 킹스타운 동대문",
     "rate": 4.9,
     "price": "69,900원",
+    "latitude": 37.568699,
+    "longitude": 127.007667,
     "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
   },
   {
@@ -11,6 +13,8 @@
     "name": "호텔투게더",
     "rate": 3.2,
     "price": "69,900원",
+    "latitude": 37.528626,
+    "longitude": 126.920098,
     "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
   },
   {
@@ -18,6 +22,8 @@
     "name": "임피리얼 팰리스 서울",
     "rate": 4.5,
     "price": "139,900원",
+    "latitude": 37.514300,
+    "longitude": 127.035902,
     "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
   },
   {
@@ -25,6 +31,8 @@
     "name": "강남 648호텔",
     "rate": 3.4,
     "price": "69,900원",
+    "latitude": 37.499938,
+    "longitude": 127.031853,
     "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
   },
   {
@@ -32,6 +40,8 @@
     "name": "신라스테이 광화문",
     "rate": 4.6,
     "price": "129,900원",
+    "latitude": 37.504836,
+    "longitude": 127.041494,
     "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
   },
   {
@@ -39,6 +49,8 @@
     "name": "쉐라톤 그랜드 워커힐",
     "rate": 3.2,
     "price": "69,900원",
+    "latitude": 37.555236,
+    "longitude": 127.110774,
     "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
   },
   {
@@ -46,6 +58,8 @@
     "name": "베니키아 프리미어 호텔 동대문",
     "rate": 4.5,
     "price": "139,900원",
+    "latitude": 37.573671,
+    "longitude": 127.020379,
     "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
   },
   {
@@ -53,6 +67,8 @@
     "name": "그린그래스호텔",
     "rate": 3.4,
     "price": "69,900원",
+    "latitude": 37.505811,
+    "longitude": 127.050082,
     "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
   },
   {
@@ -60,6 +76,8 @@
     "name": "호텔 카푸치노",
     "rate": 4.6,
     "price": "129,900원",
+    "latitude": 37.506728,
+    "longitude": 127.031557,
     "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
   },
   {
@@ -67,6 +85,8 @@
     "name": "InterContinental Grand Seoul Parnas",
     "rate": 4.9,
     "price": "69,900원",
+    "latitude": 37.508884,
+    "longitude": 127.060790,
     "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
   }
 ]

@@ -16,4 +16,7 @@
     <string name="hotel_date_format">M월 dd</string>
     <string name="per_night">/1박</string>
 
+    <!--Hotel List-->
+    <string name="hotel_list_head_title">Today\'s Hotel(%1$d)</string>
+
 </resources>

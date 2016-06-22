@@ -1,5 +1,6 @@
 package com.moffcomm.slothstay.ui;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
@@ -57,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onSeeMoreClick(View v) {
+        Intent intent = new Intent(this, HotelListActivity.class);
+        startActivity(intent);
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

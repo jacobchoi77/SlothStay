@@ -21,6 +21,7 @@
     <!-- Network-->
     <string name="what_home">home</string>
     <string name="what_hotel">hotel</string>
+    <string name="what_hotel_list">hotel_list</string>
 
     <!--Hotel-->
     <string name="select_room">Select a Room</string>
@@ -31,5 +32,14 @@
     <string name="per_night">/night</string>
     <string name="book">Book</string>
     <string name="view_room">View Room</string>
+    <string name="dining">Dining</string>
+    <string name="rooms_desc">Rooms</string>
+    <string name="property">Property features</string>
+    <string name="highlights">Highlights</string>
+    <string name="amenities">Prperty Amenities</string>
+    <string name="policies">Policies</string>
 
+    <!--Hotel List-->
+    <string name="title_activity_hotel_list">Hotel List</string>
+    <string name="hotel_list_head_title">Today\'s Hotel(%1$d건)</string>
 </resources>

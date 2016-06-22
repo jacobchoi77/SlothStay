@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.moffcomm.slothstay.ui.HotelActivity"
+    tools:context=".ui.HotelActivity"
     tools:showIn="@layout/activity_hotel">
 
     <LinearLayout
@@ -157,7 +158,7 @@
             android:id="@+id/horizontalScrollView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/hotel_row_height"
-            android:scrollbarAlwaysDrawHorizontalTrack="false">
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -375,14 +376,17 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/gray_divider_light" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/roomRecyclerView"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
 
 
 </android.support.v4.widget.NestedScrollView>
+

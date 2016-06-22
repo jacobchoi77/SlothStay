@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
-import com.moffcomm.slothstay.model.HomeHotel;
+import com.moffcomm.slothstay.model.SimpleHotel;
 import com.moffcomm.slothstay.ui.adapter.HomeAdapter;
 import com.moffcomm.slothstay.util.Utils;
 
@@ -32,8 +32,8 @@ public class HomeFragment extends Fragment {
     private int MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
     private int currentMainButtonLayoutHeight;
     private View mMainButtonLayout;
-    private List<HomeHotel> homeHotels = new ArrayList<>();
-    private GetHomeHotelAsyncTask mAsyncTask;
+    private List<SimpleHotel> simpleHotels = new ArrayList<>();
+    private GetSimpleHotelAsyncTask mAsyncTask;
 
     public HomeFragment() {
     }
@@ -57,42 +57,43 @@ public class HomeFragment extends Fragment {
             @Override
             public int getSpanSize(int position) {
                 final int newPosition = position - 1;
-                final int size = homeHotels.size();
+                final int size = simpleHotels.size();
                 if (newPosition >= 0 && newPosition < size)
-                    return homeHotels.get(newPosition).getRate() < Constants.RATE_BASE ? 1 : 2;
+                    return simpleHotels.get(newPosition).getRate() < Constants.RATE_BASE ? 1 : 2;
                 else
                     return 2;
             }
         });
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        mAdapter = new HomeAdapter(homeHotels, getContext());
+        mAdapter = new HomeAdapter(simpleHotels, getContext());
         mRecyclerView.setAdapter(mAdapter);
-//        mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
-//        mMainButtonLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-//            @Override
-//            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-//                if (MAX_MAIN_BUTTON_LAYOUT_HEIGHT == 0) {
-//                    MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
-//                    MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT - Constants.MAIN_BUTTON_LAYOUT_DIFF;
-//                    currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-//                    mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
-//                        @Override
-//                        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                            super.onScrolled(recyclerView, dx, dy);
-//                            currentMainButtonLayoutHeight -= dy;
-//                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT)
-//                                currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
-//                            else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT)
-//                                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-//                            ViewGroup.LayoutParams layoutParams = mMainButtonLayout.getLayoutParams();
-//                            layoutParams.height = currentMainButtonLayoutHeight;
-//                            mMainButtonLayout.setLayoutParams(layoutParams);
-//                        }
-//                    });
-//                }
-//            }
-//        });
+        mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
+        mMainButtonLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                if (MAX_MAIN_BUTTON_LAYOUT_HEIGHT == 0) {
+                    MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
+                    MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT -
+                            getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
+                    currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
+                    mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+                        @Override
+                        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                            super.onScrolled(recyclerView, dx, dy);
+                            currentMainButtonLayoutHeight -= dy;
+                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT)
+                                currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
+                            else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT)
+                                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
+                            ViewGroup.LayoutParams layoutParams = mMainButtonLayout.getLayoutParams();
+                            layoutParams.height = currentMainButtonLayoutHeight;
+                            mMainButtonLayout.setLayoutParams(layoutParams);
+                        }
+                    });
+                }
+            }
+        });
 
     }
 
@@ -102,41 +103,41 @@ public class HomeFragment extends Fragment {
         if (mAsyncTask != null && mAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
             mAsyncTask.cancel(true);
         }
-        mAsyncTask = new GetHomeHotelAsyncTask(this);
+        mAsyncTask = new GetSimpleHotelAsyncTask(this);
         mAsyncTask.execute();
     }
 
-    public void setHomeHotels(List<HomeHotel> homeHotels) {
-        this.homeHotels.clear();
-        this.homeHotels.addAll(homeHotels);
+    public void setSimpleHotels(List<SimpleHotel> simpleHotels) {
+        this.simpleHotels.clear();
+        this.simpleHotels.addAll(simpleHotels);
         mAdapter.notifyDataSetChanged();
     }
 
-    private static class GetHomeHotelAsyncTask extends AsyncTask<Void, Void, List<HomeHotel>> {
+    private static class GetSimpleHotelAsyncTask extends AsyncTask<Void, Void, List<SimpleHotel>> {
 
         private WeakReference<HomeFragment> homeFragmentWeakReference;
 
-        public GetHomeHotelAsyncTask(HomeFragment homeFragment) {
+        public GetSimpleHotelAsyncTask(HomeFragment homeFragment) {
             homeFragmentWeakReference = new WeakReference<>(homeFragment);
         }
 
         @Override
-        protected List<HomeHotel> doInBackground(Void... params) {
+        protected List<SimpleHotel> doInBackground(Void... params) {
             HomeFragment homeFragment = homeFragmentWeakReference.get();
             if (homeFragment != null)
-                return HomeHotel.fromJsonReader(Utils.getJsonReader(homeFragment.getContext(),
+                return SimpleHotel.fromJsonReader(Utils.getJsonReader(homeFragment.getContext(),
                         homeFragment.getString(R.string.what_home)));
             return null;
         }
 
         @Override
-        protected void onPostExecute(List<HomeHotel> homeHotels) {
-            super.onPostExecute(homeHotels);
-            if (homeHotels != null) {
-                Utils.reorder(homeHotels);
+        protected void onPostExecute(List<SimpleHotel> simpleHotels) {
+            super.onPostExecute(simpleHotels);
+            if (simpleHotels != null) {
+                Utils.reorder(simpleHotels);
                 HomeFragment homeFragment = homeFragmentWeakReference.get();
                 if (homeFragment != null)
-                    homeFragment.setHomeHotels(homeHotels);
+                    homeFragment.setSimpleHotels(simpleHotels);
             }
 
         }

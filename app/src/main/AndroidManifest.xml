@@ -30,6 +30,7 @@
         <activity
             android:name=".ui.HotelActivity"
             android:screenOrientation="portrait" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -44,7 +45,12 @@
 
         <activity
             android:name=".ui.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.HotelListActivity"
+            android:label="@string/title_activity_hotel_list"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

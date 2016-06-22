@@ -1,10 +1,21 @@
 package com.moffcomm.slothstay.util;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.util.JsonReader;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.moffcomm.slothstay.Constants;
-import com.moffcomm.slothstay.model.HomeHotel;
+import com.moffcomm.slothstay.R;
+import com.moffcomm.slothstay.model.SimpleHotel;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,18 +43,18 @@ public class Utils {
         return null;
     }
 
-    public static void reorder(List<HomeHotel> homeHotels) {
+    public static void reorder(List<SimpleHotel> simpleHotels) {
         int alone = -1;
-        for (int i = 0; i < homeHotels.size(); i++) {
-            HomeHotel homeHotel = homeHotels.get(i);
-            if (homeHotel.getRate() < Constants.RATE_BASE) {
+        for (int i = 0; i < simpleHotels.size(); i++) {
+            SimpleHotel simpleHotel = simpleHotels.get(i);
+            if (simpleHotel.getRate() < Constants.RATE_BASE) {
                 if (alone == -1) {
                     alone = i;
                 } else {
-                    HomeHotel temp = homeHotels.get(alone + 1);
-                    homeHotels.add(alone + 1, homeHotel);
-                    homeHotels.remove(i);
-                    homeHotels.add(i, temp);
+                    SimpleHotel temp = simpleHotels.get(alone + 1);
+                    simpleHotels.add(alone + 1, simpleHotel);
+                    simpleHotels.remove(i);
+                    simpleHotels.add(i, temp);
                     alone = -1;
                 }
             }
@@ -55,6 +66,24 @@ public class Utils {
             return "";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
         return simpleDateFormat.format(date);
+    }
+
+    public static Bitmap getMarkerBitmapFromView(Context context, String price) {
+        View customMarkerView = ((LayoutInflater) context.getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.map_icon, null);
+        ((TextView) customMarkerView.findViewById(R.id.priceTextView)).setText(price);
+        customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        customMarkerView.layout(0, 0, customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight());
+        customMarkerView.buildDrawingCache();
+        Bitmap returnedBitmap = Bitmap.createBitmap(customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        Drawable drawable = customMarkerView.getBackground();
+        if (drawable != null)
+            drawable.draw(canvas);
+        customMarkerView.draw(canvas);
+        return returnedBitmap;
     }
 
 }

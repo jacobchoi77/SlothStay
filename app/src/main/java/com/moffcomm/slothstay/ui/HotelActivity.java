@@ -1,35 +1,41 @@
 package com.moffcomm.slothstay.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.Hotel;
+import com.moffcomm.slothstay.model.Room;
 import com.moffcomm.slothstay.ui.adapter.HotelPictureAdapter;
 import com.moffcomm.slothstay.util.Utils;
 
 import java.lang.ref.WeakReference;
 import java.text.NumberFormat;
-import java.util.Locale;
 
-public class HotelActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class HotelActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
     private Hotel hotel;
     private int hotelId;
@@ -38,6 +44,8 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     private HotelPictureAdapter hotelPictureAdapter;
     private CollapsingToolbarLayout collapsing_container;
     private GoogleMap mMap;
+    private LinearLayout linearLayout;
+    private View selectedRoomView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +66,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         }
         pictureViewPager = (ViewPager) findViewById(R.id.pictureViewPager);
         collapsing_container = (CollapsingToolbarLayout) findViewById(R.id.collapsing_container);
+        linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
     }
 
     public Hotel getHotel() {
@@ -95,6 +104,70 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        addRooms();
+        addOthers();
+    }
+
+    private void addOthers() {
+        LayoutInflater inflater = getLayoutInflater();
+        if (hotel.getDining() != null) {
+            View view = inflater.inflate(R.layout.item_others, linearLayout, false);
+            ((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.dining);
+            ((TextView) view.findViewById(R.id.contentTextView)).setText(hotel.getDining());
+            linearLayout.addView(view);
+        }
+        if (hotel.getRoomsDesc() != null) {
+            View view = inflater.inflate(R.layout.item_others, linearLayout, false);
+            ((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.rooms_desc);
+            ((TextView) view.findViewById(R.id.contentTextView)).setText(hotel.getRoomsDesc());
+            linearLayout.addView(view);
+        }
+        if (hotel.getProperty() != null) {
+            View view = inflater.inflate(R.layout.item_others, linearLayout, false);
+            ((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.property);
+            ((TextView) view.findViewById(R.id.contentTextView)).setText(hotel.getProperty());
+            linearLayout.addView(view);
+        }
+        if (hotel.getPolicies() != null) {
+            View view = inflater.inflate(R.layout.item_others, linearLayout, false);
+            ((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.policies);
+            ((TextView) view.findViewById(R.id.contentTextView)).setText(hotel.getPolicies());
+            linearLayout.addView(view);
+        }
+        if (hotel.getAmenities() != null) {
+            View view = inflater.inflate(R.layout.item_others, linearLayout, false);
+            ((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.amenities);
+            ((TextView) view.findViewById(R.id.contentTextView)).setText(hotel.getAmenities());
+            linearLayout.addView(view);
+        }
+        if (hotel.getHighlight() != null) {
+            View view = inflater.inflate(R.layout.item_others, linearLayout, false);
+            ((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.highlights);
+            ((TextView) view.findViewById(R.id.contentTextView)).setText(hotel.getHighlight());
+            linearLayout.addView(view);
+        }
+    }
+
+    private void addRooms() {
+        for (Room room : hotel.getRooms()) {
+            addRoom(room);
+        }
+    }
+
+    private void addRoom(Room room, int index) {
+        View view = getLayoutInflater().inflate(R.layout.item_room, linearLayout, false);
+        ((TextView) view.findViewById(R.id.nameTextView)).setText(room.getName());
+        ((TextView) view.findViewById(R.id.priceTextView)).setText(room.getPrice());
+        Glide.with(this).load(room.getImageUrl()).into((ImageView) view.findViewById(R.id.imageView));
+        view.setOnClickListener(this);
+        if (index != -1)
+            linearLayout.addView(view, index);
+        else
+            linearLayout.addView(view);
+    }
+
+    private void addRoom(Room room) {
+        addRoom(room, -1);
     }
 
     @Override
@@ -130,6 +203,26 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         mMap.addMarker(new MarkerOptions()
                 .position(hotel.getLatLng())
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v != selectedRoomView) {
+            CardView cardView = (CardView) getLayoutInflater().inflate(R.layout.item_card_room, linearLayout, false);
+            int index = linearLayout.indexOfChild(v);
+            linearLayout.removeView(v);
+            v.setOnClickListener(null);
+            cardView.addView(v, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            v.findViewById(R.id.imageView).setVisibility(View.VISIBLE);
+            cardView.setOnClickListener(this);
+            linearLayout.addView(cardView, index);
+            if (selectedRoomView != null) {
+                index = linearLayout.indexOfChild(selectedRoomView);
+                linearLayout.removeView(selectedRoomView);
+                addRoom(hotel.getRooms().get(index), index);
+            }
+            selectedRoomView = cardView;
+        }
     }
 
     private static class GetHotelAsyncTask extends AsyncTask<Integer, Void, Hotel> {

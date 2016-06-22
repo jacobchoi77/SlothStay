@@ -2,8 +2,7 @@ package com.moffcomm.slothstay.model;
 
 import android.util.JsonReader;
 
-import com.moffcomm.slothstay.Constants;
-import com.moffcomm.slothstay.util.Utils;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,11 +12,13 @@ import java.util.List;
  * Created by jacobsFactory on 2016-06-13.
  */
 
-public class HomeHotel {
+public class SimpleHotel {
 
     public static final String CONST_ID = "id";
     public static final String CONST_NAME = "name";
     public static final String CONST_RATE = "rate";
+    public static final String CONST_LATITUDE = "latitude";
+    public static final String CONST_LONGITUDE = "longitude";
     public static final String CONST_PRICE = "price";
     public static final String CONST_IMAGE_URL = "image_url";
 
@@ -26,6 +27,8 @@ public class HomeHotel {
     private double rate;
     private String price;
     private String imageUrl;
+    private String latitude;
+    private String longitude;
 
     public int getId() {
         return id;
@@ -51,6 +54,22 @@ public class HomeHotel {
         this.rate = rate;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
     public String getPrice() {
         return price;
     }
@@ -67,39 +86,49 @@ public class HomeHotel {
         this.imageUrl = imageUrl;
     }
 
+    public LatLng getLatLng() {
+        return new LatLng(Double.valueOf(latitude), Double.valueOf(longitude));
+    }
 
-    public static List<HomeHotel> fromJsonReader(JsonReader jsonReader) {
+
+    public static List<SimpleHotel> fromJsonReader(JsonReader jsonReader) {
         try {
             jsonReader.beginArray();
-            List<HomeHotel> homeHotels = new ArrayList<>();
+            List<SimpleHotel> simpleHotels = new ArrayList<>();
             while (jsonReader.hasNext()) {
                 jsonReader.beginObject();
-                HomeHotel homeHotel = new HomeHotel();
+                SimpleHotel simpleHotel = new SimpleHotel();
                 while (jsonReader.hasNext()) {
                     final String name = jsonReader.nextName();
                     switch (name) {
                         case CONST_ID:
-                            homeHotel.setId(jsonReader.nextInt());
+                            simpleHotel.setId(jsonReader.nextInt());
                             break;
                         case CONST_NAME:
-                            homeHotel.setName(jsonReader.nextString());
+                            simpleHotel.setName(jsonReader.nextString());
                             break;
                         case CONST_RATE:
-                            homeHotel.setRate(jsonReader.nextDouble());
+                            simpleHotel.setRate(jsonReader.nextDouble());
+                            break;
+                        case CONST_LATITUDE:
+                            simpleHotel.setLatitude(jsonReader.nextString());
+                            break;
+                        case CONST_LONGITUDE:
+                            simpleHotel.setLongitude(jsonReader.nextString());
                             break;
                         case CONST_PRICE:
-                            homeHotel.setPrice(jsonReader.nextString());
+                            simpleHotel.setPrice(jsonReader.nextString());
                             break;
                         case CONST_IMAGE_URL:
-                            homeHotel.setImageUrl(jsonReader.nextString());
+                            simpleHotel.setImageUrl(jsonReader.nextString());
                             break;
                     }
                 }
                 jsonReader.endObject();
-                homeHotels.add(homeHotel);
+                simpleHotels.add(simpleHotel);
             }
             jsonReader.endArray();
-            return homeHotels;
+            return simpleHotels;
         } catch (IOException e) {
             e.printStackTrace();
             return null;

@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.SimpleHotel;
 import com.moffcomm.slothstay.ui.HotelActivity;
@@ -20,12 +19,10 @@ import java.util.List;
 /**
  * Created by jacobsFactory on 2016-06-10.
  */
-public class HomeAdapter extends HeaderRecyclerViewAdapter {
+public class HotelListAdapter extends HeaderRecyclerViewAdapter {
 
     private List<SimpleHotel> simpleHotels;
     private Context mContext;
-    private static final int TYPE_FULL = 1;
-    private static final int TYPE_HALF = 2;
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -56,7 +53,7 @@ public class HomeAdapter extends HeaderRecyclerViewAdapter {
         }
     }
 
-    public HomeAdapter(List<SimpleHotel> simpleHotels, Context context) {
+    public HotelListAdapter(List<SimpleHotel> simpleHotels, Context context) {
         this.simpleHotels = simpleHotels;
         mContext = context;
     }
@@ -68,14 +65,15 @@ public class HomeAdapter extends HeaderRecyclerViewAdapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateHeaderViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.header_home, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.header_hotel_list, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
 
     @Override
     public void onBindHeaderView(RecyclerView.ViewHolder holder, int position) {
-
+        ((TextView) holder.itemView.findViewById(R.id.todayTextView)).setText(
+                mContext.getString(R.string.hotel_list_head_title, simpleHotels.size()));
     }
 
     @Override
@@ -95,15 +93,7 @@ public class HomeAdapter extends HeaderRecyclerViewAdapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateBasicItemViewHolder(ViewGroup parent, int viewType) {
-        View v = null;
-        switch (viewType) {
-            case TYPE_FULL:
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, parent, false);
-                break;
-            case TYPE_HALF:
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_small, parent, false);
-                break;
-        }
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_hotel_list, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
@@ -124,9 +114,7 @@ public class HomeAdapter extends HeaderRecyclerViewAdapter {
 
     @Override
     public int getBasicItemType(int position) {
-        final int newPosition = position - 1;
-        SimpleHotel simpleHotel = simpleHotels.get(newPosition);
-        return simpleHotel.getRate() < Constants.RATE_BASE ? TYPE_HALF : TYPE_FULL;
+        return 0;
     }
 
 }

@@ -29,6 +29,12 @@ public class Hotel {
     public static final String CONST_LONGITUDE = "longitude";
     public static final String CONST_PICTURES = "pictures";
     public static final String CONST_ROOMS = "rooms";
+    public static final String CONST_DINING = "dining";
+    public static final String CONST_ROOMS_DESC = "rooms_desc";
+    public static final String CONST_PROPERTY = "property";
+    public static final String CONST_HIGHLIGHT = "highlight";
+    public static final String CONST_AMENITIES = "amenities";
+    public static final String CONST_POLICIES = "policies";
 
     private int id;
     private String name;
@@ -45,6 +51,13 @@ public class Hotel {
     private String longitude;
     private List<Picture> pictures;
     private List<Room> rooms;
+    private String dining;
+    private String roomsDesc;
+    private String property;
+    private String highlight;
+    private String amenities;
+    private String policies;
+
 
     public int getId() {
         return id;
@@ -170,6 +183,54 @@ public class Hotel {
         return new LatLng(Double.valueOf(latitude), Double.valueOf(longitude));
     }
 
+    public String getDining() {
+        return dining;
+    }
+
+    public void setDining(String dining) {
+        this.dining = dining;
+    }
+
+    public String getRoomsDesc() {
+        return roomsDesc;
+    }
+
+    public void setRoomsDesc(String roomsDesc) {
+        this.roomsDesc = roomsDesc;
+    }
+
+    public String getProperty() {
+        return property;
+    }
+
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
+    public String getHighlight() {
+        return highlight;
+    }
+
+    public void setHighlight(String highlight) {
+        this.highlight = highlight;
+    }
+
+    public String getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(String amenities) {
+        this.amenities = amenities;
+    }
+
+    public String getPolicies() {
+        return policies;
+    }
+
+    public void setPolicies(String policies) {
+        this.policies = policies;
+    }
+
     public static Hotel fromJsonReader(JsonReader jsonReader) {
         try {
             jsonReader.beginObject();
@@ -243,6 +304,24 @@ public class Hotel {
                         }
                         jsonReader.endArray();
                         hotel.setRooms(roomList);
+                        break;
+                    case CONST_ROOMS_DESC:
+                        hotel.setRoomsDesc(jsonReader.nextString());
+                        break;
+                    case CONST_DINING:
+                        hotel.setDining(jsonReader.nextString());
+                        break;
+                    case CONST_PROPERTY:
+                        hotel.setProperty(jsonReader.nextString());
+                        break;
+                    case CONST_AMENITIES:
+                        hotel.setAmenities(jsonReader.nextString());
+                        break;
+                    case CONST_HIGHLIGHT:
+                        hotel.setHighlight(jsonReader.nextString());
+                        break;
+                    case CONST_POLICIES:
+                        hotel.setPolicies(jsonReader.nextString());
                         break;
                 }
             }

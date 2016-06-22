@@ -16,5 +16,14 @@
     <dimen name="hotel_map_height">160dp</dimen>
 
     <dimen name="room_image_height">120dp</dimen>
+    <dimen name="room_item_height">110dp</dimen>
+    <dimen name="room_card_height">220dp</dimen>
+
+    <dimen name="main_button_shrink">30dp</dimen>
+
+    <dimen name="hotel_list_item_height">200dp</dimen>
+
+    <dimen name="flexible_space_image_height">240dp</dimen>
+    <dimen name="intersection_height">16dp</dimen>
 
 </resources>
