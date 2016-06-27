@@ -1,8 +1,12 @@
 package com.moffcomm.slothstay.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.JsonReader;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
+import com.hannesdorfmann.parcelableplease.annotation.ParcelableThisPlease;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,8 +15,8 @@ import java.util.List;
 /**
  * Created by jacobsFactory on 2016-06-13.
  */
-
-public class SimpleHotel {
+@ParcelablePlease(allFields = false)
+public class SimpleHotel implements Parcelable {
 
     public static final String CONST_ID = "id";
     public static final String CONST_NAME = "name";
@@ -22,13 +26,20 @@ public class SimpleHotel {
     public static final String CONST_PRICE = "price";
     public static final String CONST_IMAGE_URL = "image_url";
 
-    private int id;
-    private String name;
-    private double rate;
-    private String price;
-    private String imageUrl;
-    private String latitude;
-    private String longitude;
+    @ParcelableThisPlease
+    int id;
+    @ParcelableThisPlease
+    String name;
+    @ParcelableThisPlease
+    double rate;
+    @ParcelableThisPlease
+    String price;
+    @ParcelableThisPlease
+    String imageUrl;
+    @ParcelableThisPlease
+    String latitude;
+    @ParcelableThisPlease
+    String longitude;
 
     public int getId() {
         return id;
@@ -136,4 +147,25 @@ public class SimpleHotel {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        SimpleHotelParcelablePlease.writeToParcel(this, dest, flags);
+    }
+
+    public static final Creator<SimpleHotel> CREATOR = new Creator<SimpleHotel>() {
+        public SimpleHotel createFromParcel(Parcel source) {
+            SimpleHotel target = new SimpleHotel();
+            SimpleHotelParcelablePlease.readFromParcel(target, source);
+            return target;
+        }
+
+        public SimpleHotel[] newArray(int size) {
+            return new SimpleHotel[size];
+        }
+    };
 }

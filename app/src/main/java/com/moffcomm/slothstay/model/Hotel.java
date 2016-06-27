@@ -1,8 +1,13 @@
 package com.moffcomm.slothstay.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.JsonReader;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
+import com.hannesdorfmann.parcelableplease.annotation.ParcelableThisPlease;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +17,8 @@ import java.util.List;
 /**
  * Created by jacobsFactory on 2016-06-16.
  */
-public class Hotel {
+@ParcelablePlease(allFields = false)
+public class Hotel implements Parcelable {
 
     public static final String CONST_ID = "id";
     public static final String CONST_NAME = "name";
@@ -27,6 +33,8 @@ public class Hotel {
     public static final String CONST_DESCRIPTION = "desc";
     public static final String CONST_LATITUDE = "latitude";
     public static final String CONST_LONGITUDE = "longitude";
+    public static final String CONST_ADDRESS_1 = "address_1";
+    public static final String CONST_ADDRESS_2 = "address_2";
     public static final String CONST_PICTURES = "pictures";
     public static final String CONST_ROOMS = "rooms";
     public static final String CONST_DINING = "dining";
@@ -36,27 +44,52 @@ public class Hotel {
     public static final String CONST_AMENITIES = "amenities";
     public static final String CONST_POLICIES = "policies";
 
-    private int id;
-    private String name;
-    private int grade;
-    private int discount;
-    private Date checkInDate;
-    private Date checkOutDate;
-    private int guestCount;
-    private double rate;
-    private int reviewCount;
-    private List<String> services;
-    private String description;
-    private String latitude;
-    private String longitude;
-    private List<Picture> pictures;
-    private List<Room> rooms;
-    private String dining;
-    private String roomsDesc;
-    private String property;
-    private String highlight;
-    private String amenities;
-    private String policies;
+    @ParcelableThisPlease
+    int id;
+    @ParcelableThisPlease
+    String name;
+    @ParcelableThisPlease
+    int grade;
+    @ParcelableThisPlease
+    int discount;
+    @ParcelableThisPlease
+    Date checkInDate;
+    @ParcelableThisPlease
+    Date checkOutDate;
+    @ParcelableThisPlease
+    int guestCount;
+    @ParcelableThisPlease
+    double rate;
+    @ParcelableThisPlease
+    int reviewCount;
+    @ParcelableThisPlease
+    List<String> services;
+    @ParcelableThisPlease
+    String description;
+    @ParcelableThisPlease
+    String latitude;
+    @ParcelableThisPlease
+    String longitude;
+    @ParcelableThisPlease
+    String address1;
+    @ParcelableThisPlease
+    String address2;
+    @ParcelableThisPlease
+    List<Picture> pictures;
+    @ParcelableThisPlease
+    List<Room> rooms;
+    @ParcelableThisPlease
+    String dining;
+    @ParcelableThisPlease
+    String roomsDesc;
+    @ParcelableThisPlease
+    String property;
+    @ParcelableThisPlease
+    String highlight;
+    @ParcelableThisPlease
+    String amenities;
+    @ParcelableThisPlease
+    String policies;
 
 
     public int getId() {
@@ -161,6 +194,22 @@ public class Hotel {
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
     public List<Picture> getPictures() {
@@ -283,6 +332,12 @@ public class Hotel {
                     case CONST_LONGITUDE:
                         hotel.setLongitude(jsonReader.nextString());
                         break;
+                    case CONST_ADDRESS_1:
+                        hotel.setAddress1(jsonReader.nextString());
+                        break;
+                    case CONST_ADDRESS_2:
+                        hotel.setAddress2(jsonReader.nextString());
+                        break;
                     case CONST_PICTURES:
                         jsonReader.beginArray();
                         ArrayList<Picture> pictureList = new ArrayList<>();
@@ -332,4 +387,27 @@ public class Hotel {
             return null;
         }
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        HotelParcelablePlease.writeToParcel(this, dest, flags);
+    }
+
+    public static final Creator<Hotel> CREATOR = new Creator<Hotel>() {
+        public Hotel createFromParcel(Parcel source) {
+            Hotel target = new Hotel();
+            HotelParcelablePlease.readFromParcel(target, source);
+            return target;
+        }
+
+        public Hotel[] newArray(int size) {
+            return new Hotel[size];
+        }
+    };
 }

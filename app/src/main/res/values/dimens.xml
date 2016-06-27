@@ -26,4 +26,6 @@
     <dimen name="flexible_space_image_height">240dp</dimen>
     <dimen name="intersection_height">16dp</dimen>
 
+    <dimen name="book_image_height">120dp</dimen>
+
 </resources>

@@ -1,6 +1,11 @@
 package com.moffcomm.slothstay.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.JsonReader;
+
+import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
+import com.hannesdorfmann.parcelableplease.annotation.ParcelableThisPlease;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,7 +14,8 @@ import java.util.List;
 /**
  * Created by jacobsFactory on 2016-06-16.
  */
-public class Room {
+@ParcelablePlease(allFields = false)
+public class Room implements Parcelable {
 
     public static final String CONST_NAME = "name";
     public static final String CONST_PRICE = "price";
@@ -17,11 +23,16 @@ public class Room {
     public static final String CONST_DETAIL = "detail";
     public static final String CONST_IMAGE_URL = "image_url";
 
-    private String name;
-    private String price;
-    private List<String> etc;
-    private String detail;
-    private String imageUrl;
+    @ParcelableThisPlease
+    String name;
+    @ParcelableThisPlease
+    String price;
+    @ParcelableThisPlease
+    List<String> etc;
+    @ParcelableThisPlease
+    String detail;
+    @ParcelableThisPlease
+    String imageUrl;
 
     public String getName() {
         return name;
@@ -99,4 +110,27 @@ public class Room {
         }
         return null;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        RoomParcelablePlease.writeToParcel(this, dest, flags);
+    }
+
+    public static final Creator<Room> CREATOR = new Creator<Room>() {
+        public Room createFromParcel(Parcel source) {
+            Room target = new Room();
+            RoomParcelablePlease.readFromParcel(target, source);
+            return target;
+        }
+
+        public Room[] newArray(int size) {
+            return new Room[size];
+        }
+    };
 }

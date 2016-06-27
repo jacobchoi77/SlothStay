@@ -50,6 +50,9 @@
         <activity
             android:name=".ui.HotelListActivity"
             android:label="@string/title_activity_hotel_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.BookActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

@@ -4,12 +4,12 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView;
@@ -40,6 +40,7 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
     private ObservableRecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private LinearLayoutManager linearLayoutManager;
+    private int displayContentHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mAdapter = new HotelListAdapter(simpleHotels, this);
         mRecyclerView.setAdapter(mAdapter);
+        displayContentHeight = Utils.getDisplayContentHeight(this);
     }
 
     @Override
@@ -154,6 +156,21 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
 
     @Override
     public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+//        if (scrollY > 0) {
+//            if (mMapView.getMeasuredHeight() < displayContentHeight) {
+//                ViewGroup.LayoutParams layoutParams = mMapView.getLayoutParams();
+//                final int h = layoutParams.height + scrollY;
+//                layoutParams.height = (h >= displayContentHeight ? displayContentHeight : h);
+//                mMapView.setLayoutParams(layoutParams);
+//            }
+//        } else {
+//            if (mMapView.getMeasuredHeight() > 0) {
+//                ViewGroup.LayoutParams layoutParams = mMapView.getLayoutParams();
+//                final int h = layoutParams.height + scrollY;
+//                layoutParams.height = (h <= 0 ? 0 : h);
+//                mMapView.setLayoutParams(layoutParams);
+//            }
+//        }
 
     }
 
@@ -164,16 +181,6 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
 
     @Override
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
-        ActionBar ab = getSupportActionBar();
-        if (scrollState == ScrollState.UP) {
-            if (ab.isShowing()) {
-                ab.hide();
-            }
-        } else if (scrollState == ScrollState.DOWN) {
-            if (!ab.isShowing()) {
-                ab.show();
-            }
-        }
     }
 
     private static class GetSimpleHotelAsyncTask extends AsyncTask<Void, Void, List<SimpleHotel>> {

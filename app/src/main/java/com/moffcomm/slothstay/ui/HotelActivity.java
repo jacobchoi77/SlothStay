@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
+import com.moffcomm.slothstay.model.Book;
 import com.moffcomm.slothstay.model.Hotel;
 import com.moffcomm.slothstay.model.Room;
 import com.moffcomm.slothstay.ui.adapter.HotelPictureAdapter;
@@ -46,6 +48,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     private GoogleMap mMap;
     private LinearLayout linearLayout;
     private View selectedRoomView;
+    private NestedScrollView nestedScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         pictureViewPager = (ViewPager) findViewById(R.id.pictureViewPager);
         collapsing_container = (CollapsingToolbarLayout) findViewById(R.id.collapsing_container);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+        nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
     }
 
     public Hotel getHotel() {
@@ -106,6 +110,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         mapFragment.getMapAsync(this);
         addRooms();
         addOthers();
+        linearLayout.getChildAt(0).performClick();
     }
 
     private void addOthers() {
@@ -158,6 +163,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         View view = getLayoutInflater().inflate(R.layout.item_room, linearLayout, false);
         ((TextView) view.findViewById(R.id.nameTextView)).setText(room.getName());
         ((TextView) view.findViewById(R.id.priceTextView)).setText(room.getPrice());
+        (view.findViewById(R.id.bookButton)).setTag(room);
         Glide.with(this).load(room.getImageUrl()).into((ImageView) view.findViewById(R.id.imageView));
         view.setOnClickListener(this);
         if (index != -1)
@@ -223,6 +229,20 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
             }
             selectedRoomView = cardView;
         }
+    }
+
+    public void onSelectRoomClick(View v) {
+        nestedScrollView.smoothScrollTo(0, linearLayout.getTop());
+    }
+
+    public void onBookClick(View view) {
+        Room room = (Room) view.getTag();
+        Book book = new Book();
+        book.setHotel(hotel);
+        book.setRoom(room);
+        Intent intent = new Intent(this, BookActivity.class);
+        intent.putExtra("book", book);
+        startActivity(intent);
     }
 
     private static class GetHotelAsyncTask extends AsyncTask<Integer, Void, Hotel> {

@@ -18,7 +18,8 @@
     <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="5dp">
 
     </com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView>
