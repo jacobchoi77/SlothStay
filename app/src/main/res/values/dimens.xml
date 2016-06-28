@@ -28,4 +28,6 @@
 
     <dimen name="book_image_height">120dp</dimen>
 
+    <dimen name="status_bar_height">24dp</dimen>
+
 </resources>

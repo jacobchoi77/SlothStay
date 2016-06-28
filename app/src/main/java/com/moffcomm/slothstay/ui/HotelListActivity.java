@@ -1,6 +1,7 @@
 package com.moffcomm.slothstay.ui;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -48,7 +49,7 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
         setContentView(R.layout.activity_hotel_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setupActionBar();
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,6 +182,14 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
 
     @Override
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void setupActionBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            // Show the Up button in the action bar.
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private static class GetSimpleHotelAsyncTask extends AsyncTask<Void, Void, List<SimpleHotel>> {

@@ -5,7 +5,7 @@
     android:id="@+id/nestedScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
+    android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.HotelActivity"
     tools:showIn="@layout/activity_hotel">
@@ -17,12 +17,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:background="@color/colorPrimaryDarkMore"
+            android:layout_height="@dimen/status_bar_height"
+            android:background="@color/colorPrimaryDark"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/padding_contents">
-
+            android:paddingLeft="@dimen/padding_contents"
+            app:layout_collapseMode="pin">
 
             <TextView
                 android:id="@+id/textView4"
@@ -48,11 +48,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/hotel_row_height"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDarkMore"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/padding_contents"
-            android:paddingRight="@dimen/padding_contents">
+            android:paddingRight="@dimen/padding_contents"
+            app:layout_collapseMode="pin">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -97,11 +98,12 @@
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
                 android:onClick="onSelectRoomClick"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="@string/select_room"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDarkMore"
                 android:textStyle="bold" />
 
         </LinearLayout>

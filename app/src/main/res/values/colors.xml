@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#004d7c</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryDark">#01304d</color>
+    <color name="colorPrimaryDarkTransparent">#5001304d</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorTabIndicator">#7baed4</color>
@@ -26,5 +27,7 @@
 
     <color name="gray_divider">#cacaca</color>
     <color name="gray_divider_light">#e2e2e2</color>
+
+    <color name="colorFacebook">#4c8cf5</color>
 
 </resources>

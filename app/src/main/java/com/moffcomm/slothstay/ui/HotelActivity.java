@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
@@ -37,7 +38,7 @@ import com.moffcomm.slothstay.util.Utils;
 import java.lang.ref.WeakReference;
 import java.text.NumberFormat;
 
-public class HotelActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
+public class HotelActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener, AppBarLayout.OnOffsetChangedListener {
 
     private Hotel hotel;
     private int hotelId;
@@ -93,6 +94,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     }
 
     public void setContents() {
+        getSupportActionBar().setTitle(hotel.getName());
         hotelPictureAdapter = new HotelPictureAdapter(this, hotel.getPictures());
         pictureViewPager.setAdapter(hotelPictureAdapter);
         collapsing_container.setTitle(hotel.getName());
@@ -243,6 +245,11 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         Intent intent = new Intent(this, BookActivity.class);
         intent.putExtra("book", book);
         startActivity(intent);
+    }
+
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
     }
 
     private static class GetHotelAsyncTask extends AsyncTask<Integer, Void, Hotel> {
