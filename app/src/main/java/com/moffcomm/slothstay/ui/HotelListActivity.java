@@ -5,43 +5,43 @@ import android.annotation.TargetApi;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
-import com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView;
-import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
-import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.SimpleHotel;
 import com.moffcomm.slothstay.ui.adapter.HotelListAdapter;
 import com.moffcomm.slothstay.util.Utils;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HotelListActivity extends AppCompatActivity implements OnMapReadyCallback, ObservableScrollViewCallbacks {
+public class HotelListActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private MapView mMapView;
     private GoogleMap mMap;
     private List<SimpleHotel> simpleHotels = new ArrayList<>();
     private GetSimpleHotelAsyncTask mAsyncTask;
-    private ObservableRecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private LinearLayoutManager linearLayoutManager;
-    private int displayContentHeight;
+    private SlidingUpPanelLayout mLayout;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +61,56 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
 
         mMapView.getMapAsync(this);
 
-        mRecyclerView = (ObservableRecyclerView) findViewById(R.id.recyclerView);
-        mRecyclerView.setScrollViewCallbacks(this);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mAdapter = new HotelListAdapter(simpleHotels, this);
         mRecyclerView.setAdapter(mAdapter);
-        displayContentHeight = Utils.getDisplayContentHeight(this);
+
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                if (newState == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                    fab.setVisibility(View.VISIBLE);
+                    fab.setImageResource(R.drawable.fab_list);
+                } else if (newState == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                    fab.setVisibility(View.VISIBLE);
+                    fab.setImageResource(R.drawable.fab_map);
+                } else {
+                    fab.setVisibility(View.GONE);
+                }
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                    mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+                    mRecyclerView.scrollToPosition(0);
+                    mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                        @Override
+                        public void onMapClick(LatLng latLng) {
+                            if (mLayout.getPanelState() != SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                            }
+                            mMap.setOnMapClickListener(null);
+                        }
+                    });
+                } else {
+                    mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                    mMap.setOnMapClickListener(null);
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -137,6 +180,15 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
                         }
                         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 50));
                         showHotels();
+                        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                            @Override
+                            public void onMapClick(LatLng latLng) {
+                                if (mLayout.getPanelState() != SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                                    mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                                }
+                                mMap.setOnMapClickListener(null);
+                            }
+                        });
                     }
                 }
             });
@@ -153,35 +205,6 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
                     .position(simpleHotel.getLatLng()).icon(BitmapDescriptorFactory.fromBitmap(
                             Utils.getMarkerBitmapFromView(this, simpleHotel.getPrice()))));
         }
-    }
-
-    @Override
-    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-//        if (scrollY > 0) {
-//            if (mMapView.getMeasuredHeight() < displayContentHeight) {
-//                ViewGroup.LayoutParams layoutParams = mMapView.getLayoutParams();
-//                final int h = layoutParams.height + scrollY;
-//                layoutParams.height = (h >= displayContentHeight ? displayContentHeight : h);
-//                mMapView.setLayoutParams(layoutParams);
-//            }
-//        } else {
-//            if (mMapView.getMeasuredHeight() > 0) {
-//                ViewGroup.LayoutParams layoutParams = mMapView.getLayoutParams();
-//                final int h = layoutParams.height + scrollY;
-//                layoutParams.height = (h <= 0 ? 0 : h);
-//                mMapView.setLayoutParams(layoutParams);
-//            }
-//        }
-
-    }
-
-    @Override
-    public void onDownMotionEvent() {
-
-    }
-
-    @Override
-    public void onUpOrCancelMotionEvent(ScrollState scrollState) {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

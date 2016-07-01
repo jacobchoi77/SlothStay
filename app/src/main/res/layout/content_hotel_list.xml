@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:gravity="bottom"
+    app:umanoAnchorPoint="0.6"
+    app:umanoFadeColor="@android:color/transparent"
+    app:umanoOverlay="true"
+    app:umanoPanelHeight="0dp"
+    app:umanoParallaxOffset="320dp"
+    app:umanoScrollableView="@+id/recyclerView"
+    app:umanoShadowHeight="4dp"
     tools:context=".ui.HotelListActivity"
     tools:showIn="@layout/activity_hotel_list">
-
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/hotel_map_height"
-        app:liteMode="true" />
+        android:layout_height="match_parent" />
 
-    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:focusable="false"
         android:padding="5dp">
 
-    </com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

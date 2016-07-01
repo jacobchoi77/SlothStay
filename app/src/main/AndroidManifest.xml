@@ -58,7 +58,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.BookActivity"
-            android:screenOrientation="portrait" />
+            android:label="@string/title_activity_book"
+            android:parentActivityName=".ui.HotelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnimTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moffcomm.slothstay.ui.HotelActivity" />
+        </activity>
         <activity
             android:name=".ui.AccountActivity"
             android:label="@string/action_account"
@@ -76,6 +83,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moffcomm.slothstay.ui.AccountActivity" />
+        </activity>
+        <activity
+            android:name=".ui.CheckActivity"
+            android:label="@string/title_activity_check"
+            android:parentActivityName=".ui.BookActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnimTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moffcomm.slothstay.ui.BookActivity" />
         </activity>
     </application>
 

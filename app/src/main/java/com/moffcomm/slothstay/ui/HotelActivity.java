@@ -6,18 +6,19 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -34,6 +35,7 @@ import com.moffcomm.slothstay.model.Hotel;
 import com.moffcomm.slothstay.model.Room;
 import com.moffcomm.slothstay.ui.adapter.HotelPictureAdapter;
 import com.moffcomm.slothstay.util.Utils;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.lang.ref.WeakReference;
 import java.text.NumberFormat;
@@ -45,11 +47,13 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     private GetHotelAsyncTask mAsyncTask;
     private ViewPager pictureViewPager;
     private HotelPictureAdapter hotelPictureAdapter;
-    private CollapsingToolbarLayout collapsing_container;
     private GoogleMap mMap;
     private LinearLayout linearLayout;
     private View selectedRoomView;
-    private NestedScrollView nestedScrollView;
+    private SlidingUpPanelLayout mLayout;
+    private View roomSelectButton;
+    private View roomInfoRelativeLayout;
+    private ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +65,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                onBackPressed();
             }
         });
         hotelId = getIntent().getIntExtra(Hotel.CONST_ID, -1);
@@ -69,9 +73,28 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
             finish();
         }
         pictureViewPager = (ViewPager) findViewById(R.id.pictureViewPager);
-        collapsing_container = (CollapsingToolbarLayout) findViewById(R.id.collapsing_container);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
-        nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        roomSelectButton = findViewById(R.id.selectRoomButton);
+        roomInfoRelativeLayout = findViewById(R.id.roomInfoRelativeLayout);
+        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                if (newState == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                    roomInfoRelativeLayout.setVisibility(View.GONE);
+                    roomSelectButton.setVisibility(View.GONE);
+                } else {
+                    roomInfoRelativeLayout.setVisibility(View.VISIBLE);
+                    roomSelectButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        scrollView = (ScrollView) findViewById(R.id.scrollView);
     }
 
     public Hotel getHotel() {
@@ -97,7 +120,6 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         getSupportActionBar().setTitle(hotel.getName());
         hotelPictureAdapter = new HotelPictureAdapter(this, hotel.getPictures());
         pictureViewPager.setAdapter(hotelPictureAdapter);
-        collapsing_container.setTitle(hotel.getName());
         ((TextView) findViewById(R.id.priceTextView)).setText(hotel.getRooms().get(0).getPrice());
         final String checkIn = Utils.getDateString(hotel.getCheckInDate(), getString(R.string.hotel_date_format));
         final String checkOut = Utils.getDateString(hotel.getCheckOutDate(), getString(R.string.hotel_date_format));
@@ -234,7 +256,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     }
 
     public void onSelectRoomClick(View v) {
-        nestedScrollView.smoothScrollTo(0, linearLayout.getTop());
+        scrollView.smoothScrollTo(0, linearLayout.getTop());
     }
 
     public void onBookClick(View view) {

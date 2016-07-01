@@ -63,5 +63,8 @@
         completions."
     </string>
 
+    <!--Book-->
+    <string name="title_activity_book">Book</string>
+    <string name="title_activity_check">Check in/out</string>
 
 </resources>

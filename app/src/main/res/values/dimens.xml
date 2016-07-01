@@ -7,7 +7,7 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
-    <dimen name="hotel_picture_height">220dp</dimen>
+    <dimen name="hotel_picture_height">280dp</dimen>
 
     <dimen name="padding_contents">15dp</dimen>
 
@@ -29,5 +29,7 @@
     <dimen name="book_image_height">120dp</dimen>
 
     <dimen name="status_bar_height">24dp</dimen>
+
+    <dimen name="book_margin">10dp</dimen>
 
 </resources>
