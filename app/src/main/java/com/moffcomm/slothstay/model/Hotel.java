@@ -7,6 +7,8 @@ import android.util.JsonReader;
 import com.google.android.gms.maps.model.LatLng;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelableThisPlease;
+import com.moffcomm.slothstay.Constants;
+import com.moffcomm.slothstay.util.Utils;
 
 
 import java.io.IOException;
@@ -90,7 +92,6 @@ public class Hotel implements Parcelable {
     String amenities;
     @ParcelableThisPlease
     String policies;
-
 
     public int getId() {
         return id;
@@ -300,10 +301,18 @@ public class Hotel implements Parcelable {
                         hotel.setDiscount(jsonReader.nextInt());
                         break;
                     case CONST_CHECK_IN_DATE:
-                        hotel.setCheckInDate(new Date(jsonReader.nextLong()));
+                        if (Constants.IS_TEST_MODE) {
+                            hotel.setCheckInDate(Utils.getTodayCheckInDate());
+                            jsonReader.nextLong();
+                        } else
+                            hotel.setCheckInDate(new Date(jsonReader.nextLong()));
                         break;
                     case CONST_CHECK_OUT_DATE:
-                        hotel.setCheckOutDate(new Date(jsonReader.nextLong()));
+                        if (Constants.IS_TEST_MODE) {
+                            hotel.setCheckOutDate(Utils.getTomorrowCheckOutDate());
+                            jsonReader.nextLong();
+                        } else
+                            hotel.setCheckOutDate(new Date(jsonReader.nextLong()));
                         break;
                     case CONST_GUEST_COUNT:
                         hotel.setGuestCount(jsonReader.nextInt());

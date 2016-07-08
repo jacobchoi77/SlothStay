@@ -17,65 +17,100 @@
         android:padding="15dp">
 
 
-        <Button
-            android:id="@+id/signInButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="15dp"
-            android:background="@color/colorPrimary"
-            android:onClick="onSignInClick"
-            android:text="@string/sign_in"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/signInWithFaceBookButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorFacebook"
-            android:text="@string/sign_in_with_facebook"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
-
         <LinearLayout
+            android:id="@+id/loginLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@color/gray_divider_light"></View>
+            <Button
+                android:id="@+id/signInButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/colorPrimary"
+                android:onClick="onSignInClick"
+                android:text="@string/sign_in"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/signInWithFaceBookButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorFacebook"
+                android:text="@string/sign_in_with_facebook"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="@string/or"
-                android:textColor="@color/gray_divider"
-                android:textSize="16sp" />
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@color/gray_divider_light"></View>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/gray_divider_light"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/or"
+                    android:textColor="@color/gray_divider"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/gray_divider_light"></View>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/createAccountButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/make_new_account"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/createAccountButton"
+        <android.support.v7.widget.CardView
+            android:id="@+id/mileageCardView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="15dp"
-            android:text="@string/make_new_account"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/mileageTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="onLogoutClick"
+            android:text="Logout"
+            android:visibility="gone"
+            android:textColor="@color/background_material_light" />
+
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"

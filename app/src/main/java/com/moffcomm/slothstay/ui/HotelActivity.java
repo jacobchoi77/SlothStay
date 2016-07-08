@@ -264,6 +264,8 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         Book book = new Book();
         book.setHotel(hotel);
         book.setRoom(room);
+        book.setCheckInDate(hotel.getCheckInDate());
+        book.setCheckOutDate(hotel.getCheckOutDate());
         Intent intent = new Intent(this, BookActivity.class);
         intent.putExtra("book", book);
         startActivity(intent);

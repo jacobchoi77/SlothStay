@@ -39,4 +39,5 @@ dependencies {
     apt 'com.hannesdorfmann.parcelableplease:processor:1.0.2'
     compile 'com.sothree.slidinguppanel:library:3.3.0'
     compile project(':lib')
+    compile 'joda-time:joda-time:2.3'
 }

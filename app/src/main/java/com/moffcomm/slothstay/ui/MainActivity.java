@@ -1,23 +1,26 @@
 package com.moffcomm.slothstay.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.moffcomm.slothstay.R;
-import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
+import com.moffcomm.slothstay.SlothStayApplication;
+import com.moffcomm.slothstay.model.Book;
+import com.moffcomm.slothstay.model.User;
 import com.moffcomm.slothstay.ui.fragment.HomeFragment;
+import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
+import com.moffcomm.slothstay.util.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,12 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
+    private Book book;
+    private Toolbar toolbar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(null);
@@ -42,8 +49,17 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        User user = User.fromJsonReader(Utils.getJsonReader(this, getString(R.string.what_user)));
+        ((SlothStayApplication) getApplication()).setUser(user);
+
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        mViewPager.setCurrentItem(1);
+        book = intent.getParcelableExtra("book");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,6 +82,27 @@ public class MainActivity extends AppCompatActivity {
     public void onSeeMoreClick(View v) {
         Intent intent = new Intent(this, HotelListActivity.class);
         startActivity(intent);
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void showToolBar() {
+        toolbar.setVisibility(View.VISIBLE);
+    }
+
+    public void hideToolBar() {
+        toolbar.setVisibility(View.GONE);
+    }
+
+    public MyReservationFragment getMyReservationFragment() {
+        String name = makeFragmentName(R.id.viewpager, 1);
+        return (MyReservationFragment) getSupportFragmentManager().findFragmentByTag(name);
+    }
+
+    private static String makeFragmentName(int viewId, int index) {
+        return "android:switcher:" + viewId + ":" + index;
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

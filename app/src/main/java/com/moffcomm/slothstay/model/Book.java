@@ -7,6 +7,8 @@ import android.os.Parcelable;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelableThisPlease;
 
+import java.util.Date;
+
 /**
  * Created by jacobsFactory on 2016-06-22.
  */
@@ -17,11 +19,11 @@ public class Book implements Parcelable {
     @ParcelableThisPlease
     Room room;
     @ParcelableThisPlease
-    long checkInDateInMillis;
-    @ParcelableThisPlease
-    long checkOutDateInMillis;
-    @ParcelableThisPlease
     int guestCount;
+    @ParcelableThisPlease
+    Date checkInDate;
+    @ParcelableThisPlease
+    Date checkOutDate;
 
     public Hotel getHotel() {
         return hotel;
@@ -39,22 +41,6 @@ public class Book implements Parcelable {
         this.room = room;
     }
 
-    public long getCheckInDateInMillis() {
-        return checkInDateInMillis;
-    }
-
-    public void setCheckInDateInMillis(long checkInDateInMillis) {
-        this.checkInDateInMillis = checkInDateInMillis;
-    }
-
-    public long getCheckOutDateInMillis() {
-        return checkOutDateInMillis;
-    }
-
-    public void setCheckOutDateInMillis(long checkOutDateInMillis) {
-        this.checkOutDateInMillis = checkOutDateInMillis;
-    }
-
     public int getGuestCount() {
         return guestCount;
     }
@@ -63,6 +49,21 @@ public class Book implements Parcelable {
         this.guestCount = guestCount;
     }
 
+    public Date getCheckInDate() {
+        return checkInDate;
+    }
+
+    public void setCheckInDate(Date checkInDate) {
+        this.checkInDate = checkInDate;
+    }
+
+    public Date getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(Date checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
 
     @Override
     public int describeContents() {

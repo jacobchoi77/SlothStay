@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import com.moffcomm.slothstay.model.Book;
 
 public class BookActivity extends AppCompatActivity {
 
+    public static final int REQUEST_CODE_CHECK = 1;
     private Book book;
 
     @Override
@@ -42,10 +45,61 @@ public class BookActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.priceTextView)).setText(book.getRoom().getPrice());
         Glide.with(this).load(book.getHotel().getPictures().get(0).getImageUrl()).
                 into((ImageView) findViewById(R.id.imageView));
+        int res = 0;
+        if (book.getHotel().getCheckInDate().compareTo(book.getCheckInDate()) == 0) {
+            res = R.string.check_in_normal;
+        } else if (book.getHotel().getCheckInDate().compareTo(book.getCheckInDate()) < 0) {
+            res = R.string.check_in_late;
+        } else {
+            res = R.string.check_in_early;
+        }
+        ((TextView) findViewById(R.id.checkInTextView)).setText(getString(res, book.getCheckInDate().getHours()));
+
+        if (book.getHotel().getCheckOutDate().compareTo(book.getCheckOutDate()) == 0) {
+            res = R.string.check_out_normal;
+        } else if (book.getHotel().getCheckOutDate().compareTo(book.getCheckOutDate()) < 0) {
+            res = R.string.check_out_late;
+        } else {
+            res = R.string.check_out_early;
+        }
+        ((TextView) findViewById(R.id.checkOutTextView)).setText(getString(res, book.getCheckOutDate().getHours()));
+
     }
 
     public void onCheckClick(View view) {
         Intent intent = new Intent(this, CheckActivity.class);
+        intent.putExtra("book", book);
+        startActivityForResult(intent, REQUEST_CODE_CHECK);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_CHECK && resultCode == RESULT_OK) {
+            book = data.getParcelableExtra("book");
+            setupContent();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_book, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+//        if (id == R.id.action_next) {
+//            return true;
+//        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onPayClick(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("book", book);
         startActivity(intent);
     }
 }

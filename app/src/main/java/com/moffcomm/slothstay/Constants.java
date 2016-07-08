@@ -12,4 +12,6 @@ public class Constants {
 
     public static final float HOTEL_ZOOM = 13f;
 
+    public static final boolean IS_TEST_MODE = true;
+
 }

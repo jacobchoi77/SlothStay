@@ -27,5 +27,17 @@
     <string name="sign_in_with_facebook">FACEBOOK 계정으로 로그인</string>
     <string name="or">또는</string>
     <string name="make_new_account">새 슬로스테이 계정 만들기</string>
+    <string name="your_mileage">%1$s 님의 마일리지 : %2$d</string>
+    <string name="logout_desc">슬로스테이 계정을 로그아웃 하시겠습니까?</string>
+    <string name="logout">로그아웃</string>
+    <string name="cancel">취소</string>
+
+    <!--Book-->
+    <string name="check_in_normal">체크인 %1$d시</string>
+    <string name="check_in_early">빠른 체크인 %1$d시</string>
+    <string name="check_in_late">늦은 체크인 %1$d시</string>
+    <string name="check_out_normal">체크아웃 %1$d시</string>
+    <string name="check_out_early">빠른 체크아웃 %1$d시</string>
+    <string name="check_out_late">늦은 체크아웃 %1$d시</string>
 
 </resources>

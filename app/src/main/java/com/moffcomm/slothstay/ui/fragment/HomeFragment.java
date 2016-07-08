@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
@@ -30,10 +31,15 @@ public class HomeFragment extends Fragment {
     private GridLayoutManager gridLayoutManager;
     private int MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
     private int MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
+    private int MAX_MAIN_BUTTON_IMAGE_HEIGHT;
+    private int MIN_MAIN_BUTTON_IMAGE_HEIGHT;
     private int currentMainButtonLayoutHeight;
+    private int currentMainButtonImageHeight;
     private View mMainButtonLayout;
     private List<SimpleHotel> simpleHotels = new ArrayList<>();
     private GetSimpleHotelAsyncTask mAsyncTask;
+    private ImageView mileageImageView;
+    private ImageView membershipImageView;
 
     public HomeFragment() {
     }
@@ -69,6 +75,8 @@ public class HomeFragment extends Fragment {
         mAdapter = new HomeAdapter(simpleHotels, getContext());
         mRecyclerView.setAdapter(mAdapter);
         mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
+        mileageImageView = (ImageView) mContentView.findViewById(R.id.mileageImageView);
+        membershipImageView = (ImageView) mContentView.findViewById(R.id.membershipImageView);
         mMainButtonLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @Override
             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
@@ -76,19 +84,40 @@ public class HomeFragment extends Fragment {
                     MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
                     MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT -
                             getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
+                    MAX_MAIN_BUTTON_IMAGE_HEIGHT = mileageImageView.getMeasuredHeight();
+                    MIN_MAIN_BUTTON_IMAGE_HEIGHT = MAX_MAIN_BUTTON_IMAGE_HEIGHT -
+                            getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
                     currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                    mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+                    currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
+                    mRecyclerView.setScrollingTouchSlop(RecyclerView.TOUCH_SLOP_DEFAULT);
+                    mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                        ViewGroup.LayoutParams buttonlayoutParams;
+                        ViewGroup.LayoutParams imagelayoutParams;
+
                         @Override
                         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                             super.onScrolled(recyclerView, dx, dy);
                             currentMainButtonLayoutHeight -= dy;
-                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT)
+                            currentMainButtonImageHeight -= dy;
+                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT) {
                                 currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
-                            else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT)
+                                currentMainButtonImageHeight = MIN_MAIN_BUTTON_IMAGE_HEIGHT;
+                            } else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT) {
                                 currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                            ViewGroup.LayoutParams layoutParams = mMainButtonLayout.getLayoutParams();
-                            layoutParams.height = currentMainButtonLayoutHeight;
-                            mMainButtonLayout.setLayoutParams(layoutParams);
+                                currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
+                            }
+                            buttonlayoutParams = mMainButtonLayout.getLayoutParams();
+                            imagelayoutParams = mileageImageView.getLayoutParams();
+                            if (buttonlayoutParams.height == currentMainButtonLayoutHeight)
+                                return;
+                            else {
+                                buttonlayoutParams.height = currentMainButtonLayoutHeight;
+                                imagelayoutParams.height = currentMainButtonImageHeight;
+                                imagelayoutParams.width = currentMainButtonImageHeight;
+                                mileageImageView.setLayoutParams(imagelayoutParams);
+                                membershipImageView.setLayoutParams(imagelayoutParams);
+                                mMainButtonLayout.setLayoutParams(buttonlayoutParams);
+                            }
                         }
                     });
                 }

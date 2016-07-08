@@ -22,6 +22,10 @@ public class Room implements Parcelable {
     public static final String CONST_ETC = "etc";
     public static final String CONST_DETAIL = "detail";
     public static final String CONST_IMAGE_URL = "image_url";
+    public static final String CONST_CHECK_IN_EARLY = "check_in_early";
+    public static final String CONST_CHECK_IN_LATE = "check_in_late";
+    public static final String CONST_CHECK_OUT_EARLY = "check_out_early";
+    public static final String CONST_CHECK_OUT_LATE = "check_out_late";
 
     @ParcelableThisPlease
     String name;
@@ -33,6 +37,14 @@ public class Room implements Parcelable {
     String detail;
     @ParcelableThisPlease
     String imageUrl;
+    @ParcelableThisPlease
+    int checkInEarly;
+    @ParcelableThisPlease
+    int checkInLate;
+    @ParcelableThisPlease
+    int checkOutEarly;
+    @ParcelableThisPlease
+    int checkOutLate;
 
     public String getName() {
         return name;
@@ -74,6 +86,38 @@ public class Room implements Parcelable {
         this.imageUrl = imageUrl;
     }
 
+    public int getCheckInEarly() {
+        return checkInEarly;
+    }
+
+    public void setCheckInEarly(int checkInEarly) {
+        this.checkInEarly = checkInEarly;
+    }
+
+    public int getCheckInLate() {
+        return checkInLate;
+    }
+
+    public void setCheckInLate(int checkInLate) {
+        this.checkInLate = checkInLate;
+    }
+
+    public int getCheckOutEarly() {
+        return checkOutEarly;
+    }
+
+    public void setCheckOutEarly(int checkOutEarly) {
+        this.checkOutEarly = checkOutEarly;
+    }
+
+    public int getCheckOutLate() {
+        return checkOutLate;
+    }
+
+    public void setCheckOutLate(int checkOutLate) {
+        this.checkOutLate = checkOutLate;
+    }
+
     public static Room fromJsonReader(JsonReader jsonReader) {
         try {
             Room room = new Room();
@@ -100,6 +144,18 @@ public class Room implements Parcelable {
                         break;
                     case CONST_IMAGE_URL:
                         room.setImageUrl(jsonReader.nextString());
+                        break;
+                    case CONST_CHECK_IN_EARLY:
+                        room.setCheckInEarly(jsonReader.nextInt());
+                        break;
+                    case CONST_CHECK_IN_LATE:
+                        room.setCheckInLate(jsonReader.nextInt());
+                        break;
+                    case CONST_CHECK_OUT_EARLY:
+                        room.setCheckOutEarly(jsonReader.nextInt());
+                        break;
+                    case CONST_CHECK_OUT_LATE:
+                        room.setCheckOutLate(jsonReader.nextInt());
                         break;
 
                 }

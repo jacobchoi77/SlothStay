@@ -1,0 +1,15 @@
+[
+  {
+    "hotel_name": "임페리얼 팰리스 서울",
+    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg",
+    "hotel_address": "180 산성대로\n중원구 성남 \n경기도 한국 462-824",
+    "hotel_phone": "02-215-3997",
+    "guest_count": 1,
+    "check_in_date": 1467774018000,
+    "check_out_date": 1467892818000,
+    "latitude": 37.514300,
+    "longitude": 127.035902,
+    "room_name": "Blooming 스파이크1",
+    "itinerary": "7194824212741"
+  }
+]

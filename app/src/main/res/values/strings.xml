@@ -22,6 +22,8 @@
     <string name="what_home">home</string>
     <string name="what_hotel">hotel</string>
     <string name="what_hotel_list">hotel_list</string>
+    <string name="what_user">hong123</string>
+    <string name="what_reservation">reservation</string>
 
     <!--Hotel-->
     <string name="select_room">Select a Room</string>
@@ -49,6 +51,10 @@
     <string name="or">or</string>
     <string name="make_new_account">Make New Slothstay Account</string>
     <string name="title_activity_login">Login</string>
+    <string name="your_mileage">%1$s\'s Mileage : %2$d</string>
+    <string name="logout_desc">Are you sure you want to sign out of your Slothstay account?</string>
+    <string name="logout">LOG OUT</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -59,12 +65,19 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."
     </string>
 
     <!--Book-->
     <string name="title_activity_book">Book</string>
     <string name="title_activity_check">Check in/out</string>
+    <string name="check_in_normal">Check in %1$d hour</string>
+    <string name="check_in_early">Check in Early %1$d hour</string>
+    <string name="check_in_late">Check in Late %1$d hour</string>
+    <string name="check_out_normal">Check out %1$d hour</string>
+    <string name="check_out_early">Check out Early %1$d hour</string>
+    <string name="check_out_late">Check out Late %1$d hour</string>
+
+    <!--Reservation-->
 
 </resources>
