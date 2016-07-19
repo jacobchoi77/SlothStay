@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.Book;
+import com.moffcomm.slothstay.model.Reservation;
+
+import java.util.Random;
 
 
 public class BookActivity extends AppCompatActivity {
@@ -98,8 +101,18 @@ public class BookActivity extends AppCompatActivity {
     }
 
     public void onPayClick(View v) {
+        Reservation reservation = new Reservation();
+        reservation.setItinerary("7194824212742");
+        reservation.setImageUrl(book.getHotel().getPictures().get(0).getImageUrl());
+        reservation.setRoomName(book.getRoom().getName());
+        reservation.setCheckInDate(book.getCheckInDate());
+        reservation.setCheckOutDate(book.getCheckOutDate());
+        reservation.setGuestCount(book.getGuestCount());
+        reservation.setHotelAddress(book.getHotel().getAddress());
+        reservation.setHotelName(book.getHotel().getName());
+        reservation.setHotelPhone(book.getHotel().getPhone());
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("book", book);
+        intent.putExtra("reservation", reservation);
         startActivity(intent);
     }
 }

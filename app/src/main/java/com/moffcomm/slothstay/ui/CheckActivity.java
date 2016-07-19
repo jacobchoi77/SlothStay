@@ -92,12 +92,12 @@ public class CheckActivity extends AppCompatActivity {
                     res = R.string.check_in_late;
                     checkInMileage = calculateCheckInMileage(
                             checkInDate.getHourOfDay() - hotelCheckInDate.getHourOfDay());
-                    checkInMileageTextView.setText("" + checkInMileage);
+                    checkInMileageTextView.setText("+" + checkInMileage);
                 } else {
                     res = R.string.check_in_early;
                     checkInMileage = calculateCheckInMileage(
                             checkInDate.getHourOfDay() - hotelCheckInDate.getHourOfDay());
-                    checkInMileageTextView.setText("" + checkInMileage);
+                    checkInMileageTextView.setText("-" + checkInMileage);
                 }
                 checkInTextView.setText(getString(res, checkInDate.getHourOfDay()));
                 totalMileageTextView.setText("" + calculateTotalMileage());
@@ -117,12 +117,12 @@ public class CheckActivity extends AppCompatActivity {
                     res = R.string.check_out_late;
                     checkOutMileage = calculateCheckOutMileage(
                             hotelCheckOutDate.getHourOfDay() - checkOutDate.getHourOfDay());
-                    checkOutMileageTextView.setText("" + checkOutMileage);
+                    checkOutMileageTextView.setText("-" + checkOutMileage);
                 } else {
                     res = R.string.check_out_early;
                     checkOutMileage = calculateCheckOutMileage(
                             hotelCheckOutDate.getHourOfDay() - checkOutDate.getHourOfDay());
-                    checkOutMileageTextView.setText("" + checkOutMileage);
+                    checkOutMileageTextView.setText("+" + checkOutMileage);
                 }
                 checkOutTextView.setText(getString(res, checkOutDate.getHourOfDay()));
                 totalMileageTextView.setText("" + calculateTotalMileage());

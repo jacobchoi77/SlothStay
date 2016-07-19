@@ -28,6 +28,7 @@
     <!--Hotel-->
     <string name="select_room">Select a Room</string>
     <string name="hotel_date_format">MMM dd</string>
+    <string name="hotel_date_time_format">MMM dd HHhr</string>
     <string name="hotel_date_guest">%1$s - %2$s,%3$d Guests</string>
     <string name="view">VIEW %1$s REVIEWS</string>
     <string name="title_activity_maps">Map</string>
@@ -44,6 +45,9 @@
     <!--Hotel List-->
     <string name="title_activity_hotel_list">Hotel List</string>
     <string name="hotel_list_head_title">Today\'s Hotel(%1$d건)</string>
+    <string name="hotel_list_info">%1$s ~ %2$s, 1 Guests</string>
+    <string name="sort_filter">Sort &amp; Filter</string>
+
 
     <!-- Account -->
     <string name="sign_in">SIGN IN</string>
@@ -79,5 +83,21 @@
     <string name="check_out_late">Check out Late %1$d hour</string>
 
     <!--Reservation-->
+    <string name="top_check_in">Check in %1$s</string>
+
+    <!--Sort & Filter-->
+    <string name="sort_filter_title">Sort &amp; Filter</string>
+    <string name="done">DONE</string>
+    <string name="sort_by">Sort By</string>
+    <string name="filter_by">Filter By</string>
+    <string name="filter_by_hint">Hotel name</string>
+    <string name="price_range">Price Range</string>
+    <string name="star_rating">Star Rating</string>
+    <string-array name="sort_by_options">
+        <item>Popular</item>
+        <item>Price</item>
+        <item>Deals</item>
+        <item>Rating</item>
+    </string-array>
 
 </resources>

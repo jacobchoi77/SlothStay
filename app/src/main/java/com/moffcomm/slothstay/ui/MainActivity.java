@@ -16,11 +16,13 @@ import android.view.View;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.SlothStayApplication;
-import com.moffcomm.slothstay.model.Book;
+import com.moffcomm.slothstay.model.Reservation;
 import com.moffcomm.slothstay.model.User;
 import com.moffcomm.slothstay.ui.fragment.HomeFragment;
 import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
 import com.moffcomm.slothstay.util.Utils;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
-    private Book book;
     private Toolbar toolbar;
 
 
@@ -57,8 +58,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        mViewPager.setCurrentItem(1);
-        book = intent.getParcelableExtra("book");
+        Reservation reservation = intent.getParcelableExtra("reservation");
+        if (reservation != null) {
+            ((SlothStayApplication) getApplication()).addReservation(reservation);
+            getMyReservationFragment().refresh();
+            mViewPager.setCurrentItem(1);
+        }
+
     }
 
     @Override
@@ -82,10 +88,6 @@ public class MainActivity extends AppCompatActivity {
     public void onSeeMoreClick(View v) {
         Intent intent = new Intent(this, HotelListActivity.class);
         startActivity(intent);
-    }
-
-    public Book getBook() {
-        return book;
     }
 
     public void showToolBar() {

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.SortFilterActivity">
+    <item
+        android:id="@+id/action_done"
+        android:icon="@drawable/paynow_checkmark"
+        android:title="@string/done"
+        app:showAsAction="always|withText" />
+</menu>

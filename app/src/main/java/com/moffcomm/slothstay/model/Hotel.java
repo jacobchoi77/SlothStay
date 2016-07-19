@@ -37,6 +37,7 @@ public class Hotel implements Parcelable {
     public static final String CONST_LONGITUDE = "longitude";
     public static final String CONST_ADDRESS_1 = "address_1";
     public static final String CONST_ADDRESS_2 = "address_2";
+    public static final String CONST_PHONE = "phone";
     public static final String CONST_PICTURES = "pictures";
     public static final String CONST_ROOMS = "rooms";
     public static final String CONST_DINING = "dining";
@@ -76,6 +77,8 @@ public class Hotel implements Parcelable {
     String address1;
     @ParcelableThisPlease
     String address2;
+    @ParcelableThisPlease
+    String phone;
     @ParcelableThisPlease
     List<Picture> pictures;
     @ParcelableThisPlease
@@ -201,6 +204,10 @@ public class Hotel implements Parcelable {
         return address1;
     }
 
+    public String getAddress() {
+        return address1 + "\n" + address2;
+    }
+
     public void setAddress1(String address1) {
         this.address1 = address1;
     }
@@ -211,6 +218,14 @@ public class Hotel implements Parcelable {
 
     public void setAddress2(String address2) {
         this.address2 = address2;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public List<Picture> getPictures() {
@@ -346,6 +361,9 @@ public class Hotel implements Parcelable {
                         break;
                     case CONST_ADDRESS_2:
                         hotel.setAddress2(jsonReader.nextString());
+                        break;
+                    case CONST_PHONE:
+                        hotel.setPhone(jsonReader.nextString());
                         break;
                     case CONST_PICTURES:
                         jsonReader.beginArray();

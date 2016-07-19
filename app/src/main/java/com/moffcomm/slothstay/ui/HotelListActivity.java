@@ -2,16 +2,23 @@ package com.moffcomm.slothstay.ui;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,6 +36,9 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class HotelListActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -42,6 +52,9 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
     private LinearLayoutManager linearLayoutManager;
     private SlidingUpPanelLayout mLayout;
     private FloatingActionButton fab;
+    private CoordinatorLayout coordinatorLayout;
+    private Snackbar snackbar;
+    private float oldSlideOffset = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +66,7 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                onBackPressed();
             }
         });
         mMapView = (MapView) findViewById(R.id.map);
@@ -73,6 +86,16 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
         mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
+                if (oldSlideOffset == 0) {
+                    oldSlideOffset = slideOffset;
+                    return;
+                } else if (slideOffset < oldSlideOffset) {
+                    oldSlideOffset = slideOffset;
+                    showSnackBar();
+                } else {
+                    oldSlideOffset = slideOffset;
+                    hideSnackBar();
+                }
             }
 
             @Override
@@ -80,14 +103,19 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
                 if (newState == SlidingUpPanelLayout.PanelState.COLLAPSED) {
                     fab.setVisibility(View.VISIBLE);
                     fab.setImageResource(R.drawable.fab_list);
+                    hideSnackBar();
                 } else if (newState == SlidingUpPanelLayout.PanelState.EXPANDED) {
                     fab.setVisibility(View.VISIBLE);
                     fab.setImageResource(R.drawable.fab_map);
+                    showSnackBar();
+                } else if (newState == SlidingUpPanelLayout.PanelState.ANCHORED) {
+                    showSnackBar();
                 } else {
                     fab.setVisibility(View.GONE);
                 }
             }
         });
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +138,17 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
 
             }
         });
-
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy < 0)
+                    showSnackBar();
+                else
+                    hideSnackBar();
+            }
+        });
     }
 
     @Override
@@ -157,6 +195,8 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
         this.simpleHotels.clear();
         this.simpleHotels.addAll(simpleHotels);
         mAdapter.notifyDataSetChanged();
+        ((TextView) findViewById(R.id.todaysHotelTextView)).setText(
+                getString(R.string.hotel_list_head_title, simpleHotels.size()));
     }
 
     @Override
@@ -178,7 +218,7 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
                         } else {
                             mMapView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                         }
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 50));
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 200));
                         showHotels();
                         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                             @Override
@@ -209,10 +249,51 @@ public class HotelListActivity extends AppCompatActivity implements OnMapReadyCa
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void setupActionBar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Calendar calendar = new GregorianCalendar();
+        Date today = calendar.getTime();
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        Date tommorrow = calendar.getTime();
+        String s = getString(R.string.hotel_list_info, Utils.getDateString(today, getString(R.string.hotel_date_format)),
+                Utils.getDateString(tommorrow, getString(R.string.hotel_date_format)));
+        ((TextView) toolbar.findViewById(R.id.infoTextView)).setText(s);
+        setSupportActionBar(toolbar);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            // Show the Up button in the action bar.
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    private void showSnackBar() {
+        if (snackbar != null && snackbar.isShown())
+            return;
+        snackbar = Snackbar.make(coordinatorLayout, "", Snackbar.LENGTH_INDEFINITE);
+        Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
+        layout.setBackgroundColor(Color.WHITE);
+        layout.setGravity(Gravity.CENTER);
+        layout.setElevation(10);
+        TextView textView = (TextView) layout.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setText(getString(R.string.sort_filter));
+        textView.setTextSize(16);
+        textView.setTextColor(Color.BLACK);
+        textView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.sort, 0, 0, 0);
+        textView.setCompoundDrawablePadding(10);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
+        layoutParams.weight = 0;
+        textView.setLayoutParams(layoutParams);
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HotelListActivity.this, SortFilterActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_up, R.anim.stay);
+            }
+        });
+        snackbar.show();
+    }
+
+    private void hideSnackBar() {
+        if (snackbar != null)
+            snackbar.dismiss();
     }
 
     private static class GetSimpleHotelAsyncTask extends AsyncTask<Void, Void, List<SimpleHotel>> {

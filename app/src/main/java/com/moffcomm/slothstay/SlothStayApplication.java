@@ -29,6 +29,9 @@ public class SlothStayApplication extends Application {
     }
 
     public void addReservation(Reservation reservation) {
+        if (reservationList == null) {
+            reservationList = new ArrayList<>();
+        }
         reservationList.add(reservation);
     }
 }

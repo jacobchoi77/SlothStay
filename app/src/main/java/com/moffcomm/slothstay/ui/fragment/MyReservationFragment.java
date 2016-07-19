@@ -28,6 +28,7 @@ public class MyReservationFragment extends Fragment {
 
     private View mContentView;
     private RecyclerView mRecyclerView;
+    private View mEmptyView;
     private CustomGridLayoutManager linearLayoutManager;
     private List<Reservation> reservationList;
     private ReservationListAdapter mAdapter;
@@ -45,16 +46,25 @@ public class MyReservationFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        refresh();
+
+    }
+
+    public void refresh() {
         reservationList = ((SlothStayApplication) getActivity().getApplication()).getReservationList();
-        if (reservationList == null) {
-            reservationList = Reservation.fromJsonReader(
-                    Utils.getJsonReader(getActivity(), getString(R.string.what_reservation)));
-        }
         mRecyclerView = (RecyclerView) mContentView.findViewById(R.id.recyclerView);
-        linearLayoutManager = new CustomGridLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        mAdapter = new ReservationListAdapter(reservationList, (MainActivity) getActivity());
-        mRecyclerView.setAdapter(mAdapter);
+        mEmptyView = mContentView.findViewById(R.id.emptyView);
+        if (reservationList == null || reservationList.size() == 0) {
+            mEmptyView.setVisibility(View.VISIBLE);
+            mRecyclerView.setVisibility(View.GONE);
+        } else {
+            mEmptyView.setVisibility(View.GONE);
+            mRecyclerView.setVisibility(View.VISIBLE);
+            linearLayoutManager = new CustomGridLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+            mRecyclerView.setLayoutManager(linearLayoutManager);
+            mAdapter = new ReservationListAdapter(reservationList, (MainActivity) getActivity());
+            mRecyclerView.setAdapter(mAdapter);
+        }
     }
 
     public void enableScroll() {

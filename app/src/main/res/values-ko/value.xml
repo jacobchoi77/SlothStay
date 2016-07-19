@@ -16,11 +16,12 @@
 
     <!--Hotel-->
     <string name="select_room">방 선택하기</string>
-    <string name="hotel_date_format">M월 dd</string>
+    <string name="hotel_date_format">M월 dd일</string>
+    <string name="hotel_date_time_format">M월 dd일 HH시</string>
     <string name="per_night">/1박</string>
 
     <!--Hotel List-->
-    <string name="hotel_list_head_title">Today\'s Hotel(%1$d)</string>
+    <string name="hotel_list_head_title">오늘의 호텔(%1$d)</string>
 
     <!-- Account -->
     <string name="sign_in">로그인 하기</string>
@@ -39,5 +40,22 @@
     <string name="check_out_normal">체크아웃 %1$d시</string>
     <string name="check_out_early">빠른 체크아웃 %1$d시</string>
     <string name="check_out_late">늦은 체크아웃 %1$d시</string>
+
+    <!--Reservation-->
+    <string name="top_check_in">체크인 %1$s</string>
+
+    <!--Sort & Filter-->
+    <string name="sort_filter_title">Sort &amp; Filter</string>
+    <string name="done">DONE</string>
+    <string name="sort_by">Sort By</string>
+    <string name="filter_by">Filter By</string>
+    <string name="filter_by_hint">호텔 이름</string>
+    <string name="price_range">가격 범위</string>
+    <string-array name="sort_by_options">
+        <item>인기순</item>
+        <item>가격</item>
+        <item>거래순</item>
+        <item>등급순</item>
+    </string-array>
 
 </resources>

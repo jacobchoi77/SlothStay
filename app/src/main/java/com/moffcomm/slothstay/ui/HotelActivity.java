@@ -10,12 +10,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -54,6 +52,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     private View roomSelectButton;
     private View roomInfoRelativeLayout;
     private ScrollView scrollView;
+    private TextView picDescTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +76,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         roomSelectButton = findViewById(R.id.selectRoomButton);
         roomInfoRelativeLayout = findViewById(R.id.roomInfoRelativeLayout);
+        picDescTextView = (TextView) findViewById(R.id.picDescTextView);
         mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
         mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
@@ -88,7 +88,13 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
                 if (newState == SlidingUpPanelLayout.PanelState.EXPANDED) {
                     roomInfoRelativeLayout.setVisibility(View.GONE);
                     roomSelectButton.setVisibility(View.GONE);
+                    picDescTextView.setVisibility(View.GONE);
+                } else if (newState == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                    picDescTextView.setVisibility(View.VISIBLE);
+                    roomInfoRelativeLayout.setVisibility(View.GONE);
+                    roomSelectButton.setVisibility(View.GONE);
                 } else {
+                    picDescTextView.setVisibility(View.GONE);
                     roomInfoRelativeLayout.setVisibility(View.VISIBLE);
                     roomSelectButton.setVisibility(View.VISIBLE);
                 }
@@ -120,6 +126,22 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         getSupportActionBar().setTitle(hotel.getName());
         hotelPictureAdapter = new HotelPictureAdapter(this, hotel.getPictures());
         pictureViewPager.setAdapter(hotelPictureAdapter);
+        pictureViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                picDescTextView.setText(hotel.getPictures().get(position).getDescription());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         ((TextView) findViewById(R.id.priceTextView)).setText(hotel.getRooms().get(0).getPrice());
         final String checkIn = Utils.getDateString(hotel.getCheckInDate(), getString(R.string.hotel_date_format));
         final String checkOut = Utils.getDateString(hotel.getCheckOutDate(), getString(R.string.hotel_date_format));
@@ -264,6 +286,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         Book book = new Book();
         book.setHotel(hotel);
         book.setRoom(room);
+        book.setGuestCount(1);
         book.setCheckInDate(hotel.getCheckInDate());
         book.setCheckOutDate(hotel.getCheckOutDate());
         Intent intent = new Intent(this, BookActivity.class);

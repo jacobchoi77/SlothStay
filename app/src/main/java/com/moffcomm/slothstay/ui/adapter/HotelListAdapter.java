@@ -19,10 +19,31 @@ import java.util.List;
 /**
  * Created by jacobsFactory on 2016-06-10.
  */
-public class HotelListAdapter extends HeaderRecyclerViewAdapter {
+public class HotelListAdapter extends RecyclerView.Adapter {
 
     private List<SimpleHotel> simpleHotels;
     private Context mContext;
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_hotel_list, parent, false);
+        ViewHolder viewHolder = new ViewHolder(v);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        SimpleHotel simpleHotel = simpleHotels.get(position);
+        ((ViewHolder) holder).nameTextView.setText(simpleHotel.getName());
+        ((ViewHolder) holder).rateTextView.setText("" + simpleHotel.getRate());
+        ((ViewHolder) holder).priceTextView.setText(simpleHotel.getPrice());
+        Glide.with(mContext).load(simpleHotel.getImageUrl()).into(((ViewHolder) holder).imageView);
+    }
+
+    @Override
+    public int getItemCount() {
+        return simpleHotels.size();
+    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -43,8 +64,7 @@ public class HotelListAdapter extends HeaderRecyclerViewAdapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = getAdapterPosition() - 1;
-                    SimpleHotel hotel = simpleHotels.get(position);
+                    SimpleHotel hotel = simpleHotels.get(getAdapterPosition());
                     Intent intent = new Intent(mContext, HotelActivity.class);
                     intent.putExtra(SimpleHotel.CONST_ID, hotel.getId());
                     mContext.startActivity(intent);
@@ -56,65 +76,6 @@ public class HotelListAdapter extends HeaderRecyclerViewAdapter {
     public HotelListAdapter(List<SimpleHotel> simpleHotels, Context context) {
         this.simpleHotels = simpleHotels;
         mContext = context;
-    }
-
-    @Override
-    public boolean useHeader() {
-        return true;
-    }
-
-    @Override
-    public RecyclerView.ViewHolder onCreateHeaderViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.header_hotel_list, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
-    }
-
-    @Override
-    public void onBindHeaderView(RecyclerView.ViewHolder holder, int position) {
-        ((TextView) holder.itemView.findViewById(R.id.todayTextView)).setText(
-                mContext.getString(R.string.hotel_list_head_title, simpleHotels.size()));
-    }
-
-    @Override
-    public boolean useFooter() {
-        return false;
-    }
-
-    @Override
-    public RecyclerView.ViewHolder onCreateFooterViewHolder(ViewGroup parent, int viewType) {
-        return null;
-    }
-
-    @Override
-    public void onBindFooterView(RecyclerView.ViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public RecyclerView.ViewHolder onCreateBasicItemViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_hotel_list, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
-    }
-
-    @Override
-    public void onBindBasicItemView(RecyclerView.ViewHolder holder, int position) {
-        SimpleHotel simpleHotel = simpleHotels.get(position);
-        ((ViewHolder) holder).nameTextView.setText(simpleHotel.getName());
-        ((ViewHolder) holder).rateTextView.setText("" + simpleHotel.getRate());
-        ((ViewHolder) holder).priceTextView.setText(simpleHotel.getPrice());
-        Glide.with(mContext).load(simpleHotel.getImageUrl()).into(((ViewHolder) holder).imageView);
-    }
-
-    @Override
-    public int getBasicItemCount() {
-        return simpleHotels.size();
-    }
-
-    @Override
-    public int getBasicItemType(int position) {
-        return 0;
     }
 
 }

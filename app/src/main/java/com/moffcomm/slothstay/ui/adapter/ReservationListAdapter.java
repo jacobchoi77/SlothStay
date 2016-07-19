@@ -1,5 +1,10 @@
 package com.moffcomm.slothstay.ui.adapter;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,16 +47,16 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
-        Reservation reservation = reservationList.get(position);
+        final Reservation reservation = reservationList.get(position);
         ((ViewHolder) holder).topHotelNameTextView.setText(reservation.getHotelName());
         Glide.with(mainActivity).load(reservation.getImageUrl()).into(((ViewHolder) holder).imageView);
         ((ViewHolder) holder).hotelNameTextView.setText(reservation.getHotelName());
-        ((ViewHolder) holder).topCheckInTextView.setText(Utils.getDateString(reservation.getCheckInDate(),
-                mainActivity.getString(R.string.hotel_date_format)));
+        ((ViewHolder) holder).topCheckInTextView.setText(mainActivity.getString(R.string.top_check_in, Utils.getDateString(reservation.getCheckInDate(),
+                mainActivity.getString(R.string.hotel_date_time_format))));
         ((ViewHolder) holder).checkInTextView.setText(Utils.getDateString(reservation.getCheckInDate(),
-                mainActivity.getString(R.string.hotel_date_format)));
+                mainActivity.getString(R.string.hotel_date_time_format)));
         ((ViewHolder) holder).checkOutTextView.setText(Utils.getDateString(reservation.getCheckOutDate(),
-                mainActivity.getString(R.string.hotel_date_format)));
+                mainActivity.getString(R.string.hotel_date_time_format)));
         ((ViewHolder) holder).guestTextView.setText("" + reservation.getGuestCount());
         ((ViewHolder) holder).hotelAddressTextView.setText(reservation.getHotelAddress());
         ((ViewHolder) holder).hotelPhoneTextView.setText(reservation.getHotelPhone());
@@ -60,28 +65,58 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
         ((ViewHolder) holder).doExpandLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ViewHolder) holder).isExpanded = !((ViewHolder) holder).isExpanded;
-                if (((ViewHolder) holder).isExpanded) {
-                    Utils.expand(((ViewHolder) holder).expandLinearLayout);
-                    Utils.expand(((ViewHolder) holder).topExpandLinearLayout);
-                    ((ViewHolder) holder).hotelNameTextView.setVisibility(View.GONE);
-                    mainActivity.hideToolBar();
-                    myReservationFragment.disableScroll();
-                    ViewGroup.LayoutParams layoutParams = ((ViewHolder) holder).scrollView.getLayoutParams();
-                    layoutParams.height = Utils.getDisplayContentHeight(mainActivity) - 430;
-                    ((ViewHolder) holder).scrollView.setLayoutParams(layoutParams);
-                } else {
-                    Utils.collapse(((ViewHolder) holder).expandLinearLayout);
-                    Utils.collapse(((ViewHolder) holder).topExpandLinearLayout);
-                    ((ViewHolder) holder).hotelNameTextView.setVisibility(View.VISIBLE);
-                    mainActivity.showToolBar();
-                    myReservationFragment.enableScroll();
-                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                    ((ViewHolder) holder).scrollView.setLayoutParams(layoutParams);
-                }
+                expandOrCollapse(((ViewHolder) holder));
             }
         });
+
+        ((ViewHolder) holder).topExpandLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expandOrCollapse(((ViewHolder) holder));
+            }
+        });
+        ((ViewHolder) holder).directionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("google.navigation:q=" + reservation.getHotelAddress()));
+                mainActivity.startActivity(intent);
+            }
+        });
+
+        ((ViewHolder) holder).callTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + reservation.getHotelPhone()));
+                if (ActivityCompat.checkSelfPermission(mainActivity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                mainActivity.startActivity(intent);
+            }
+        });
+    }
+
+    private void expandOrCollapse(ViewHolder viewHolder) {
+        viewHolder.isExpanded = !viewHolder.isExpanded;
+        if (viewHolder.isExpanded) {
+            Utils.expand(viewHolder.expandLinearLayout);
+            Utils.expand(viewHolder.topExpandLinearLayout);
+            viewHolder.hotelNameTextView.setVisibility(View.GONE);
+            mainActivity.hideToolBar();
+            myReservationFragment.disableScroll();
+            ViewGroup.LayoutParams layoutParams = viewHolder.scrollView.getLayoutParams();
+            layoutParams.height = Utils.getDisplayContentHeight(mainActivity) - 430;
+            viewHolder.scrollView.setLayoutParams(layoutParams);
+        } else {
+            Utils.collapse(viewHolder.expandLinearLayout);
+            Utils.collapse(viewHolder.topExpandLinearLayout);
+            viewHolder.hotelNameTextView.setVisibility(View.VISIBLE);
+            mainActivity.showToolBar();
+            myReservationFragment.enableScroll();
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            viewHolder.scrollView.setLayoutParams(layoutParams);
+        }
     }
 
     @Override
@@ -108,6 +143,8 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
         public View doExpandLinearLayout;
         public boolean isExpanded = false;
         public ScrollView scrollView;
+        public View callTextView;
+        public View directionTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -128,6 +165,8 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
             topExpandLinearLayout = itemView.findViewById(R.id.topExpandLinearLayout);
             doExpandLinearLayout = itemView.findViewById(R.id.doExpandLinearLayout);
             scrollView = (ScrollView) itemView.findViewById(R.id.scrollView);
+            callTextView = itemView.findViewById(R.id.callTextView);
+            directionTextView = itemView.findViewById(R.id.directionsTextView);
         }
     }
 

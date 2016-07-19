@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".SlothStayApplication"
@@ -104,6 +105,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moffcomm.slothstay.ui.BookActivity" />
+        </activity>
+        <activity
+            android:name=".ui.SortFilterActivity"
+            android:label="@string/sort_filter"
+            android:parentActivityName=".ui.HotelListActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moffcomm.slothstay.ui.HotelListActivity" />
         </activity>
     </application>
 
