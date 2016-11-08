@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#004d7c</color>
-    <color name="colorPrimaryDark">#01304d</color>
+    <color name="colorPrimary">#24b642</color>
+    <color name="colorPrimaryDark">#006829</color>
     <color name="colorPrimaryDarkTransparent">#5001304d</color>
-    <color name="colorAccent">#ff4081</color>
+    <color name="colorAccent">#9bd636</color>
 
     <color name="colorTabIndicator">#7baed4</color>
     <color name="colorButton">#004d7c</color>
@@ -31,5 +31,9 @@
     <color name="colorFacebook">#4c8cf5</color>
 
     <color name="darker">#1c1c1d</color>
+
+    <color name="black_3">#333333</color>
+
+    <color name="gray_7">#777777</color>
 
 </resources>

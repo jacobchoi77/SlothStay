@@ -19,7 +19,7 @@
     <dimen name="room_item_height">120dp</dimen>
     <dimen name="room_card_height">200dp</dimen>
 
-    <dimen name="main_button_shrink">30dp</dimen>
+    <dimen name="main_button_shrink">35dp</dimen>
 
     <dimen name="hotel_list_item_height">180dp</dimen>
 

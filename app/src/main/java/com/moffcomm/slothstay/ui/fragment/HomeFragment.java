@@ -1,5 +1,6 @@
 package com.moffcomm.slothstay.ui.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
 import com.moffcomm.slothstay.Constants;
@@ -38,8 +40,21 @@ public class HomeFragment extends Fragment {
     private View mMainButtonLayout;
     private List<SimpleHotel> simpleHotels = new ArrayList<>();
     private GetSimpleHotelAsyncTask mAsyncTask;
-    private ImageView mileageImageView;
-    private ImageView membershipImageView;
+    private ImageView airImageView;
+    private ImageView carImageView;
+    private ImageView ticketImageView;
+    private ImageView pensionImageView;
+    private ImageView guideImageView;
+    private ImageView packageTripImageView;
+
+    private int previousDy = -1;
+    private ViewGroup.LayoutParams buttonlayoutParams;
+    private ViewGroup.LayoutParams airParams;
+    private ViewGroup.LayoutParams carParams;
+    private ViewGroup.LayoutParams ticketParams;
+    private ViewGroup.LayoutParams pensionParams;
+    private ViewGroup.LayoutParams guideParams;
+    private ViewGroup.LayoutParams packageTripParams;
 
     public HomeFragment() {
     }
@@ -75,28 +90,40 @@ public class HomeFragment extends Fragment {
         mAdapter = new HomeAdapter(simpleHotels, getContext());
         mRecyclerView.setAdapter(mAdapter);
         mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
-        mileageImageView = (ImageView) mContentView.findViewById(R.id.mileageImageView);
-        membershipImageView = (ImageView) mContentView.findViewById(R.id.membershipImageView);
-        mMainButtonLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+        airImageView = (ImageView) mContentView.findViewById(R.id.airImageView);
+        carImageView = (ImageView) mContentView.findViewById(R.id.carImageView);
+        ticketImageView = (ImageView) mContentView.findViewById(R.id.ticketImageView);
+        pensionImageView = (ImageView) mContentView.findViewById(R.id.pensionImageView);
+        guideImageView = (ImageView) mContentView.findViewById(R.id.guideImageView);
+        packageTripImageView = (ImageView) mContentView.findViewById(R.id.packageTripImageView);
+        mMainButtonLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @SuppressLint("NewApi")
+            @SuppressWarnings("deprecation")
             @Override
-            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+            public void onGlobalLayout() {
                 if (MAX_MAIN_BUTTON_LAYOUT_HEIGHT == 0) {
                     MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
                     MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT -
                             getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
-                    MAX_MAIN_BUTTON_IMAGE_HEIGHT = mileageImageView.getMeasuredHeight();
+                    MAX_MAIN_BUTTON_IMAGE_HEIGHT = airImageView.getMeasuredHeight();
                     MIN_MAIN_BUTTON_IMAGE_HEIGHT = MAX_MAIN_BUTTON_IMAGE_HEIGHT -
                             getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
                     currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
                     currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
-                    mRecyclerView.setScrollingTouchSlop(RecyclerView.TOUCH_SLOP_DEFAULT);
+                    buttonlayoutParams = mMainButtonLayout.getLayoutParams();
+                    airParams = airImageView.getLayoutParams();
+                    carParams = carImageView.getLayoutParams();
+                    ticketParams = ticketImageView.getLayoutParams();
+                    pensionParams = pensionImageView.getLayoutParams();
+                    guideParams = guideImageView.getLayoutParams();
+                    packageTripParams = packageTripImageView.getLayoutParams();
                     mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                        ViewGroup.LayoutParams buttonlayoutParams;
-                        ViewGroup.LayoutParams imagelayoutParams;
-
                         @Override
                         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                             super.onScrolled(recyclerView, dx, dy);
+                            if (previousDy == dy)
+                                return;
+                            previousDy = dy;
                             currentMainButtonLayoutHeight -= dy;
                             currentMainButtonImageHeight -= dy;
                             if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT) {
@@ -106,24 +133,37 @@ public class HomeFragment extends Fragment {
                                 currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
                                 currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
                             }
-                            buttonlayoutParams = mMainButtonLayout.getLayoutParams();
-                            imagelayoutParams = mileageImageView.getLayoutParams();
-                            if (buttonlayoutParams.height == currentMainButtonLayoutHeight)
-                                return;
-                            else {
-                                buttonlayoutParams.height = currentMainButtonLayoutHeight;
-                                imagelayoutParams.height = currentMainButtonImageHeight;
-                                imagelayoutParams.width = currentMainButtonImageHeight;
-                                mileageImageView.setLayoutParams(imagelayoutParams);
-                                membershipImageView.setLayoutParams(imagelayoutParams);
-                                mMainButtonLayout.setLayoutParams(buttonlayoutParams);
-                            }
+                            buttonlayoutParams.height = currentMainButtonLayoutHeight;
+                            airParams.height = currentMainButtonImageHeight;
+                            airParams.width = currentMainButtonImageHeight;
+                            carParams.height = currentMainButtonImageHeight;
+                            carParams.width = currentMainButtonImageHeight;
+                            ticketParams.height = currentMainButtonImageHeight;
+                            ticketParams.width = currentMainButtonImageHeight;
+                            pensionParams.height = currentMainButtonImageHeight;
+                            pensionParams.width = currentMainButtonImageHeight;
+                            guideParams.height = currentMainButtonImageHeight;
+                            guideParams.width = currentMainButtonImageHeight;
+                            packageTripParams.height = currentMainButtonImageHeight;
+                            packageTripParams.width = currentMainButtonImageHeight;
+
+                            airImageView.forceLayout();
+                            carImageView.forceLayout();
+                            ticketImageView.requestLayout();
+                            pensionImageView.forceLayout();
+                            guideImageView.forceLayout();
+                            packageTripImageView.requestLayout();
+                            mMainButtonLayout.requestLayout();
                         }
                     });
+
                 }
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
+                    mMainButtonLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                else
+                    mMainButtonLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
             }
         });
-
     }
 
     @Override
@@ -134,6 +174,12 @@ public class HomeFragment extends Fragment {
         }
         mAsyncTask = new GetSimpleHotelAsyncTask(this);
         mAsyncTask.execute();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mRecyclerView.clearOnScrollListeners();
     }
 
     public void setSimpleHotels(List<SimpleHotel> simpleHotels) {

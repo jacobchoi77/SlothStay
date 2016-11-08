@@ -22,216 +22,257 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="3dp">
+        <com.tripadvisor.seekbar.ClockView
+            android:id="@+id/checkInClockView"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:gravity="center" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/checkInTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginTop="26dp"
-                    android:text="Check In 오후 3시"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:src="@drawable/check_in" />
-
-                <com.tripadvisor.seekbar.ClockView
-                    android:id="@+id/checkInClockView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="20dp"
-                    android:gravity="center" />
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            app:cardElevation="3dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/checkOutTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="23dp"
-                    android:text="Check Out 낮 12시"
-                    android:textSize="18sp" />
-
-                <com.tripadvisor.seekbar.ClockView
-                    android:id="@+id/checkOutClockView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/imageView5"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginLeft="20dp"
-                    android:gravity="center" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:src="@drawable/check_out" />
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimaryDark"
-            app:cardElevation="3dp">
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <GridLayout
+            <TextView
+                android:id="@+id/checkInTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:columnCount="2"
-                android:padding="20dp"
-                android:rowCount="5">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="빠른 체크인"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_columnWeight="1.5"
-                    android:layout_gravity="right"
-                    android:layout_rowWeight="1"
-                    android:text="보유 마일리지"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
 
-                <TextView
-                    android:id="@+id/currentMileageTextView"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="right"
-                    android:text="500"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_gravity="right"
-                    android:layout_rowWeight="1"
-                    android:text="체크인"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/checkInTextView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="15dp"
+                        android:text="오전"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/checkInMileageTextView"
+                    <TextView
+                        android:id="@+id/checkInTextView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11:00"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray_divider_light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/checkOutTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="빠른 체크인"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_gravity="right"
-                    android:layout_rowWeight="1"
-                    android:text="체크아웃"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/checkOutTextView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="15dp"
+                        android:text="오전"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/checkOutMileageTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/checkOutTextView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11:00"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp" />
 
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:layout_columnSpan="2"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/gray_divider_light" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_gravity="right"
-                    android:layout_rowWeight="1"
-                    android:text="남은 마일리지"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/totalMileageTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="500"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
-
-            </GridLayout>
-
-        </android.support.v7.widget.CardView>
+        <com.tripadvisor.seekbar.ClockView
+            android:id="@+id/checkOutClockView"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:gravity="center" />
 
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.3"
+        android:background="@drawable/green_bg_90"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_total"
+            android:columnCount="2"
+            android:padding="30dp"
+            android:rowCount="5">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1.3"
+                android:text="보유 마일리지"
+                android:textColor="@color/black_3"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/currentMileageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="500"
+                android:textColor="@color/black_3"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:text="체크인"
+                android:textColor="@color/gray_7"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/checkInMileageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="+40"
+                android:textColor="@color/gray_7"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:text="체크아웃"
+                android:textColor="@color/gray_7"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/checkOutMileageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="-30"
+                android:textColor="@color/gray_7"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_divider_light" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:text="남은 마일리지"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalMileageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="500"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </GridLayout>
+
+    </FrameLayout>
 
 
 </LinearLayout>

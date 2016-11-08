@@ -8,8 +8,14 @@
 
     <string name="mileage">Mileage</string>
     <string name="membership">Membership</string>
+    <string name="air">Airplane</string>
+    <string name="car">Rent Car</string>
+    <string name="ticket">Ticket</string>
+    <string name="pension">Pension</string>
+    <string name="guide">Guide</string>
+    <string name="package_trip">Package Trip</string>
 
-    <string name="more">SEE MORE</string>
+    <string name="more">more</string>
     <string name="popular">Popular hotels near</string>
 
     <string name="rate_desc"> of 5 - guest rating</string>
@@ -75,12 +81,15 @@
     <!--Book-->
     <string name="title_activity_book">Book</string>
     <string name="title_activity_check">Check in/out</string>
-    <string name="check_in_normal">Check in %1$d hour</string>
-    <string name="check_in_early">Check in Early %1$d hour</string>
-    <string name="check_in_late">Check in Late %1$d hour</string>
-    <string name="check_out_normal">Check out %1$d hour</string>
-    <string name="check_out_early">Check out Early %1$d hour</string>
-    <string name="check_out_late">Check out Late %1$d hour</string>
+    <string name="check_in_normal">Check in</string>
+    <string name="check_in_early">Early Check In</string>
+    <string name="check_in_late">Late Check In</string>
+    <string name="check_out_normal">Check out</string>
+    <string name="check_out_early">Early Check out</string>
+    <string name="check_out_late">Late Check out</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="time_pattern">hh:mm</string>
 
     <!--Reservation-->
     <string name="top_check_in">Check in %1$s</string>

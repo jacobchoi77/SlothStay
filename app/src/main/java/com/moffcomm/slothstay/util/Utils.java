@@ -23,6 +23,8 @@ import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.SimpleHotel;
 
+import org.joda.time.DateTime;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -179,5 +181,6 @@ public class Utils {
         a.setDuration((int)(initialHeight / v.getContext().getResources().getDisplayMetrics().density));
         v.startAnimation(a);
     }
+
 
 }
