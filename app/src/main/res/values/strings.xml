@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">SlothStay</string>
+    <string name="app_name">Supastay</string>
     <string name="action_account">Account</string>
+    <string name="action_search">Search</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="home">HOME</string>
@@ -75,7 +76,7 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."
+    <string name="permission_rationale">전화 권한이 필요합니다.
     </string>
 
     <!--Book-->
@@ -108,5 +109,9 @@
         <item>Deals</item>
         <item>Rating</item>
     </string-array>
+
+    <string name="end">Quit?</string>
+
+    <string name="search">Search</string>
 
 </resources>

@@ -5,7 +5,9 @@
     <color name="colorPrimaryDarkTransparent">#5001304d</color>
     <color name="colorAccent">#9bd636</color>
 
-    <color name="colorTabIndicator">#7baed4</color>
+    <color name="colorAccent2">#5598f52d</color>
+
+    <color name="colorTabIndicator">#9bd636</color>
     <color name="colorButton">#004d7c</color>
     <color name="colorButton_darker">#002e4a</color>
 
@@ -23,7 +25,7 @@
 
     <color name="colorBg">#eeeeee</color>
 
-    <color name="darkerGray">#767676</color>
+    <color name="darkerGray">#006829</color>
 
     <color name="gray_divider">#cacaca</color>
     <color name="gray_divider_light">#e2e2e2</color>
@@ -35,5 +37,9 @@
     <color name="black_3">#333333</color>
 
     <color name="gray_7">#777777</color>
+
+    <color name="green_dark">#1b7a2e</color>
+
+    <color name="white_t">#99ffffff</color>
 
 </resources>

@@ -115,6 +115,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moffcomm.slothstay.ui.HotelListActivity" />
         </activity>
+
+        <activity
+            android:name=".ui.SearchActivity"
+            android:label="@string/search"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moffcomm.slothstay.ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

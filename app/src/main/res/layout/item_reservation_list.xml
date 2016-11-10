@@ -4,6 +4,7 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     android:layout_marginTop="4dp"
@@ -75,7 +76,8 @@
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,6 +85,7 @@
                 android:orientation="vertical">
 
                 <FrameLayout
+                    android:id="@+id/doExpandFrameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:layout_alignParentLeft="true"
@@ -292,18 +295,17 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="10dp"
                         android:background="@color/gray_divider_light" />
 
                     <TextView
                         android:id="@+id/hotelAddressTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
+                        android:paddingBottom="15dp"
                         android:paddingLeft="15dp"
                         android:paddingRight="10dp"
-                        android:paddingTop="10dp"
+                        android:paddingTop="5dp"
                         android:text="180 산성대로, 중원구, \n성남, 경기도, 한국 \n462-824"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
@@ -323,18 +325,17 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="10dp"
                         android:background="@color/gray_divider_light" />
 
                     <TextView
                         android:id="@+id/hotelPhoneTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
+                        android:paddingBottom="15dp"
                         android:paddingLeft="15dp"
                         android:paddingRight="10dp"
-                        android:paddingTop="10dp"
+                        android:paddingTop="5dp"
                         android:text="02-321-3512"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
@@ -354,18 +355,17 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="10dp"
                         android:background="@color/gray_divider_light" />
 
                     <TextView
                         android:id="@+id/roomTypeTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
+                        android:paddingBottom="15dp"
                         android:paddingLeft="15dp"
                         android:paddingRight="10dp"
-                        android:paddingTop="10dp"
+                        android:paddingTop="5dp"
                         android:text="Standard Double Room"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
@@ -385,46 +385,59 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="10dp"
                         android:background="@color/gray_divider_light" />
 
                     <TextView
                         android:id="@+id/itineraryTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
+                        android:paddingBottom="15dp"
                         android:paddingLeft="15dp"
-                        android:paddingRight="10dp"
-                        android:paddingTop="10dp"
+                        android:paddingTop="5dp"
                         android:text="7194824212741"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_divider" />
+
+
                     <TextView
+                        android:id="@+id/changeTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="15dp"
+                        android:background="@drawable/ripple_button"
+                        android:drawableLeft="@drawable/ic_access_time_black_24dp"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
-                        android:text="예약 정보"
+                        android:text="체크인/아웃 시간변경"
                         android:textColor="@android:color/white"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
                         android:background="@color/gray_divider_light" />
 
                     <TextView
+                        android:id="@+id/cancelTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="15dp"
+                        android:background="@drawable/ripple_button"
+                        android:drawableLeft="@drawable/ic_cancel_black_24dp"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="예약 취소"
@@ -434,15 +447,13 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
                         android:background="@color/gray_divider" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="15dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="부가정보"

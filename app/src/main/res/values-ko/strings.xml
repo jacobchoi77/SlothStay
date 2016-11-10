@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">슬로스테이</string>
+    <string name="app_name">수파스테이</string>
     <string name="action_account">계정</string>
+    <string name="action_search">검색</string>
 
     <string name="home">홈</string>
     <string name="my_reservation">내 예약</string>
@@ -65,6 +66,10 @@
         <item>거래순</item>
         <item>등급순</item>
     </string-array>
+
+    <string name="end">수파스테이를 종료 하시겠습니까?</string>
+
+    <string name="search">검색</string>
 
 
 </resources>

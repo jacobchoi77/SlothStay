@@ -1,11 +1,14 @@
 package com.moffcomm.slothstay.ui;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,13 +19,16 @@ import android.view.View;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.SlothStayApplication;
+import com.moffcomm.slothstay.model.Book;
 import com.moffcomm.slothstay.model.Reservation;
 import com.moffcomm.slothstay.model.User;
 import com.moffcomm.slothstay.ui.fragment.HomeFragment;
+import com.moffcomm.slothstay.ui.fragment.MileageFragment;
 import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
+import com.moffcomm.slothstay.ui.fragment.OkCancelDialogFragment;
 import com.moffcomm.slothstay.util.Utils;
 
-import java.util.List;
+import static android.Manifest.permission.CALL_PHONE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+    private static final int MY_PERMISSIONS_REQUEST = 10;
+
+    private int selectedReservationIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +55,23 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (toolbar.getVisibility() == View.GONE)
+                    toolbar.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -53,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         User user = User.fromJsonReader(Utils.getJsonReader(this, getString(R.string.what_user)));
         ((SlothStayApplication) getApplication()).setUser(user);
 
+        mayRequestPermissions();
     }
 
     @Override
@@ -67,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void setSelectedReservationIndex(int selectedReservationIndex) {
+        this.selectedReservationIndex = selectedReservationIndex;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -78,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.action_account) {
             Intent intent = new Intent(this, AccountActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_search) {
+            Intent intent = new Intent(this, SearchActivity.class);
             startActivity(intent);
             return true;
         }
@@ -107,6 +142,61 @@ public class MainActivity extends AppCompatActivity {
         return "android:switcher:" + viewId + ":" + index;
     }
 
+    @Override
+    public void onBackPressed() {
+        final OkCancelDialogFragment okCancelDialogFragment = OkCancelDialogFragment.newInstance(null,
+                getString(R.string.end), getString(android.R.string.ok), getString(android.R.string.cancel));
+        okCancelDialogFragment.setOkCancelDialogListener(new OkCancelDialogFragment.OkCancelDialogListener() {
+            @Override
+            public void onDialogOkClick() {
+                finish();
+            }
+
+            @Override
+            public void onDialogCancelClick() {
+            }
+        });
+        okCancelDialogFragment.show(getSupportFragmentManager(), "dialog");
+    }
+
+    private boolean mayRequestPermissions() {
+        if (ContextCompat.checkSelfPermission(this, CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, CALL_PHONE)) {
+            final OkCancelDialogFragment okCancelDialogFragment = OkCancelDialogFragment.newInstance(null,
+                    getString(R.string.permission_rationale), getString(android.R.string.ok), getString(android.R.string.cancel));
+            okCancelDialogFragment.setOkCancelDialogListener(new OkCancelDialogFragment.OkCancelDialogListener() {
+                @Override
+                public void onDialogOkClick() {
+                    requestPermissions(new String[]{CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                }
+
+                @Override
+                public void onDialogCancelClick() {
+                    finish();
+                }
+            });
+            okCancelDialogFragment.show(getSupportFragmentManager(), "dialog");
+        } else {
+            requestPermissions(new String[]{CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+        }
+        return false;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == MyReservationFragment.REQUEST_CODE_CHECK && resultCode == RESULT_OK) {
+            Book book = data.getParcelableExtra("book");
+            Reservation reservation = ((SlothStayApplication) getApplication())
+                    .getReservationList().get(selectedReservationIndex);
+            reservation.setBook(book);
+            reservation.setCheckInDate(book.getCheckInDate());
+            reservation.setCheckOutDate(book.getCheckOutDate());
+        }
+    }
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -123,13 +213,16 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     fragment = new MyReservationFragment();
                     break;
+                case 2:
+                    fragment = new MileageFragment();
+                    break;
             }
             return fragment;
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
 
         @Override
@@ -139,8 +232,12 @@ public class MainActivity extends AppCompatActivity {
                     return getString(R.string.home);
                 case 1:
                     return getString(R.string.my_reservation);
+                case 2:
+                    return getString(R.string.mileage);
             }
             return null;
         }
     }
+
+
 }

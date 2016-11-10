@@ -54,6 +54,8 @@ public class Reservation implements Parcelable {
     String roomName;
     @ParcelableThisPlease
     String itinerary;
+    @ParcelableThisPlease
+    Book book;
 
     public String getHotelName() {
         return hotelName;
@@ -141,6 +143,14 @@ public class Reservation implements Parcelable {
 
     public void setItinerary(String itinerary) {
         this.itinerary = itinerary;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     public static List<Reservation> fromJsonReader(JsonReader jsonReader) {

@@ -207,6 +207,16 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@color/colorAccent2"
+        android:elevation="8dp"
+        android:text="최저가 검색"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

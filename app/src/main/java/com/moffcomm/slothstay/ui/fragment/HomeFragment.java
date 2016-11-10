@@ -96,74 +96,7 @@ public class HomeFragment extends Fragment {
         pensionImageView = (ImageView) mContentView.findViewById(R.id.pensionImageView);
         guideImageView = (ImageView) mContentView.findViewById(R.id.guideImageView);
         packageTripImageView = (ImageView) mContentView.findViewById(R.id.packageTripImageView);
-        mMainButtonLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @SuppressLint("NewApi")
-            @SuppressWarnings("deprecation")
-            @Override
-            public void onGlobalLayout() {
-                if (MAX_MAIN_BUTTON_LAYOUT_HEIGHT == 0) {
-                    MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
-                    MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT -
-                            getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
-                    MAX_MAIN_BUTTON_IMAGE_HEIGHT = airImageView.getMeasuredHeight();
-                    MIN_MAIN_BUTTON_IMAGE_HEIGHT = MAX_MAIN_BUTTON_IMAGE_HEIGHT -
-                            getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
-                    currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                    currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
-                    buttonlayoutParams = mMainButtonLayout.getLayoutParams();
-                    airParams = airImageView.getLayoutParams();
-                    carParams = carImageView.getLayoutParams();
-                    ticketParams = ticketImageView.getLayoutParams();
-                    pensionParams = pensionImageView.getLayoutParams();
-                    guideParams = guideImageView.getLayoutParams();
-                    packageTripParams = packageTripImageView.getLayoutParams();
-                    mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                        @Override
-                        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                            super.onScrolled(recyclerView, dx, dy);
-                            if (previousDy == dy)
-                                return;
-                            previousDy = dy;
-                            currentMainButtonLayoutHeight -= dy;
-                            currentMainButtonImageHeight -= dy;
-                            if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT) {
-                                currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
-                                currentMainButtonImageHeight = MIN_MAIN_BUTTON_IMAGE_HEIGHT;
-                            } else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT) {
-                                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                                currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
-                            }
-                            buttonlayoutParams.height = currentMainButtonLayoutHeight;
-                            airParams.height = currentMainButtonImageHeight;
-                            airParams.width = currentMainButtonImageHeight;
-                            carParams.height = currentMainButtonImageHeight;
-                            carParams.width = currentMainButtonImageHeight;
-                            ticketParams.height = currentMainButtonImageHeight;
-                            ticketParams.width = currentMainButtonImageHeight;
-                            pensionParams.height = currentMainButtonImageHeight;
-                            pensionParams.width = currentMainButtonImageHeight;
-                            guideParams.height = currentMainButtonImageHeight;
-                            guideParams.width = currentMainButtonImageHeight;
-                            packageTripParams.height = currentMainButtonImageHeight;
-                            packageTripParams.width = currentMainButtonImageHeight;
 
-                            airImageView.forceLayout();
-                            carImageView.forceLayout();
-                            ticketImageView.requestLayout();
-                            pensionImageView.forceLayout();
-                            guideImageView.forceLayout();
-                            packageTripImageView.requestLayout();
-                            mMainButtonLayout.requestLayout();
-                        }
-                    });
-
-                }
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
-                    mMainButtonLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                else
-                    mMainButtonLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-            }
-        });
     }
 
     @Override
@@ -174,12 +107,85 @@ public class HomeFragment extends Fragment {
         }
         mAsyncTask = new GetSimpleHotelAsyncTask(this);
         mAsyncTask.execute();
+
+        mMainButtonLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @SuppressLint("NewApi")
+            @SuppressWarnings("deprecation")
+            @Override
+            public void onGlobalLayout() {
+                MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
+                MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT -
+                        getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
+                MAX_MAIN_BUTTON_IMAGE_HEIGHT = airImageView.getMeasuredHeight();
+                MIN_MAIN_BUTTON_IMAGE_HEIGHT = MAX_MAIN_BUTTON_IMAGE_HEIGHT -
+                        getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
+                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
+                currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
+                buttonlayoutParams = mMainButtonLayout.getLayoutParams();
+                airParams = airImageView.getLayoutParams();
+                carParams = carImageView.getLayoutParams();
+                ticketParams = ticketImageView.getLayoutParams();
+                pensionParams = pensionImageView.getLayoutParams();
+                guideParams = guideImageView.getLayoutParams();
+                packageTripParams = packageTripImageView.getLayoutParams();
+                mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                    @Override
+                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                        super.onScrolled(recyclerView, dx, dy);
+                        if (previousDy == dy)
+                            return;
+                        previousDy = dy;
+                        currentMainButtonLayoutHeight -= dy;
+                        currentMainButtonImageHeight -= dy;
+                        if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT) {
+                            currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
+                            currentMainButtonImageHeight = MIN_MAIN_BUTTON_IMAGE_HEIGHT;
+                        } else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT) {
+                            currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
+                            currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
+                        }
+                        buttonlayoutParams.height = currentMainButtonLayoutHeight;
+                        airParams.height = currentMainButtonImageHeight;
+                        airParams.width = currentMainButtonImageHeight;
+                        carParams.height = currentMainButtonImageHeight;
+                        carParams.width = currentMainButtonImageHeight;
+                        ticketParams.height = currentMainButtonImageHeight;
+                        ticketParams.width = currentMainButtonImageHeight;
+                        pensionParams.height = currentMainButtonImageHeight;
+                        pensionParams.width = currentMainButtonImageHeight;
+                        guideParams.height = currentMainButtonImageHeight;
+                        guideParams.width = currentMainButtonImageHeight;
+                        packageTripParams.height = currentMainButtonImageHeight;
+                        packageTripParams.width = currentMainButtonImageHeight;
+
+                        airImageView.forceLayout();
+                        carImageView.forceLayout();
+                        ticketImageView.requestLayout();
+                        pensionImageView.forceLayout();
+                        guideImageView.forceLayout();
+                        packageTripImageView.requestLayout();
+                        mMainButtonLayout.requestLayout();
+                    }
+                });
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
+                    mMainButtonLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                else
+                    mMainButtonLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+            }
+        });
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mRecyclerView.clearOnScrollListeners();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mRecyclerView.clearOnScrollListeners();
+
     }
 
     public void setSimpleHotels(List<SimpleHotel> simpleHotels) {

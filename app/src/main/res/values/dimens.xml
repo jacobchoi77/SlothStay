@@ -32,4 +32,6 @@
 
     <dimen name="book_margin">10dp</dimen>
 
+    <dimen name="mileage_bar">60dp</dimen>
+
 </resources>

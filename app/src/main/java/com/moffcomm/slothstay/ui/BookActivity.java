@@ -111,6 +111,7 @@ public class BookActivity extends AppCompatActivity {
         reservation.setHotelAddress(book.getHotel().getAddress());
         reservation.setHotelName(book.getHotel().getName());
         reservation.setHotelPhone(book.getHotel().getPhone());
+        reservation.setBook(book);
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("reservation", reservation);
         startActivity(intent);
