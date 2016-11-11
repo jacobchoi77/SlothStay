@@ -34,4 +34,6 @@
 
     <dimen name="mileage_bar">60dp</dimen>
 
+    <dimen name="partner_circle">84dp</dimen>
+
 </resources>

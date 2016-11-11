@@ -216,7 +216,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="27dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/brand_phone_cko_logo_drawable" />
@@ -226,7 +226,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="jacobchoi77@gmail.com"
+                        android:text="홍길동"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -286,25 +286,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/check_in" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
 
                     <TextView
                         android:id="@+id/checkInTextView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:text="오후 3시"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/check_in" />
 
                     <View
                         android:layout_width="1dp"
@@ -313,22 +314,25 @@
                         android:layout_marginTop="7dp"
                         android:background="@color/gray_divider_light" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/check_out" />
 
                     <TextView
                         android:id="@+id/checkOutTextView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
                         android:text="낮 12시"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/check_out" />
 
 
                 </LinearLayout>
@@ -391,7 +395,7 @@
                     android:id="@+id/button"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@color/colorPrimaryDarkMore"
+                    android:background="@color/colorPrimaryDarkMore2"
                     android:onClick="onPayClick"
                     android:text="결제하기"
                     android:textColor="@android:color/white"

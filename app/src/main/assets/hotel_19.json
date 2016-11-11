@@ -1,0 +1,80 @@
+﻿{
+  "id": 19,
+  "name": "보리 호텔 강남",
+  "grade": 3,
+  "discount": 50,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 12,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "160 Yeoksam-ro",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "유명한 강남구 지역에 위치한 보리 호텔 강남 입니다. 호텔에서 멋진 시간을 보낼 수 있도록 여러 시설과 특혜를 제공합니다. Wi-Fi (무료/전 객실), 24시간 프런트 데스크, 장애인용 편의시설, 익스프레스 체크인/체크아웃, 여행 가방 보관 등을 포함한 모든 필요한 시설이 가까이 있습니다. 일부 객실에는 타월, 슬리퍼, 평면 TV, 무선 인터넷, 무선 인터넷(무료) 등이 구비되어 있습니다. 손님의 숙박을 향상시키기 위해, 호텔에서 피트니스센터 같은 레크리에이션 시설을 제공합니다. 보리 호텔 강남에서 숙박하면서 서울의 사랑스러운 분위기와 따뜻한 환대를 느낄 수 있습니다.",
+  "latitude": 37.494790000000002,
+  "longitude": 127.036647,
+  "dining": "",
+  "rooms_desc": "각 객실에는 TV가 마련되어 있으며, 객실에서 정원 또는 도시 전망을 감상하며 차 한 잔의 여유를 즐기실 수 있습니다. 모든 객실에 전용 욕실이 있고, 편안함을 더하는 목욕 가운과 슬리퍼도 준비되어 있습니다. 보리 호텔 강남 전역에서 무료 Wi-Fi 이용이 가능합니다",
+  "property": "",
+  "highlight": "",
+  "amenities": "",
+  "policies": "어린이는 호텔에 투숙할 수 없습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/19/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/19/1.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/19/2.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/19/3.jpg",
+      "desc": "객실"
+    }
+],
+  "rooms": [
+    {
+      "name": "디럭스 더블룸",
+      "price": "120000",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 26제곱미터(더블침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/19/3.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "디럭스 더블룸",
+      "price": "120000",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 26제곱미터(더블침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/19/3.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

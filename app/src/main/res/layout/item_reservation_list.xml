@@ -18,14 +18,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/white"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/topExpandLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:visibility="gone">
 
@@ -126,6 +126,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
                     android:animateLayoutChanges="true"
+                    android:background="@color/colorPrimaryDark"
                     android:clickable="true"
                     android:orientation="horizontal"
                     android:padding="10dp">
@@ -159,8 +160,6 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:background="@color/darkerGray" />
 
 
@@ -191,7 +190,7 @@
                                 android:layout_weight="1"
                                 android:gravity="bottom"
                                 android:text="9월 21일"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/black_3"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
@@ -201,7 +200,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Check In"
-                                android:textColor="@color/gray_divider"
+                                android:textColor="@color/gray_a"
                                 android:textSize="13sp" />
                         </LinearLayout>
 
@@ -225,7 +224,7 @@
                                 android:layout_weight="1"
                                 android:gravity="bottom"
                                 android:text="9월 22일"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/black_3"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
@@ -235,7 +234,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Check Out"
-                                android:textColor="@color/gray_divider"
+                                android:textColor="@color/gray_a"
                                 android:textSize="13sp" />
                         </LinearLayout>
 
@@ -258,7 +257,7 @@
                                 android:layout_weight="1"
                                 android:gravity="bottom"
                                 android:text="1"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/black_3"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -268,7 +267,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Guests"
-                                android:textColor="@color/gray_divider"
+                                android:textColor="@color/gray_a"
                                 android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -288,7 +287,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="주소"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -307,7 +306,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="5dp"
                         android:text="180 산성대로, 중원구, \n성남, 경기도, 한국 \n462-824"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
 
                     <TextView
@@ -318,7 +317,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="전화번호"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -337,7 +336,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="5dp"
                         android:text="02-321-3512"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
 
                     <TextView
@@ -348,7 +347,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="ROOM TYPE"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -367,7 +366,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="5dp"
                         android:text="Standard Double Room"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
 
                     <TextView
@@ -378,7 +377,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="ITINERARY"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -396,7 +395,7 @@
                         android:paddingLeft="15dp"
                         android:paddingTop="5dp"
                         android:text="7194824212741"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
 
                     <View
@@ -409,7 +408,7 @@
                         android:id="@+id/changeTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ripple_button"
+                        android:background="@drawable/ripple_button_e2"
                         android:drawableLeft="@drawable/ic_access_time_black_24dp"
                         android:drawablePadding="5dp"
                         android:drawableTint="@android:color/white"
@@ -419,7 +418,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="체크인/아웃 시간변경"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
 
                     <View
@@ -431,7 +430,7 @@
                         android:id="@+id/cancelTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ripple_button"
+                        android:background="@drawable/ripple_button_e2"
                         android:drawableLeft="@drawable/ic_cancel_black_24dp"
                         android:drawablePadding="5dp"
                         android:drawableTint="@android:color/white"
@@ -441,7 +440,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="예약 취소"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
 
                     <View
@@ -457,9 +456,8 @@
                         android:paddingRight="10dp"
                         android:paddingTop="10dp"
                         android:text="부가정보"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black_3"
                         android:textSize="15sp" />
-
 
                 </LinearLayout>
 
@@ -478,7 +476,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/ripple_button"
+                android:background="@drawable/ripple_button_green"
                 android:clickable="true"
                 android:drawableLeft="@drawable/car_directions"
                 android:gravity="center"
@@ -490,8 +488,6 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
                 android:background="@color/darkerGray" />
 
             <TextView
@@ -499,7 +495,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/ripple_button"
+                android:background="@drawable/ripple_button_green"
                 android:clickable="true"
                 android:drawableLeft="@drawable/hotel_phone"
                 android:gravity="center"

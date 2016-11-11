@@ -1,6 +1,6 @@
 package com.moffcomm.slothstay.ui.fragment;
 
-import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,11 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
+import com.moffcomm.slothstay.customtabs.CustomTabActivityHelper;
 import com.moffcomm.slothstay.model.SimpleHotel;
 import com.moffcomm.slothstay.ui.adapter.HomeAdapter;
 import com.moffcomm.slothstay.util.Utils;
@@ -25,36 +24,15 @@ import java.util.List;
 /**
  * Created by jacobsFactory on 2016-06-09.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private View mContentView;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private GridLayoutManager gridLayoutManager;
-    private int MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-    private int MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
-    private int MAX_MAIN_BUTTON_IMAGE_HEIGHT;
-    private int MIN_MAIN_BUTTON_IMAGE_HEIGHT;
-    private int currentMainButtonLayoutHeight;
-    private int currentMainButtonImageHeight;
-    private View mMainButtonLayout;
     private List<SimpleHotel> simpleHotels = new ArrayList<>();
     private GetSimpleHotelAsyncTask mAsyncTask;
-    private ImageView airImageView;
-    private ImageView carImageView;
-    private ImageView ticketImageView;
-    private ImageView pensionImageView;
-    private ImageView guideImageView;
-    private ImageView packageTripImageView;
-
-    private int previousDy = -1;
-    private ViewGroup.LayoutParams buttonlayoutParams;
-    private ViewGroup.LayoutParams airParams;
-    private ViewGroup.LayoutParams carParams;
-    private ViewGroup.LayoutParams ticketParams;
-    private ViewGroup.LayoutParams pensionParams;
-    private ViewGroup.LayoutParams guideParams;
-    private ViewGroup.LayoutParams packageTripParams;
+    private CustomTabActivityHelper customTabActivityHelper;
 
     public HomeFragment() {
     }
@@ -89,13 +67,8 @@ public class HomeFragment extends Fragment {
 
         mAdapter = new HomeAdapter(simpleHotels, getContext());
         mRecyclerView.setAdapter(mAdapter);
-        mMainButtonLayout = mContentView.findViewById(R.id.mainButtonLayout);
-        airImageView = (ImageView) mContentView.findViewById(R.id.airImageView);
-        carImageView = (ImageView) mContentView.findViewById(R.id.carImageView);
-        ticketImageView = (ImageView) mContentView.findViewById(R.id.ticketImageView);
-        pensionImageView = (ImageView) mContentView.findViewById(R.id.pensionImageView);
-        guideImageView = (ImageView) mContentView.findViewById(R.id.guideImageView);
-        packageTripImageView = (ImageView) mContentView.findViewById(R.id.packageTripImageView);
+
+        customTabActivityHelper = new CustomTabActivityHelper();
 
     }
 
@@ -108,90 +81,49 @@ public class HomeFragment extends Fragment {
         mAsyncTask = new GetSimpleHotelAsyncTask(this);
         mAsyncTask.execute();
 
-        mMainButtonLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @SuppressLint("NewApi")
-            @SuppressWarnings("deprecation")
-            @Override
-            public void onGlobalLayout() {
-                MAX_MAIN_BUTTON_LAYOUT_HEIGHT = mMainButtonLayout.getMeasuredHeight();
-                MIN_MAIN_BUTTON_LAYOUT_HEIGHT = MAX_MAIN_BUTTON_LAYOUT_HEIGHT -
-                        getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
-                MAX_MAIN_BUTTON_IMAGE_HEIGHT = airImageView.getMeasuredHeight();
-                MIN_MAIN_BUTTON_IMAGE_HEIGHT = MAX_MAIN_BUTTON_IMAGE_HEIGHT -
-                        getResources().getDimensionPixelOffset(R.dimen.main_button_shrink);
-                currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
-                buttonlayoutParams = mMainButtonLayout.getLayoutParams();
-                airParams = airImageView.getLayoutParams();
-                carParams = carImageView.getLayoutParams();
-                ticketParams = ticketImageView.getLayoutParams();
-                pensionParams = pensionImageView.getLayoutParams();
-                guideParams = guideImageView.getLayoutParams();
-                packageTripParams = packageTripImageView.getLayoutParams();
-                mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                    @Override
-                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                        super.onScrolled(recyclerView, dx, dy);
-                        if (previousDy == dy)
-                            return;
-                        previousDy = dy;
-                        currentMainButtonLayoutHeight -= dy;
-                        currentMainButtonImageHeight -= dy;
-                        if (currentMainButtonLayoutHeight < MIN_MAIN_BUTTON_LAYOUT_HEIGHT) {
-                            currentMainButtonLayoutHeight = MIN_MAIN_BUTTON_LAYOUT_HEIGHT;
-                            currentMainButtonImageHeight = MIN_MAIN_BUTTON_IMAGE_HEIGHT;
-                        } else if (currentMainButtonLayoutHeight > MAX_MAIN_BUTTON_LAYOUT_HEIGHT) {
-                            currentMainButtonLayoutHeight = MAX_MAIN_BUTTON_LAYOUT_HEIGHT;
-                            currentMainButtonImageHeight = MAX_MAIN_BUTTON_IMAGE_HEIGHT;
-                        }
-                        buttonlayoutParams.height = currentMainButtonLayoutHeight;
-                        airParams.height = currentMainButtonImageHeight;
-                        airParams.width = currentMainButtonImageHeight;
-                        carParams.height = currentMainButtonImageHeight;
-                        carParams.width = currentMainButtonImageHeight;
-                        ticketParams.height = currentMainButtonImageHeight;
-                        ticketParams.width = currentMainButtonImageHeight;
-                        pensionParams.height = currentMainButtonImageHeight;
-                        pensionParams.width = currentMainButtonImageHeight;
-                        guideParams.height = currentMainButtonImageHeight;
-                        guideParams.width = currentMainButtonImageHeight;
-                        packageTripParams.height = currentMainButtonImageHeight;
-                        packageTripParams.width = currentMainButtonImageHeight;
-
-                        airImageView.forceLayout();
-                        carImageView.forceLayout();
-                        ticketImageView.requestLayout();
-                        pensionImageView.forceLayout();
-                        guideImageView.forceLayout();
-                        packageTripImageView.requestLayout();
-                        mMainButtonLayout.requestLayout();
-                    }
-                });
-
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
-                    mMainButtonLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                else
-                    mMainButtonLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-            }
-        });
+        customTabActivityHelper.bindCustomTabsService(getActivity());
+        customTabActivityHelper.mayLaunchUrl(Uri.parse(getString(R.string.url_total)), null, null);
+        customTabActivityHelper.mayLaunchUrl(Uri.parse(getString(R.string.url_agoda)), null, null);
+        customTabActivityHelper.mayLaunchUrl(Uri.parse(getString(R.string.url_bookings)), null, null);
+        customTabActivityHelper.mayLaunchUrl(Uri.parse(getString(R.string.url_hotels)), null, null);
     }
 
     @Override
     public void onStop() {
+        customTabActivityHelper.unbindCustomTabsService(getActivity());
         super.onStop();
-        mRecyclerView.clearOnScrollListeners();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
     }
 
     public void setSimpleHotels(List<SimpleHotel> simpleHotels) {
         this.simpleHotels.clear();
         this.simpleHotels.addAll(simpleHotels);
         mAdapter.notifyDataSetChanged();
+        setupHeader();
+    }
+
+    private void setupHeader() {
+        mContentView.findViewById(R.id.total).setOnClickListener(this);
+        mContentView.findViewById(R.id.agoda).setOnClickListener(this);
+        mContentView.findViewById(R.id.bookings).setOnClickListener(this);
+        mContentView.findViewById(R.id.hotels).setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.total:
+                Utils.goUrl(getActivity(), customTabActivityHelper, getString(R.string.url_total));
+                break;
+            case R.id.agoda:
+                Utils.goUrl(getActivity(), customTabActivityHelper, getString(R.string.url_agoda));
+                break;
+            case R.id.bookings:
+                Utils.goUrl(getActivity(), customTabActivityHelper, getString(R.string.url_bookings));
+                break;
+            case R.id.hotels:
+                Utils.goUrl(getActivity(), customTabActivityHelper, getString(R.string.url_hotels));
+                break;
+        }
     }
 
     private static class GetSimpleHotelAsyncTask extends AsyncTask<Void, Void, List<SimpleHotel>> {

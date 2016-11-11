@@ -2,6 +2,7 @@ package com.moffcomm.slothstay.ui;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
@@ -19,6 +20,7 @@ import android.view.View;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.SlothStayApplication;
+import com.moffcomm.slothstay.customtabs.CustomTabActivityHelper;
 import com.moffcomm.slothstay.model.Book;
 import com.moffcomm.slothstay.model.Reservation;
 import com.moffcomm.slothstay.model.User;
@@ -26,6 +28,7 @@ import com.moffcomm.slothstay.ui.fragment.HomeFragment;
 import com.moffcomm.slothstay.ui.fragment.MileageFragment;
 import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
 import com.moffcomm.slothstay.ui.fragment.OkCancelDialogFragment;
+import com.moffcomm.slothstay.ui.fragment.PartnerFragment;
 import com.moffcomm.slothstay.util.Utils;
 
 import static android.Manifest.permission.CALL_PHONE;
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         ((SlothStayApplication) getApplication()).setUser(user);
 
         mayRequestPermissions();
+
     }
 
     @Override
@@ -109,10 +113,6 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.action_account) {
             Intent intent = new Intent(this, AccountActivity.class);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.action_search) {
-            Intent intent = new Intent(this, SearchActivity.class);
             startActivity(intent);
             return true;
         }
@@ -216,13 +216,16 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     fragment = new MileageFragment();
                     break;
+                case 3:
+                    fragment = new PartnerFragment();
+                    break;
             }
             return fragment;
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Override
@@ -234,6 +237,8 @@ public class MainActivity extends AppCompatActivity {
                     return getString(R.string.my_reservation);
                 case 2:
                     return getString(R.string.mileage);
+                case 3:
+                    return "제휴사";
             }
             return null;
         }

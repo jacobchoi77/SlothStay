@@ -1,155 +1,80 @@
 {
   "id": 4,
-  "name": "강남 648호텔",
-  "grade": 4,
+  "name": "인터컨티넨탈 서울 코엑스",
+  "grade": 5,
   "discount": 50,
   "check_in_date": 1466046000000,
   "check_out_date": 1466164800000,
   "guest_count": 1,
-  "rate": 3.4,
-  "review_count": 51,
+  "rate": 5,
+  "review_count": 735,
   "service": [
     "internet",
-    "breakfast"
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
   ],
-  "desc": "Within 7 minutes' walk of the Yeoksam and Gangnam subway stations, this stylish, laid-back hotel is a 15-minute metro ride from Seoul Arts Center. Featuring wood floors and chandeliers, the chic rooms come with free Wi-Fi, flat-screen TVs and balconies. Upgraded rooms add sofas and/or in-room whirlpool tubs, and 1 has a billiard room. Breakfast and parking are free.",
-  "latitude": 37.499938,
-  "longitude": 127.031853,
-  "address_1": "서울 특별시 중구",
-  "address_2": "장충단로 13길 20",
-  "phone" : "02-315-2912",
-  "dining": "For your convenience, breakfast is served for a fee from 7:30 AM to 9 AM. Savor a meal from the privacy of your room with room service, or get a pick-me-up at the coffee shop/café.",
-  "rooms_desc": "All of Benikea Swiss Rosen Hotel's 60 rooms are recently renovated and have an array of amenities, including furnished balconies or patios, refrigerators, and electric kettles. 42-inch LCD TVs come with digital channels and pay movies, and guests can stay connected with free WiFi. Bathrooms offer hair dryers and free toiletries, and beds sport down comforters. Free bottled water and phones are also standard.",
-  "property": "Benikea Swiss Rosen Hotel features free WiFi in public areas, 2 meeting rooms, and a business center. If you plan to drive, free parking is available. A multilingual staff is on hand to assist with dry cleaning/laundry, tours or tickets, and luggage storage. Additional amenities include a seasonal outdoor pool, a computer station, and a terrace.",
-  "highlight": "·Free WiFi in rooms and public areas\n·Free parking\n·Onsite dining\n·Business center",
-  "amenities": "In addition to an indoor pool and a children's pool, Lotte Hotel Ulsan provides a health club and a spa tub. Dining is available at one of the hotel's 2 restaurants and guests can grab coffee at the coffee shop/café. The property also has a snack bar/deli. This 5-star property offers access to a business center and a meeting room. A computer station is located on site and high-speed wired and wireless Internet access is complimentary. Event facilities measuring 161 square feet (15 square meters) include conference space. This luxury hotel also offers a sauna, tour/ticket assistance, and multilingual staff. Limited onsite parking is available on a first-come, first-served basis (surcharge).  Lotte Hotel Ulsan is a smoke-free property.",
-  "policies": "Extra-person charges may apply and vary depending on hotel policy.  Government-issued photo identification and a credit card or cash deposit are required at check-in for incidental charges.  Special requests are subject to availability upon check-in and may incur additional charges. Special requests cannot be guaranteed.",
+  "address_1": "524, Bongeunsaro, Gagnam-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "삼성동 지역에 위치한 인터컨티넨탈 서울 코엑스에서 서울의 탐험을 시작하세요. 호텔에서 투숙객들이 쾌적한 환경을 누릴 수 있도록 다양한 시설을 갖추고 있습니다. 오로지 서비스만 생각하는 직원들이 인터컨티넨탈 서울 코엑스에서 여러분을 환영하며 안내할 것입니다. 아늑한 객실에서 편안한 잠자리를 보장해 드리며, 일부 객실은 평면 TV, 에어컨, 난방, 모닝콜 서비스, 책상 등의 편의시설을 제공합니다. 온수 욕조, 피트니스센터, 사우나, 실내 수영장, 스파 등을 포함한 호텔의 레크리에이션 시설을 즐겨보세요. 편리함과 편안함을 제공하는 인터컨티넨탈 서울 코엑스에서 머문다면 서울에 있는 동안 탁월한 선택이 될 것입니다.",
+  "latitude": 37.513249999999999,
+  "longitude": 127.05714399999999,
+  "dining": "스카이 라운지(Sky Lounge) - 화려한 서울 시내 스카이라인 전경이 바라보이는 레스토랑으로 현대식 요리와 어비에이션풍의 칵테일을 제공합니다. 점심시간과 저녁시간에 오픈합니다.",
+  "rooms_desc": "객실에는 WiFi(요금 별도), 미니바, 커피 메이커, 객실 내 금고, 밝은 조명의 책상 및 프리미엄 채널 지원 케이블 TV가 구비되어 있습니다. 전용 욕실에는 비데, 가운 및 헤어드라이어가 구비되어 있습니다. 아기용 침대와 간이 침대를 이용하실 수 있습니다.",
+  "property": "인터컨티넨탈 코엑스에는 실내 수영장이 있는 헬스클럽, 좋은 시설을 갖춘 운동실, 사우나, 그리고 야외 스파 욕조가 있습니다. (나이 제한이 적용됩니다.) 직원이 상주하는 비즈니스 센터, 회의실, 공용 구역의 무료 WiFi 서비스, 다양한 식당 옵션 등을 제공합니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "애완동물을 동반하실 수 없습니다. 일부 시설의 경우 출입이 제한될 수 있습니다",
   "pictures": [
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/19.jpg",
-      "desc": ""
+      "image_url": "http://slothstay.com/resources/image/4/main.jpg",
+      "desc": "대표사진"
     },
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg",
-      "desc": "스탠다드 더블"
+      "image_url": "http://slothstay.com/resources/image/4/1.jpg",
+      "desc": "로비"
     },
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg",
-      "desc": "스탠다드 더블"
+      "image_url": "http://slothstay.com/resources/image/4/2.jpg",
+      "desc": "객실"
     },
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg",
-      "desc": "스탠다드 싱글+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg",
-      "desc": "스탠다드 싱글+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/24.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/25.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/26.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/27.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/28.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/29.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/30.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/31.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/32.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/33.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/34.jpg",
-      "desc": ""
+      "image_url": "http://slothstay.com/resources/image/4/3.jpg",
+      "desc": "객실"
     }
-  ],
+],
   "rooms": [
     {
-      "name": "Blooming 스카이파크 1",
-      "price": "16만원",
+      "name": "스위트, 킹사이즈침대 1개, 코너",
+      "price": "510000",
       "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
+        "예약무료 취소",
+        "무료 주차",
+        "무료 인터넷"
       ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg",
+      "detail": "3인기준/최대5인/조식불포함, 75제곱미터(킹사이즈침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/4/4.jpg",
       "check_in_early": 4,
       "check_in_late": 4,
       "check_out_early": 4,
       "check_out_late": 4
     },
-    {
-      "name": "Blooming 스카이파크 2",
-      "price": "12만원",
+{
+      "name": "스위트, 킹사이즈침대 1개, 코너",
+      "price": "510000",
       "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
+        "예약무료 취소",
+        "무료 주차",
+        "무료 인터넷"
       ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg",
-      "check_in_early": 4,
-      "check_in_late": 4,
-      "check_out_early": 4,
-      "check_out_late": 4
-    },
-    {
-      "name": "마운틴뷰",
-      "price": "19만원",
-      "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
-      ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg",
-      "check_in_early": 4,
-      "check_in_late": 4,
-      "check_out_early": 4,
-      "check_out_late": 4
-    },
-    {
-      "name": "Deluxe 싱글 + 싱글 (마운틴뷰)",
-      "price": "24만원",
-      "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
-      ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg",
+      "detail": "3인기준/최대5인/조식불포함, 75제곱미터(킹사이즈침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/4/4.jpg",
       "check_in_early": 4,
       "check_in_late": 4,
       "check_out_early": 4,
       "check_out_late": 4
     }
-  ]
+]
 }

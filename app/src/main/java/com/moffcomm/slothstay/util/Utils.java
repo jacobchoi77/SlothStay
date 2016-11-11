@@ -2,13 +2,16 @@ package com.moffcomm.slothstay.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
+import android.support.customtabs.CustomTabsIntent;
 import android.util.JsonReader;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -21,9 +24,8 @@ import android.widget.TextView;
 
 import com.moffcomm.slothstay.Constants;
 import com.moffcomm.slothstay.R;
+import com.moffcomm.slothstay.customtabs.CustomTabActivityHelper;
 import com.moffcomm.slothstay.model.SimpleHotel;
-
-import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -135,13 +137,12 @@ public class Utils {
         // Older versions of android (pre API 21) cancel animations for views with a height of 0.
         v.getLayoutParams().height = 1;
         v.setVisibility(View.VISIBLE);
-        Animation a = new Animation()
-        {
+        Animation a = new Animation() {
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
                 v.getLayoutParams().height = interpolatedTime == 1
                         ? ViewGroup.LayoutParams.WRAP_CONTENT
-                        : (int)(targetHeight * interpolatedTime);
+                        : (int) (targetHeight * interpolatedTime);
                 v.requestLayout();
             }
 
@@ -152,21 +153,20 @@ public class Utils {
         };
 
         // 1dp/ms
-        a.setDuration((int)(targetHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration((int) (targetHeight / v.getContext().getResources().getDisplayMetrics().density));
         v.startAnimation(a);
     }
 
     public static void collapse(final View v) {
         final int initialHeight = v.getMeasuredHeight();
 
-        Animation a = new Animation()
-        {
+        Animation a = new Animation() {
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
-                if(interpolatedTime == 1){
+                if (interpolatedTime == 1) {
                     v.setVisibility(View.GONE);
-                }else{
-                    v.getLayoutParams().height = initialHeight - (int)(initialHeight * interpolatedTime);
+                } else {
+                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
                     v.requestLayout();
                 }
             }
@@ -178,8 +178,17 @@ public class Utils {
         };
 
         // 1dp/ms
-        a.setDuration((int)(initialHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
         v.startAnimation(a);
+    }
+
+    public static void goUrl(Activity activity, CustomTabActivityHelper customTabActivityHelper, String url) {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(customTabActivityHelper.getSession());
+        builder.setToolbarColor(activity.getResources().getColor(R.color.colorPrimary));
+        builder.enableUrlBarHiding();
+        builder.setShowTitle(false);
+        CustomTabsIntent customTabsIntent = builder.build();
+        CustomTabActivityHelper.openCustomTab(activity, customTabsIntent, Uri.parse(url), null);
     }
 
 

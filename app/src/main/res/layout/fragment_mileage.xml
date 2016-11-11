@@ -219,11 +219,13 @@
                 android:src="@drawable/ico_mileage" />
 
             <TextView
+                android:id="@+id/saveTextView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
-                android:background="@android:color/white"
+                android:background="@drawable/ripple_button_white"
+                android:clickable="true"
                 android:drawableRight="@drawable/ico_plus"
                 android:gravity="center_vertical|left"
                 android:paddingLeft="20dp"
@@ -257,11 +259,13 @@
                 android:src="@drawable/ico_use" />
 
             <TextView
+                android:id="@+id/useTextView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
-                android:background="@android:color/white"
+                android:background="@drawable/ripple_button_white"
+                android:clickable="true"
                 android:drawableRight="@drawable/ico_plus"
                 android:gravity="center_vertical|left"
                 android:paddingLeft="20dp"
@@ -295,11 +299,13 @@
                 android:src="@drawable/ico_info" />
 
             <TextView
+                android:id="@+id/guideTextView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
-                android:background="@android:color/white"
+                android:background="@drawable/ripple_button_white"
+                android:clickable="true"
                 android:drawableRight="@drawable/ico_plus"
                 android:gravity="center_vertical|left"
                 android:paddingLeft="20dp"

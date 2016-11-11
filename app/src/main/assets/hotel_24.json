@@ -1,0 +1,80 @@
+﻿{
+  "id": 24,
+  "name": "강남 초콜릿 호텔",
+  "grade": 1,
+  "discount": 50,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 2,
+  "review_count": 4,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "825-29, Yeoksam-dong",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "강남구 지역의 관광명소와 근접한 강남 초콜릿 호텔에서 편안하고 즐거운 여행을 제공합니다. 다양한 시설과 서비스를 제공하는 호텔에서 편하게 주무실 수 있습니다. Wi-Fi (무료/전 객실), 택시 서비스, 24시간 프런트 데스크, Wi-Fi (공공 장소), 발렛 파킹와 같은 시설을 항상 손쉽게 사용할 수 있습니다. 객실은 아늑하게 디자인되어 있으며, 일부 객실은 평면 TV, 무선 인터넷, 무선 인터넷(무료), 월풀욕조, 에어컨 등의 편의시설을 제공합니다. 호텔의 평화로운 분위기는 온수 욕조 등을 포함한 자사의 레크리에이션 시설로 확장됩니다. 서울 여행은 꼭 강남 초콜릿 호텔에서 시작하세요.",
+  "latitude": 37.497193000000003,
+  "longitude": 127.029285,
+  "dining": "",
+  "rooms_desc": "객실에는 냉장고 및 커피 메이커 같은 편의 시설은 물론 무료 WiFi 및 케이블 채널 시청이 가능한 평면 TV가 제공됩니다. 기타 편의 시설로는 무료 생수 서비스, 헤어드라이어 및 무료 세면용품도 마련되어 있습니다.",
+  "property": "이 금연 호텔에는 무료 셀프 주차 및 공용 장소에서의 무료 WiFi 등이 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "애완동물을 동반하실 수 없습니다. (단, 장애인 안내 동물은 동반 가능합니다.)",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/24/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/24/1.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/24/2.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/24/3.jpg",
+      "desc": "욕실"
+    }
+],
+  "rooms": [
+    {
+      "name": "스탠다드더블룸",
+      "price": "66364",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 26제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/24/1.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "스탠다드더블룸",
+      "price": "66364",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 26제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/24/1.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

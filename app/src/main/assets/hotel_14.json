@@ -1,0 +1,80 @@
+﻿{
+  "id": 14,
+  "name": "밀라텔 쉐르빌 서비스 아파트먼트",
+  "grade": 4,
+  "discount": 50,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 202,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "1316-31, Seocho 4-dong, Seocho-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "서울에 업무차 또는 휴가를 누리기 위해 방문하였다면 3.5성 밀라텔 쉐르빌 서비스 아파트먼트에서 편리함을 즐기세요. 호텔에는 편안한 숙박에 필요한 모든 것을 갖추고 있습니다. 오로지 서비스만 생각하는 직원들이 밀라텔 쉐르빌 서비스 아파트먼트에서 여러분을 환영하며 안내할 것입니다. 각 객실은 우아하게 꾸며져 있으며 편리한 시설을 갖추고 있습니다. 호텔은 다양한 레크리에이션 기회를 제공합니다. 밀라텔 쉐르빌 서비스 아파트먼트에서 단순히 쉬면서 피로를 풀어주거나 활력이 넘치는 서울 탐험을 시작할 수 있습니다.",
+  "latitude": 37.498610999999997,
+  "longitude": 127.025002,
+  "dining": "",
+  "rooms_desc": "총 125개의 객실에는 냉장고 및 전자레인지가 갖추어진 간이 주방 외에 무료 WiFi, 무료 유선 인터넷과 케이블 채널 시청이 가능한 LCD TV가 마련되어 있습니다. 또한, 좌석 공간, 무료 생수 서비스, 헤어드라이어 등을 이용하실 수 있습니다. 정해진 횟수의 하우스키핑 서비스가 제공됩니다.",
+  "property": "셀프 주차(요금 별도), 비즈니스 센터, 회의실 등을 이 호텔에서 이용하실 수 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 또한, 드라이클리닝 서비스, 세탁 시설 및 간편 체크인도 이용하실 수 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "고객께서는 적어도 예상 도착 시간 24시간 전에 이 숙박 시설에 미리 연락하여 체크인 안내를 받으셔야 합니다. 연락처 정보는 예약 후 받으신 예약 확인에 나와 있습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/14/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/14/2.jpg",
+      "desc": "건물"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/14/1.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/14/3.jpg",
+      "desc": "욕실"
+    }
+],
+  "rooms": [
+    {
+      "name": "디럭스더블룸",
+      "price": "92727",
+      "etc": [
+        "환불 불가",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대3인/조식불포함, 24제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/14/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "디럭스더블룸",
+      "price": "92727",
+      "etc": [
+        "환불 불가",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대3인/조식불포함, 24제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/14/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

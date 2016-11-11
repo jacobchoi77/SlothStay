@@ -1,272 +1,228 @@
-[
-  {
+﻿[
+{
     "id": 1,
-    "name": "호텔 스카이파크 킹스타운 동대문",
-    "rate": 4.9,
-    "price": "69,900원",
-    "latitude": 37.568699,
-    "longitude": 127.007667,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
-  },
-  {
+    "name": "노보텔 앰배서더 서울 강남",
+    "rate":5,
+    "price": "180,047원",
+    "latitude":37.505406999999998,
+    "longitude":127.028893,
+    "image_url": "http://slothstay.com/resources/image/1/main.jpg"
+},
+{
     "id": 2,
-    "name": "호텔투게더",
-    "rate": 3.2,
-    "price": "69,900원",
-    "latitude": 37.528626,
-    "longitude": 126.920098,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-  },
-  {
+    "name": "리츠칼튼 서울",
+    "rate":5,
+    "price": "298,946원",
+    "latitude":37.504953,
+    "longitude":127.02782500000001,
+    "image_url": "http://slothstay.com/resources/image/2/main.jpg"
+},
+{
     "id": 3,
-    "name": "임피리얼 팰리스 서울",
-    "rate": 4.5,
-    "price": "139,900원",
-    "latitude": 37.514300,
-    "longitude": 127.035902,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-  },
-  {
+    "name": "JW 메리어트 호텔 서울",
+    "rate":5,
+    "price": "370,285원",
+    "latitude":37.503763999999997,
+    "longitude":127.004636,
+    "image_url": "http://slothstay.com/resources/image/3/main.jpg"
+},
+{
     "id": 4,
-    "name": "강남 648호텔",
-    "rate": 3.4,
-    "price": "69,900원",
-    "latitude": 37.499938,
-    "longitude": 127.031853,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-  },
-  {
+    "name": "인터컨티넨탈 서울 코엑스",
+    "rate":5,
+    "price": "329,520원",
+    "latitude":37.513249999999999,
+    "longitude":127.05714399999999,
+    "image_url": "http://slothstay.com/resources/image/4/main.jpg"
+},
+{
     "id": 5,
-    "name": "신라스테이 광화문",
-    "rate": 4.6,
-    "price": "129,900원",
-    "latitude": 37.504836,
-    "longitude": 127.041494,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-  },
-  {
+    "name": "그랜드 인터컨티넨탈 서울 파르나스",
+    "rate":5,
+    "price": "353,299원",
+    "latitude":37.508904000000001,
+    "longitude":127.06113999999999,
+    "image_url": "http://slothstay.com/resources/image/5/main.jpg"
+},
+{
     "id": 6,
-    "name": "쉐라톤 그랜드 워커힐",
-    "rate": 3.2,
-    "price": "69,900원",
-    "latitude": 37.555236,
-    "longitude": 127.110774,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-  },
-  {
+    "name": "파크 하얏트 서울 호텔",
+    "rate":5,
+    "price": "452,948원",
+    "latitude":37.508538999999999,
+    "longitude":127.064134,
+    "image_url": "http://slothstay.com/resources/image/6/main.jpg"
+},
+{
     "id": 7,
-    "name": "베니키아 프리미어 호텔 동대문",
-    "rate": 4.5,
-    "price": "139,900원",
-    "latitude": 37.573671,
-    "longitude": 127.020379,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-  },
-  {
+    "name": "프로비스타 호텔 강남",
+    "rate":4,
+    "price": "114,369원",
+    "latitude":37.494881999999997,
+    "longitude":127.018596,
+    "image_url": "http://slothstay.com/resources/image/7/main.jpg"
+},
+{
     "id": 8,
-    "name": "그린그래스호텔",
-    "rate": 3.4,
-    "price": "69,900원",
-    "latitude": 37.505813,
-    "longitude": 127.050083,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-  },
-  {
+    "name": "베스트웨스턴 프리미어 국도 호텔",
+    "rate":4,
+    "price": "108,708원",
+    "latitude":37.565908999999998,
+    "longitude":126.996331,
+    "image_url": "http://slothstay.com/resources/image/8/main.jpg"
+},
+{
     "id": 9,
-    "name": "호텔 카푸치노",
-    "rate": 4.6,
-    "price": "129,900원",
-    "latitude": 37.506728,
-    "longitude": 127.031557,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-  },
-  {
+    "name": "머큐어 서울 앰배서더 강남 쏘도베",
+    "rate":4,
+    "price": "165,326원",
+    "latitude":37.501384999999999,
+    "longitude":127.03546900000001,
+    "image_url": "http://slothstay.com/resources/image/9/main.jpg"
+},
+{
     "id": 10,
-    "name": "InterContinental Grand Seoul Parnas",
-    "rate": 4.9,
-    "price": "69,900원",
-    "latitude": 37.508884,
-    "longitude": 127.060790,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
-  },
-  {
-    "id": 1,
-    "name": "호텔 스카이파크 킹스타운 동대문",
-    "rate": 4.9,
-    "price": "69,900원",
-    "latitude": 37.568698,
-    "longitude": 127.007669,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
-  },
-  {
-    "id": 2,
-    "name": "호텔투게더",
-    "rate": 3.2,
-    "price": "69,900원",
-    "latitude": 37.528625,
-    "longitude": 126.920097,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-  },
-  {
-    "id": 3,
-    "name": "임피리얼 팰리스 서울",
-    "rate": 4.5,
-    "price": "139,900원",
-    "latitude": 37.514301,
-    "longitude": 127.035903,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-  },
-  {
-    "id": 4,
-    "name": "강남 648호텔",
-    "rate": 3.4,
-    "price": "69,900원",
-    "latitude": 37.499934,
-    "longitude": 127.031851,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-  },
-  {
-    "id": 5,
-    "name": "신라스테이 광화문",
-    "rate": 4.6,
-    "price": "129,900원",
-    "latitude": 37.504831,
-    "longitude": 127.041491,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-  },
-  {
-    "id": 6,
-    "name": "쉐라톤 그랜드 워커힐",
-    "rate": 3.2,
-    "price": "69,900원",
-    "latitude": 37.555231,
-    "longitude": 127.110771,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-  },
-  {
-    "id": 7,
-    "name": "베니키아 프리미어 호텔 동대문",
-    "rate": 4.5,
-    "price": "139,900원",
-    "latitude": 37.573673,
-    "longitude": 127.020371,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-  },
-  {
-    "id": 8,
-    "name": "그린그래스호텔",
-    "rate": 3.4,
-    "price": "69,900원",
-    "latitude": 37.505811,
-    "longitude": 127.050082,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-  },
-  {
-    "id": 9,
-    "name": "호텔 카푸치노",
-    "rate": 4.6,
-    "price": "129,900원",
-    "latitude": 37.506721,
-    "longitude": 127.031552,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-  },
-  {
-    "id": 10,
-    "name": "InterContinental Grand Seoul Parnas",
-    "rate": 4.9,
-    "price": "69,900원",
-    "latitude": 37.508881,
-    "longitude": 127.060792,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
-  },
-  {
-    "id": 1,
-    "name": "호텔 스카이파크 킹스타운 동대문",
-    "rate": 4.9,
-    "price": "69,900원",
-    "latitude": 37.568691,
-    "longitude": 127.007662,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
-  },
-  {
-    "id": 2,
-    "name": "호텔투게더",
-    "rate": 3.2,
-    "price": "69,900원",
-    "latitude": 37.528627,
-    "longitude": 126.920099,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-  },
-  {
-    "id": 3,
-    "name": "임피리얼 팰리스 서울",
-    "rate": 4.5,
-    "price": "139,900원",
-    "latitude": 37.514305,
-    "longitude": 127.035907,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-  },
-  {
-    "id": 4,
-    "name": "강남 648호텔",
-    "rate": 3.4,
-    "price": "69,900원",
-    "latitude": 37.499939,
-    "longitude": 127.031851,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-  },
-  {
-    "id": 5,
-    "name": "신라스테이 광화문",
-    "rate": 4.6,
-    "price": "129,900원",
-    "latitude": 37.504839,
-    "longitude": 127.041499,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-  },
-  {
-    "id": 6,
-    "name": "쉐라톤 그랜드 워커힐",
-    "rate": 3.2,
-    "price": "69,900원",
-    "latitude": 37.555239,
-    "longitude": 127.110779,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_together/01.jpg"
-  },
-  {
-    "id": 7,
-    "name": "베니키아 프리미어 호텔 동대문",
-    "rate": 4.5,
-    "price": "139,900원",
-    "latitude": 37.573677,
-    "longitude": 127.020377,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dir_imperialpalace/00.jpg"
-  },
-  {
-    "id": 8,
-    "name": "그린그래스호텔",
-    "rate": 3.4,
-    "price": "69,900원",
-    "latitude": 37.505814,
-    "longitude": 127.050084,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/648hotel/00_2.jpg"
-  },
-  {
-    "id": 9,
-    "name": "호텔 카푸치노",
-    "rate": 4.6,
-    "price": "129,900원",
-    "latitude": 37.506727,
-    "longitude": 127.031551,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/stayghm/00-1.jpg"
-  },
-  {
-    "id": 10,
-    "name": "InterContinental Grand Seoul Parnas",
-    "rate": 4.9,
-    "price": "69,900원",
-    "latitude": 37.508889,
-    "longitude": 127.060799,
-    "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16362/01.jpg"
-  }
+    "name": "호텔 아르누보 강남",
+    "rate":4,
+    "price": "172,120원",
+    "latitude":37.503895,
+    "longitude":127.042946,
+    "image_url": "http://slothstay.com/resources/image/10/main.jpg"
+},
+{
+    "id": 11,
+    "name": "신라스테이 역삼",
+    "rate":4,
+    "price": "166,458원",
+    "latitude":37.504750000000001,
+    "longitude":127.04119,
+    "image_url": "http://slothstay.com/resources/image/11/main.jpg"
+},
+{
+    "id": 12,
+    "name": "오클라우드 호텔 강남",
+    "rate":4,
+    "price": "134,752원",
+    "latitude":37.503711000000003,
+    "longitude":127.023544,
+    "image_url": "http://slothstay.com/resources/image/12/main.jpg"
+},
+{
+    "id": 13,
+    "name": "스테이 호텔 강남",
+    "rate":4,
+    "price": "103,046원",
+    "latitude":37.499400999999999,
+    "longitude":127.035447,
+    "image_url": "http://slothstay.com/resources/image/13/main.jpg"
+},
+{
+    "id": 14,
+    "name": "밀라텔 쉐르빌 서비스 아파트먼트",
+    "rate":3.5,
+    "price": "100,781원",
+    "latitude":37.498610999999997,
+    "longitude":127.025002,
+    "image_url": "http://slothstay.com/resources/image/14/main.jpg"
+},
+{
+    "id": 15,
+    "name": "코아텔 쉐르빌 레지던스",
+    "rate":3.5,
+    "price": "112,105원",
+    "latitude":37.493932999999998,
+    "longitude":127.027772,
+    "image_url": "http://slothstay.com/resources/image/15/main.jpg"
+},
+{
+    "id": 16,
+    "name": "강남 패밀리호텔",
+    "rate":3.5,
+    "price": "89,457원",
+    "latitude":37.506475000000002,
+    "longitude":127.03011100000001,
+    "image_url": "http://slothstay.com/resources/image/16/main.jpg"
+},
+{
+    "id": 17,
+    "name": "서초 아르누보시티",
+    "rate":3.5,
+    "price": "89,457원",
+    "latitude":37.496082000000001,
+    "longitude":127.02048499999999,
+    "image_url": "http://slothstay.com/resources/image/17/main.jpg"
+},
+{
+    "id": 18,
+    "name": "인더시티 서비스 레지던스 강남",
+    "rate":3.5,
+    "price": "93,987원",
+    "latitude":37.510505999999999,
+    "longitude":127.02351400000001,
+    "image_url": "http://slothstay.com/resources/image/18/main.jpg"
+},
+{
+    "id": 19,
+    "name": "보리 호텔 강남",
+    "rate":3.5,
+    "price": "124,561원",
+    "latitude":37.494790000000002,
+    "longitude":127.036647,
+    "image_url": "http://slothstay.com/resources/image/19/main.jpg"
+},
+{
+    "id": 20,
+    "name": "호텔 페이토 강남",
+    "rate":3.5,
+    "price": "108,708원",
+    "latitude":37.486485999999999,
+    "longitude":127.03262700000001,
+    "image_url": "http://slothstay.com/resources/image/20/main.jpg"
+},
+{
+    "id": 21,
+    "name": "호텔 더 디자이너스 리즈 강남 프리미어",
+    "rate":3.5,
+    "price": "122,296원",
+    "latitude":37.505294999999997,
+    "longitude":127.02588,
+    "image_url": "http://slothstay.com/resources/image/21/main.jpg"
+},
+{
+    "id": 22,
+    "name": "호텔 스타 강남",
+    "rate":2.5,
+    "price": "69,075원",
+    "latitude":37.499530999999998,
+    "longitude":127.035461,
+    "image_url": "http://slothstay.com/resources/image/22/main.jpg"
+},
+{
+    "id": 23,
+    "name": "잇 플레이스 코리아 레지던스",
+    "rate":2.5,
+    "price": "154,002원",
+    "latitude":37.505585000000004,
+    "longitude":127.022397,
+    "image_url": "http://slothstay.com/resources/image/23/main.jpg"
+},
+{
+    "id": 24,
+    "name": "강남 초콜릿 호텔",
+    "rate":2,
+    "price": "69,075원",
+    "latitude":37.497193000000003,
+    "longitude":127.029285,
+    "image_url": "http://slothstay.com/resources/image/24/main.jpg"
+},
+{
+    "id": 25,
+    "name": "호텔 648",
+    "rate":2,
+    "price": "93,987원",
+    "latitude":37.499912999999999,
+    "longitude":127.031875,
+    "image_url": "http://slothstay.com/resources/image/25/main.jpg"
+}
+
 ]

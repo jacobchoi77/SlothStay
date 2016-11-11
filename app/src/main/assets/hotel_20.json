@@ -1,0 +1,80 @@
+﻿{
+  "id": 20,
+  "name": "호텔 페이토 강남",
+  "grade": 3,
+  "discount": 40,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 250,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "259, Gangnam-daero, Seocho-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "업무차 또는 휴식하러 서울에 찾아오는 모든 여행자에게 적합한 호텔 페이토 강남 입니다. 호텔에는 편안한 숙박에 필요한 모든 것을 갖추고 있습니다. Wi-Fi (무료/전 객실), 24시간 경비 서비스, 일일 청소 서비스, 휠체어 접근가능, 24시간 프런트 데스크와 같은 시설을 항상 손쉽게 사용할 수 있습니다. 아늑한 객실에서 편안한 잠자리를 보장해 드리며, 일부 객실은 무료 차, 타월, 마룻바닥, 슬리퍼, 평면 TV 등의 편의시설을 제공합니다. 호텔은 다양한 레크리에이션 기회를 제공합니다. 서울에 방문하는 이유와 상관없이 호텔 페이토 강남에서 집같은 평안함을 느낄 수 있습니다.",
+  "latitude": 37.486485999999999,
+  "longitude": 127.03262700000001,
+  "dining": "매일 07:00부터 10:00까지 뷔페 아침 식사가 제공되며 별도 요금이 적용됩니다.",
+  "rooms_desc": "총 189개의 각각 다르게 꾸며진 객실에는 무료 WiFi, 무료 유선 인터넷, 미니바 등이 제공됩니다. 냉장고 및 커피 메이커 같은 편의 시설이 마련되어 있으며, 목욕가운 및 슬리퍼도 세심하게 준비되어 있습니다.",
+  "property": "이 금연 호텔에는 레스토랑, 헬스클럽, 커피숍/카페 등이 마련되어 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖의 편의 시설/서비스로는 옥상 테라스, 주차 대행(요금 별도), 비즈니스 센터 등이 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "애완동물 또는 장애인 안내 동물을 동반하실 수 없습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/20/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/20/1.jpg",
+      "desc": "피트니스 시설"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/20/2.jpg",
+      "desc": "욕실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/20/3.jpg",
+      "desc": "객실"
+    }
+],
+  "rooms": [
+    {
+      "name": "디럭스 트윈룸",
+      "price": "90000",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 22제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/20/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "디럭스 트윈룸",
+      "price": "90000",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 22제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/20/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

@@ -1,0 +1,80 @@
+﻿{
+  "id": 15,
+  "name": "코아텔 쉐르빌 레지던스",
+  "grade": 3,
+  "discount": 40,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 312,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "1330, Seocho-dong, Seocho-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "강남구 지역에 위치한 코아텔 쉐르빌 레지던스에서 서울의 탐험을 시작하세요. 다양한 시설과 서비스를 제공하는 호텔에서 편하게 주무실 수 있습니다. 호텔의 Wi-Fi (무료/전 객실), 24시간 경비 서비스, 편의점, 일일 청소 서비스, 세탁실 등을 활용할 수 있습니다. 각 객실은 내집처럼 편안하고 아늑하게 꾸며져 있으며, 일부 객실에서는 편의시설로 옷장, 드레스룸, 타월, 마룻바닥, 옷걸이 등이 제공됩니다. 긴 하루를 보내고 객실의 피트니스센터, 사우나, 마사지 등을 통해 휴식을 취할 수 있습니다. 서울 여행은 꼭 코아텔 쉐르빌 레지던스에서 시작하세요.",
+  "latitude": 37.493932999999998,
+  "longitude": 127.027772,
+  "dining": "매일 07:00부터 09:30까지 주문 요리 아침 식사가 제공되며 별도 요금이 적용됩니다.",
+  "rooms_desc": "각각 다르게 가구가 비치된 객실 모두 무료 WiFi, 무료 유선 인터넷, 무료 생수 서비스 등을 갖추고 있습니다. 냉장고 및 전자레인지를 갖춘 주방이 기본적으로 마련되어 있으며, 케이블 채널 시청이 가능한 평면 TV와 세탁기/건조기도 이용하실 수 있습니다.",
+  "property": "이 호텔에는 4 개의 레스토랑, 헬스클럽, 바/라운지 등이 마련되어 있습니다. 공용 장소에서의 무료 WiFi 및 무료 주차 대행도 제공됩니다. 이 밖에 커피숍/카페, 사우나, 24시간 운영되는 비즈니스 센터 등도 시설 내에 마련되어 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "숙박 시설 정책에 따라 추가 인원에 대한 요금이 부과될 수 있습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/15/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/15/1.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/15/2.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/15/3.jpg",
+      "desc": "객실"
+    }
+],
+  "rooms": [
+    {
+      "name": "디럭스 트윈룸",
+      "price": "109136",
+      "etc": [
+        "예약무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대3인/조식불포함, 59제곱미터(싱글침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/15/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "디럭스 트윈룸",
+      "price": "109136",
+      "etc": [
+        "예약무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대3인/조식불포함, 59제곱미터(싱글침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/15/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

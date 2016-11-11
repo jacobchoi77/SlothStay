@@ -2,7 +2,6 @@
     <string name="app_name">Supastay</string>
     <string name="action_account">Account</string>
     <string name="action_search">Search</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="home">HOME</string>
     <string name="my_reservation">MyReservation</string>
@@ -26,7 +25,7 @@
     <string name="refresh">Refresh</string>
 
     <!-- Network-->
-    <string name="what_home">home</string>
+    <string name="what_home">hotel_list</string>
     <string name="what_hotel">hotel</string>
     <string name="what_hotel_list">hotel_list</string>
     <string name="what_user">hong123</string>
@@ -113,5 +112,17 @@
     <string name="end">Quit?</string>
 
     <string name="search">Search</string>
+
+    <string name="url_total">http://www.hotelscombined.co.kr/</string>
+    <string name="url_agoda">http://www.agoda.com/ko-kr/</string>
+    <string name="url_bookings">http://www.booking.com</string>
+    <string name="url_hotels">http://kr.hotels.com</string>
+    <string name="url_air">http://www.skyscanner.net/flight</string>
+    <string name="url_car">http://www.skyscanner.net/car-hire</string>
+    <string name="url_pension">http://m.wooripension.com/</string>
+    <string name="url_package">http://m.modetour.com/</string>
+    <string name="url_guide">http://www.myrealtrip.com/</string>
+
+    <string name="service_preparing">Service is not available now~</string>
 
 </resources>

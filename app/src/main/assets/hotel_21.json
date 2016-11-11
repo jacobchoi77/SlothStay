@@ -1,0 +1,80 @@
+﻿{
+  "id": 21,
+  "name": "호텔 더 디자이너스 리즈 강남 프리미어",
+  "grade": 3,
+  "discount": 40,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 17,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "113 Bongeunsa-ro, Gangnam-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "강남구 지역에 위치한 호텔 더 디자이너스 리즈 강남 프리미어에서 서울의 탐험을 시작하세요. 다양한 시설과 서비스를 제공하는 호텔에서 편하게 주무실 수 있습니다. Wi-Fi (무료/전 객실), 24시간 경비 서비스, 일일 청소 서비스, 팩스, 복사기와 같은 시설을 항상 손쉽게 사용할 수 있습니다. 아늑한 객실에서 편안한 잠자리를 보장해 드리며, 일부 객실은 타월, 평면 TV, 거울, 리넨, 무선 인터넷(무료) 등의 편의시설을 제공합니다. 관광에서 벗어나 손님의 객실에서 사우나, 마사지 등을 즐기며 피로를 풀 수 있습니다. 호텔 더 디자이너스 리즈 강남 프리미어에서 숙박하면서 서울의 사랑스러운 분위기와 따뜻한 환대를 느낄 수 있습니다.",
+  "latitude": 37.505294999999997,
+  "longitude": 127.02588,
+  "dining": "고객님들에게는 매일 다양한 조식이 제공됩니다.",
+  "rooms_desc": "각 객실에는 에어컨이 완비되어 있고 평면 TV, 냉장고 및 헤어드라이어도 제공하고 있습니다. 전 객실에 목욕 가운, 슬리퍼 등이 구비된 개인 욕실이 있습니다.",
+  "property": "이 호텔에서는 리셉션을 24시간 운영하고 있고 회의실, 금고, 환전도 마련되어 있습니다. 무료 구내 전용 주차장도 이용하실 수 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/21/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/21/1.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/21/2.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/21/3.jpg",
+      "desc": "객실"
+    }
+],
+  "rooms": [
+    {
+      "name": "수페리어 디럭스 룸",
+      "price": "97019",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 22제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/21/2.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "수페리어 디럭스 룸",
+      "price": "97019",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 22제곱미터(더블침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/21/2.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

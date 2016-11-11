@@ -1,0 +1,80 @@
+﻿{
+  "id": 11,
+  "name": "신라스테이 역삼",
+  "grade": 4,
+  "discount": 40,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 4,
+  "review_count": 460,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "517 Eonju-ro, Gangnam-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "서울에 방문하거나 잠시 체류하는 여행객들이 선호하는 신라스테이 역삼 입니다. 호텔에는 편안한 숙박에 필요한 모든 것을 갖추고 있습니다. 오로지 서비스만 생각하는 직원들이 신라스테이 역삼에서 여러분을 환영하며 안내할 것입니다. 아늑한 객실에서 편안한 잠자리를 보장해 드리며, 일부 객실은 슬리퍼, 평면 TV, 무선 인터넷(무료), 금연 객실, 에어컨 등의 편의시설을 제공합니다. 손님의 숙박을 향상시키기 위해, 호텔에서 피트니스센터 같은 레크리에이션 시설을 제공합니다. 신라스테이 역삼에서 머무는 동안 친근한 분위기와 훌륭한 서비스를 기대할 수 있습니다.",
+  "latitude": 37.504750000000001,
+  "longitude": 127.04119,
+  "dining": "뷔페 아침 식사가 제공되며 별도 요금이 적용됩니다.",
+  "rooms_desc": "총 306개의 객실에는 목욕가운 및 슬리퍼 같은 편의 시설이 세심하게 마련되어 있을 뿐 아니라 편안한 잠자리를 위해 고급 침구 및 오리/거위털 이불도 있습니다. 또한, 무료 WiFi, TV 및 냉장고도 이용하실 수 있습니다.",
+  "property": "이 금연 호텔에는 레스토랑, 피트니스 시설, 바/라운지 등이 마련되어 있습니다. 공용 장소에서의 무료 WiFi 및 무료 셀프 주차도 제공됩니다. 또한, 비즈니스 센터, 회의실 및 드라이클리닝 서비스도 이용하실 수 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "숙박 시설 정책에 따라 추가 인원에 대한 요금이 부과될 수 있습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/11/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/11/1.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/11/2.jpg",
+      "desc": "욕실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/11/3.jpg",
+      "desc": "레스토랑"
+    }
+],
+  "rooms": [
+    {
+      "name": "디럭스 더블룸",
+      "price": "135000",
+      "etc": [
+        "예약무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 23제곱미터(퀸사이즈침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/11/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "디럭스 더블룸",
+      "price": "135000",
+      "etc": [
+        "예약무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 23제곱미터(퀸사이즈침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/11/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

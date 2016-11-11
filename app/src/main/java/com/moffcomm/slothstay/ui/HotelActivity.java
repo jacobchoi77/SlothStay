@@ -78,6 +78,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
         roomInfoRelativeLayout = findViewById(R.id.roomInfoRelativeLayout);
         picDescTextView = (TextView) findViewById(R.id.picDescTextView);
         mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+
         mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
@@ -90,6 +91,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
                     roomSelectButton.setVisibility(View.GONE);
                     picDescTextView.setVisibility(View.GONE);
                 } else if (newState == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                    picDescTextView.setText(hotel.getPictures().get(0).getDescription());
                     picDescTextView.setVisibility(View.VISIBLE);
                     roomInfoRelativeLayout.setVisibility(View.GONE);
                     roomSelectButton.setVisibility(View.GONE);
@@ -101,6 +103,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
             }
         });
         scrollView = (ScrollView) findViewById(R.id.scrollView);
+
     }
 
     public Hotel getHotel() {
@@ -142,7 +145,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
 
             }
         });
-        ((TextView) findViewById(R.id.priceTextView)).setText(hotel.getRooms().get(0).getPrice());
+        ((TextView) findViewById(R.id.priceTextView)).setText(String.format("%,d", Integer.parseInt(hotel.getRooms().get(0).getPrice())));
         final String checkIn = Utils.getDateString(hotel.getCheckInDate(), getString(R.string.hotel_date_format));
         final String checkOut = Utils.getDateString(hotel.getCheckOutDate(), getString(R.string.hotel_date_format));
         final int guest = hotel.getGuestCount();
@@ -208,7 +211,7 @@ public class HotelActivity extends AppCompatActivity implements OnMapReadyCallba
     private void addRoom(Room room, int index) {
         View view = getLayoutInflater().inflate(R.layout.item_room, linearLayout, false);
         ((TextView) view.findViewById(R.id.nameTextView)).setText(room.getName());
-        ((TextView) view.findViewById(R.id.priceTextView)).setText(room.getPrice());
+        ((TextView) view.findViewById(R.id.priceTextView)).setText(String.format("%,d", Integer.parseInt(room.getPrice())));
         (view.findViewById(R.id.bookButton)).setTag(room);
         Glide.with(this).load(room.getImageUrl()).into((ImageView) view.findViewById(R.id.imageView));
         view.setOnClickListener(this);

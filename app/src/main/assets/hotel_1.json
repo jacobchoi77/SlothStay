@@ -1,155 +1,80 @@
-{
+﻿{
   "id": 1,
-  "name": "호텔 스카이파크 킹스타운 동대문",
-  "grade": 4,
+  "name": "노보텔 앰배서더 서울 강남",
+  "grade": 5,
   "discount": 40,
   "check_in_date": 1466046000000,
   "check_out_date": 1466164800000,
   "guest_count": 1,
-  "rate": 4.4,
-  "review_count": 694,
+  "rate": 5,
+  "review_count": 581,
   "service": [
     "internet",
     "breakfast",
     "dining",
     "gym",
-    "business_center",
-    "hot_tub"
+    "business_center"
   ],
-  "desc": "2016년 6월 오픈예정인 호텔 스카이파크 킹스타운 동대문점입니다. 동대문 역사문화공원역에서 200m, 밀리오레에서 좌측으로 약 130m 거리에 위치하여 접근성이 매우 뛰어납니다. 청결한 객실과 다양한 부대시설은 더욱 특별한 휴가를 선사합니다.",
-  "latitude": 37.568699,
-  "longitude": 127.007667,
-  "address_1": "서울 특별시 중구",
-  "address_2": "장충단로 13길 20",
-  "phone": "02-315-2912",
-  "dining": "For your convenience, breakfast is served for a fee from 7:30 AM to 9 AM. Savor a meal from the privacy of your room with room service, or get a pick-me-up at the coffee shop/café.",
-  "rooms_desc": "All of Benikea Swiss Rosen Hotel's 60 rooms are recently renovated and have an array of amenities, including furnished balconies or patios, refrigerators, and electric kettles. 42-inch LCD TVs come with digital channels and pay movies, and guests can stay connected with free WiFi. Bathrooms offer hair dryers and free toiletries, and beds sport down comforters. Free bottled water and phones are also standard.",
-  "property": "Benikea Swiss Rosen Hotel features free WiFi in public areas, 2 meeting rooms, and a business center. If you plan to drive, free parking is available. A multilingual staff is on hand to assist with dry cleaning/laundry, tours or tickets, and luggage storage. Additional amenities include a seasonal outdoor pool, a computer station, and a terrace.",
-  "highlight": "·Free WiFi in rooms and public areas\n·Free parking\n·Onsite dining\n·Business center",
-  "amenities": "In addition to an indoor pool and a children's pool, Lotte Hotel Ulsan provides a health club and a spa tub. Dining is available at one of the hotel's 2 restaurants and guests can grab coffee at the coffee shop/café. The property also has a snack bar/deli. This 5-star property offers access to a business center and a meeting room. A computer station is located on site and high-speed wired and wireless Internet access is complimentary. Event facilities measuring 161 square feet (15 square meters) include conference space. This luxury hotel also offers a sauna, tour/ticket assistance, and multilingual staff. Limited onsite parking is available on a first-come, first-served basis (surcharge).  Lotte Hotel Ulsan is a smoke-free property.",
-  "policies": "Extra-person charges may apply and vary depending on hotel policy.  Government-issued photo identification and a credit card or cash deposit are required at check-in for incidental charges.  Special requests are subject to availability upon check-in and may incur additional charges. Special requests cannot be guaranteed.",
+  "address_1": "130 Bongensa-ro, Gangnam-gu, Korea",
+  "address_2": "",
+  "phone" : "02-3480-0166",
+  "desc": "노보텔 앰배서더 서울 강남 에서 숙박하며 서울의 아름다움을 즐겨보세요. 호텔은 모든 여행객의 개별 요구에 맞도록 높은 수준의 서비스와 편의시설을 제공하고 있습니다. 24시간 룸서비스, Wi-Fi (무료/전 객실), 24시간 프런트 데스크, 장애인용 편의시설, 익스프레스 체크인/체크아웃 등 즐길 수 있는 여러 시설이 있습니다. 일부 객실에는 거실, 평면 TV, 무선 인터넷, 무선 인터넷(무료), 금연 객실 등이 구비되어 있습니다. 호텔의 평화로운 분위기는 온수 욕조, 피트니스센터, 사우나, 골프장(현지), 실내 수영장 등을 포함한 자사의 레크리에이션 시설로 확장됩니다. 안정적인 서비스와 전문적인 직원을 원하신다면 노보텔 앰배서더 서울 강남 에서 숙박하시기 바랍니다.",
+  "latitude": 37.505406999999998,
+  "longitude": 127.028893,
+  "dining": "매일 뷔페 아침 식사가 제공되며 별도 요금이 적용됩니다.",
+  "rooms_desc": "총 332개의 방음 설비를 갖춘 객실에는 무료 WiFi, 무료 유선 인터넷, 24시간 룸서비스 등이 제공됩니다. 위성 채널 시청이 가능한 LED TV가 있고 DVD 플레이어도 즐길 수 있어 심심할 틈이 없으며 다양한 종류의 베개 및 목욕가운 등의 세심한 편의 시설/서비스도 마련되어 있습니다. 하우스키핑 서비스는 숙박당 1회 제공됩니다.",
+  "property": "5 개의 레스토랑 외에 이 호텔에는 실내 수영장 및 피트니스 시설도 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖에 바/라운지, 커피숍/카페, 스파 욕조 등도 시설 내에 마련되어 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "숙박 시설 정책에 따라 추가 인원에 대한 요금이 부과될 수 있습니다.",
   "pictures": [
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/19.jpg",
-      "desc": ""
+      "image_url": "http://slothstay.com/resources/image/1/main.jpg",
+      "desc": "대표사진"
     },
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg",
-      "desc": "스탠다드 더블"
+      "image_url": "http://slothstay.com/resources/image/1/1.jpg",
+      "desc": "로비"
     },
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg",
-      "desc": "스탠다드 더블"
+      "image_url": "http://slothstay.com/resources/image/1/2.jpg",
+      "desc": "객실"
     },
     {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg",
-      "desc": "스탠다드 싱글+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg",
-      "desc": "스탠다드 싱글+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/24.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/25.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/27.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/28.jpg",
-      "desc": "디럭스 더블+싱글"
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/29.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/30.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/31.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/32.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/33.jpg",
-      "desc": ""
-    },
-    {
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/34.jpg",
-      "desc": ""
+      "image_url": "http://slothstay.com/resources/image/1/3.jpg",
+      "desc": "실내수영장"
     }
-  ],
+],
   "rooms": [
     {
-      "name": "Blooming 스카이파크 1",
-      "price": "16만원",
+      "name": "스탠다드룸, 싱글침대 2개",
+      "price": "165000",
       "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
+        "환불 불가",
+        "무료 주차",
+        "무료 인터넷"
       ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/20.jpg",
+      "detail": "2인기준/최대4인/조식불포함, 28제곱미터(싱글침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/1/4.jpg",
       "check_in_early": 4,
       "check_in_late": 4,
       "check_out_early": 4,
       "check_out_late": 4
     },
-    {
-      "name": "Blooming 스카이파크 2",
-      "price": "12만원",
+{
+      "name": "스탠다드룸, 싱글침대 2개",
+      "price": "165000",
       "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
+        "환불 불가",
+        "무료 주차",
+        "무료 인터넷"
       ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/21.jpg",
-      "check_in_early": 4,
-      "check_in_late": 4,
-      "check_out_early": 4,
-      "check_out_late": 4
-    },
-    {
-      "name": "마운틴뷰",
-      "price": "19만원",
-      "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
-      ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/22.jpg",
-      "check_in_early": 4,
-      "check_in_late": 4,
-      "check_out_early": 4,
-      "check_out_late": 4
-    },
-    {
-      "name": "Deluxe 싱글 + 싱글 (마운틴뷰)",
-      "price": "24만원",
-      "etc": [
-        "1 double bed",
-        "Includes free wireless internet",
-        "Non-refundable"
-      ],
-      "detail": "28.0m(8평)/ 2인기준/ 최대2인/조식2인포함",
-      "image_url": "http://s3.dailyhotel.kr/resources/images/dh_16665/23.jpg",
+      "detail": "2인기준/최대4인/조식불포함, 28제곱미터(싱글침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/1/4.jpg",
       "check_in_early": 4,
       "check_in_late": 4,
       "check_out_early": 4,
       "check_out_late": 4
     }
-  ]
+]
 }

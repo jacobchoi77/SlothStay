@@ -1,0 +1,80 @@
+﻿{
+  "id": 17,
+  "name": "서초 아르누보시티",
+  "grade": 3,
+  "discount": 30,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 55,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "1680-1, Seocho-dong, Seocho-gu",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "서울의 최고 위치에 있는 호텔 아르누보 서초에서 도시의 모든 것을 맛볼 수 있습니다. 다양한 시설과 서비스를 제공하는 호텔에서 편하게 주무실 수 있습니다. Wi-Fi (무료/전 객실), 24시간 경비 서비스, 24시간 프런트 데스크, 익스프레스 체크인/체크아웃, 여행 가방 보관와 같은 시설을 항상 손쉽게 사용할 수 있습니다. 일부 객실에는 타월, 평면 TV, 무선 인터넷, 금연 객실, 에어컨 등이 구비되어 있습니다. 호텔은 다양한 레크리에이션 기회를 제공합니다. 서울에 방문하는 이유와 상관없이 호텔 아르누보 서초에서 집같은 평안함을 느낄 수 있습니다.",
+  "latitude": 37.496082000000001,
+  "longitude": 127.02048499999999,
+  "dining": "",
+  "rooms_desc": "각각 다르게 가구가 비치된 객실 모두 무료 WiFi, 무료 유선 인터넷, 헤어드라이어 등을 갖추고 있습니다. 주방이 있으며, 냉장고, 스토브 및 전자레인지가 갖추어져 있습니다.",
+  "property": "이 금연 호텔에는 옥상 테라스, 24시간 운영되는 비즈니스 센터, 회의실 등이 마련되어 있습니다. 공용 장소에서의 무료 WiFi 및 무료 셀프 주차도 제공됩니다. 또한, 콘시어지 서비스, 드라이클리닝 서비스 및 세탁 시설도 이용하실 수 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "애완동물을 동반하실 수 없습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/17/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/17/1.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/17/2.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/17/3.jpg",
+      "desc": "객실"
+    }
+],
+  "rooms": [
+    {
+      "name": "Crystal Twin",
+      "price": "81818",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 63제곱미터(싱글침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/17/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "Crystal Twin",
+      "price": "81818",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 63제곱미터(싱글침대 2개)",
+      "image_url": "http://slothstay.com/resources/image/17/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

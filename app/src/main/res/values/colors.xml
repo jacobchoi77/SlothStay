@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#24b642</color>
-    <color name="colorPrimaryDark">#006829</color>
+    <color name="colorPrimary">#449945</color>
+    <color name="colorPrimaryDark">#1c5b30</color>
     <color name="colorPrimaryDarkTransparent">#5001304d</color>
-    <color name="colorAccent">#9bd636</color>
+    <color name="colorAccent">#b1d25c</color>
 
     <color name="colorAccent2">#5598f52d</color>
+
+    <color name="colorAccent3">#449945</color>
+
 
     <color name="colorTabIndicator">#9bd636</color>
     <color name="colorButton">#004d7c</color>
@@ -23,11 +26,15 @@
 
     <color name="colorPrimaryDarkMore">#00253c</color>
 
+    <color name="colorPrimaryDarkMore2">#1c5b30</color>
+
     <color name="colorBg">#eeeeee</color>
 
     <color name="darkerGray">#006829</color>
 
     <color name="gray_divider">#cacaca</color>
+
+    <color name="gray_a">#aaaaaa</color>
     <color name="gray_divider_light">#e2e2e2</color>
 
     <color name="colorFacebook">#4c8cf5</color>

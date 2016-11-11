@@ -1,0 +1,80 @@
+﻿{
+  "id": 18,
+  "name": "인더시티 서비스 레지던스 강남",
+  "grade": 3,
+  "discount": 20,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 87,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "122-8 Nonhyeon-dong",
+  "address_2": "",
+  "phone" : "02-555-1234",
+  "desc": "강남구 지역의 관광명소와 근접한 인더시티 서비스 레지던스 강남에서 편안하고 즐거운 여행을 제공합니다. 호텔은 손님에게 편안함과 편리함을 제공하기 위해 광범위한 서비스와 편의시설을 제공합니다. 투숙객들은 Wi-Fi (무료/전 객실), 편의점, 팩스, 프린터, 택시 서비스 등을 즐길 수 있습니다. 각 객실은 우아하게 꾸며져 있으며 편리한 시설을 갖추고 있습니다. 호텔의 피트니스센터, 정원 등을 통해 더욱 만족스러운 시간을 보낼 수 있습니다. 인더시티 서비스 레지던스 강남에서 단순히 쉬면서 피로를 풀어주거나 활력이 넘치는 서울 탐험을 시작할 수 있습니다.",
+  "latitude": 37.510505999999999,
+  "longitude": 127.02351400000001,
+  "dining": "",
+  "rooms_desc": "에어컨이 완비되어 있고 평면 TV, 슬리퍼 등이 갖춰져 있습니다. 객실 내 앉을 공간, 냉장고, 주방도 이용하실 수 있습니다.",
+  "property": "24시간 비지니스 센터, 투어 데스크, 공용 지역 무료 무선 인터넷도 완비되어 있습니다. 이 숙박시설에서는 웰컴 드링크도 이용하실 수 있습니다. 구내 주차장도 이용하실 수 있습니다",
+  "highlight": "",
+  "amenities": "",
+  "policies": "숙박 시설 정책에 따라 추가 인원에 대한 요금이 부과될 수 있습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/18/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/18/1.jpg",
+      "desc": "건물"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/18/2.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/18/3.jpg",
+      "desc": "객실"
+    }
+],
+  "rooms": [
+    {
+      "name": "더블룸",
+      "price": "75256",
+      "etc": [
+        "예약무료 취소",
+        "후지불",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 18제곱미터(퀸사이즈베드 1개)",
+      "image_url": "http://slothstay.com/resources/image/18/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "더블룸",
+      "price": "75256",
+      "etc": [
+        "예약무료 취소",
+        "후지불",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대2인/조식불포함, 18제곱미터(퀸사이즈베드 1개)",
+      "image_url": "http://slothstay.com/resources/image/18/4.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

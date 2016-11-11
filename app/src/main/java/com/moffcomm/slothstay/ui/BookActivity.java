@@ -15,8 +15,6 @@ import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.Book;
 import com.moffcomm.slothstay.model.Reservation;
 
-import java.util.Random;
-
 
 public class BookActivity extends AppCompatActivity {
 
@@ -36,7 +34,7 @@ public class BookActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        book = (Book) (getIntent().getParcelableExtra("book"));
+        book = getIntent().getParcelableExtra("book");
         setupContent();
     }
 
@@ -45,7 +43,7 @@ public class BookActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.address1TextView)).setText(book.getHotel().getAddress1());
         ((TextView) findViewById(R.id.address2TextView)).setText(book.getHotel().getAddress2());
         ((TextView) findViewById(R.id.roomNameTextView)).setText(book.getRoom().getName());
-        ((TextView) findViewById(R.id.priceTextView)).setText(book.getRoom().getPrice());
+        ((TextView) findViewById(R.id.priceTextView)).setText(String.format("%,d", Integer.parseInt(book.getRoom().getPrice())));
         Glide.with(this).load(book.getHotel().getPictures().get(0).getImageUrl()).
                 into((ImageView) findViewById(R.id.imageView));
         int res = 0;

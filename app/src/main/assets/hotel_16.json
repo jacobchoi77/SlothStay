@@ -1,0 +1,80 @@
+﻿{
+  "id": 16,
+  "name": "강남 패밀리호텔",
+  "grade": 3,
+  "discount": 20,
+  "check_in_date": 1466046000000,
+  "check_out_date": 1466164800000,
+  "guest_count": 1,
+  "rate": 3.5,
+  "review_count": 61,
+  "service": [
+    "internet",
+    "breakfast",
+    "dining",
+    "gym",
+    "business_center"
+  ],
+  "address_1": "205-8 Nonhyeon-Dong, Kangnam-Gu",
+  "address_2": "",
+  "phone" : "02-3480-0166",
+  "desc": "서울에 업무차 또는 휴가를 누리기 위해 방문하였다면 3.5성 강남 패밀리호텔에서 편리함을 즐기세요. 완벽한 시설을 갖춘 호텔에서 편안하게 숙박할 수 있습니다. Wi-Fi (무료/전 객실), 24시간 프런트 데스크, 여행 가방 보관, Wi-Fi (공공 장소), 주차장 시설을 포함해 여러 편의시설을 제공하고 있습니다. 일부 객실에는 타월, 평면 TV, 거울, 화재 탐지기, 욕실 내 전화기 같은 편의시설이 구비되어 있습니다. 호텔은 다양한 레크리에이션 기회를 제공합니다. 강남 패밀리호텔에서 머무는 동안 친근한 분위기와 훌륭한 서비스를 기대할 수 있습니다.",
+  "latitude": 37.506475000000002,
+  "longitude": 127.03011100000001,
+  "dining": "매일 07:00부터 10:00까지 뷔페 아침 식사가 제공되며 별도 요금이 적용됩니다.",
+  "rooms_desc": "각각 다르게 가구가 비치된 객실 모두 무료 WiFi, 무료 유선 인터넷, 무료 생수 서비스 등을 갖추고 있습니다. 간이 주방이 있으며, 냉장고, 스토브 및 전자레인지가 갖추어져 있습니다.",
+  "property": "풀서비스 스파 외에 이 호텔에는 24시간 운영되는 비즈니스 센터 및 회의실도 있습니다. 공용 장소에서의 무료 WiFi 및 무료 셀프 주차도 제공됩니다. 또한, 드라이클리닝 서비스, 세탁 시설 및 24시간 운영 프런트 데스크도 이용하실 수 있습니다.",
+  "highlight": "",
+  "amenities": "",
+  "policies": "숙박 시설 정책에 따라 추가 인원에 대한 요금이 부과될 수 있습니다.",
+  "pictures": [
+    {
+      "image_url": "http://slothstay.com/resources/image/16/main.jpg",
+      "desc": "대표사진"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/16/1.jpg",
+      "desc": "로비"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/16/2.jpg",
+      "desc": "객실"
+    },
+    {
+      "image_url": "http://slothstay.com/resources/image/16/3.jpg",
+      "desc": "욕실"
+    }
+],
+  "rooms": [
+    {
+      "name": "디럭스 트윈룸",
+      "price": "66477",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대3인/조식불포함, 31제곱미터(퀸사이즈침대 1개 및 싱글침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/16/2.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    },
+{
+      "name": "디럭스 트윈룸",
+      "price": "66477",
+      "etc": [
+        "예약 무료 취소",
+        "무료 주차",
+        "무료 인터넷"
+      ],
+      "detail": "2인기준/최대3인/조식불포함, 31제곱미터(퀸사이즈침대 1개 및 싱글침대 1개)",
+      "image_url": "http://slothstay.com/resources/image/16/2.jpg",
+      "check_in_early": 4,
+      "check_in_late": 4,
+      "check_out_early": 4,
+      "check_out_late": 4
+    }
+]
+}

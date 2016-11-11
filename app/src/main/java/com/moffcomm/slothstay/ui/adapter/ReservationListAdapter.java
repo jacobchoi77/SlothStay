@@ -105,6 +105,7 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
         ((ViewHolder) holder).changeTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mainActivity.setSelectedReservationIndex(position);
                 Intent intent = new Intent(mainActivity, CheckActivity.class);
                 intent.putExtra("book", reservation.getBook());
                 mainActivity.startActivityForResult(intent, MyReservationFragment.REQUEST_CODE_CHECK);
@@ -116,7 +117,7 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
             public void onClick(View v) {
                 reservationList.remove(reservation);
                 notifyDataSetChanged();
-                if(reservationList.size() == 0){
+                if (reservationList.size() == 0) {
                     mainActivity.showToolBar();
                 }
             }
