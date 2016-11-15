@@ -46,5 +46,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="LockStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/lock_bg</item>
+        <item name="android:layout_height">@dimen/lock_size</item>
+        <item name="android:layout_width">@dimen/lock_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">numberSigned</item>
+        <item name="android:cursorVisible">false</item>
+    </style>
+
 
 </resources>

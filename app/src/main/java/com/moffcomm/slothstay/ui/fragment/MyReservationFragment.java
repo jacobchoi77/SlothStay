@@ -2,28 +2,21 @@ package com.moffcomm.slothstay.ui.fragment;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.SlothStayApplication;
-import com.moffcomm.slothstay.model.Book;
 import com.moffcomm.slothstay.model.Reservation;
 import com.moffcomm.slothstay.ui.MainActivity;
 import com.moffcomm.slothstay.ui.adapter.ReservationListAdapter;
-import com.moffcomm.slothstay.util.Utils;
 
 import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +30,7 @@ public class MyReservationFragment extends Fragment {
     private List<Reservation> reservationList;
     private ReservationListAdapter mAdapter;
     public static final int REQUEST_CODE_CHECK = 11;
+    public static final int REQUEST_CODE_VERIFY = 22;
 
     public MyReservationFragment() {
 

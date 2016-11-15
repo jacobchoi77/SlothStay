@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">수파스테이</string>
+    <string name="app_name">Supastay</string>
     <string name="action_account">계정</string>
     <string name="action_search">검색</string>
 
@@ -110,18 +110,24 @@
 
     <string name="title_activity_book">예약</string>
     <string name="title_activity_check">체크 인/아웃</string>
+    <string name="title_activity_verify">체크 인/아웃 확인하기</string>
     <string name="permission_rationale">전화 권한이 필요합니다.</string>
 
     <string name="service_preparing">서비스 준비 중입니다.</string>
 
     <string name="url_total">http://www.hotelscombined.co.kr/</string>
-    <string name="url_agoda">http://www.agoda.com/ko-kr/</string>
+    <string name="url_agoda">https://www.agoda.com/ko-kr/</string>
     <string name="url_bookings">http://www.booking.com</string>
-    <string name="url_hotels">http://kr.hotels.com</string>
-    <string name="url_air">http://www.skyscanner.net/flight</string>
-    <string name="url_car">http://www.skyscanner.net/car-hire</string>
+    <string name="url_hotels">https://kr.hotels.com</string>
+    <string name="url_air">https://www.skyscanner.co.kr/</string>
+    <string name="url_car">https://www.skyscanner.co.kr/car-hire</string>
     <string name="url_pension">http://m.wooripension.com/</string>
     <string name="url_package">http://m.modetour.com/</string>
-    <string name="url_guide">http://www.myrealtrip.com/</string>
+    <string name="url_guide">https://www.myrealtrip.com/</string>
+
+
+    <string name="verify_check_in">체크인 Pin번호를 입력하세요</string>
+    <string name="verify_check_out">체크아웃 Pin번호를 입력하세요</string>
+    <string name="verify_none">체크 인/아웃 모두 확인되었습니다.</string>
 
 </resources>

@@ -19,6 +19,7 @@ import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.model.Reservation;
 import com.moffcomm.slothstay.ui.CheckActivity;
 import com.moffcomm.slothstay.ui.MainActivity;
+import com.moffcomm.slothstay.ui.VerifyActivity;
 import com.moffcomm.slothstay.ui.fragment.MyReservationFragment;
 import com.moffcomm.slothstay.util.Utils;
 
@@ -102,13 +103,33 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
             }
         });
 
-        ((ViewHolder) holder).changeTextView.setOnClickListener(new View.OnClickListener() {
+        ((ViewHolder) holder).checkInLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.setSelectedReservationIndex(position);
                 Intent intent = new Intent(mainActivity, CheckActivity.class);
                 intent.putExtra("book", reservation.getBook());
                 mainActivity.startActivityForResult(intent, MyReservationFragment.REQUEST_CODE_CHECK);
+            }
+        });
+
+        ((ViewHolder) holder).checkOutLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.setSelectedReservationIndex(position);
+                Intent intent = new Intent(mainActivity, CheckActivity.class);
+                intent.putExtra("book", reservation.getBook());
+                mainActivity.startActivityForResult(intent, MyReservationFragment.REQUEST_CODE_CHECK);
+            }
+        });
+
+        ((ViewHolder) holder).changeTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.setSelectedReservationIndex(position);
+                Intent intent = new Intent(mainActivity, VerifyActivity.class);
+                intent.putExtra("reservation", reservation);
+                mainActivity.startActivityForResult(intent, MyReservationFragment.REQUEST_CODE_VERIFY);
             }
         });
 
@@ -156,6 +177,8 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
         public TextView hotelNameTextView;
         public TextView topCheckInTextView;
         public ImageView folderImageView;
+        public View checkInLinearLayout;
+        public View checkOutLinearLayout;
         public TextView checkInTextView;
         public TextView checkOutTextView;
         public TextView guestTextView;
@@ -182,6 +205,8 @@ public class ReservationListAdapter extends RecyclerView.Adapter {
             hotelNameTextView = (TextView) itemView.findViewById(R.id.hotelNameTextView);
             topCheckInTextView = (TextView) itemView.findViewById(R.id.topCheckInTextView);
             folderImageView = (ImageView) itemView.findViewById(R.id.folderImageView);
+            checkInLinearLayout = itemView.findViewById(R.id.checkInLinearLayout);
+            checkOutLinearLayout = itemView.findViewById(R.id.checkOutLinearLayout);
             checkInTextView = (TextView) itemView.findViewById(R.id.checkInTextView);
             checkOutTextView = (TextView) itemView.findViewById(R.id.checkOutTextView);
             guestTextView = (TextView) itemView.findViewById(R.id.guestTextView);

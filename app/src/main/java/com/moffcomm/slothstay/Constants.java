@@ -14,4 +14,8 @@ public class Constants {
 
     public static final boolean IS_TEST_MODE = true;
 
+    public static final String TEST_CHECK_IN_VERIFY = "1111";
+
+    public static final String TEST_CHECK_OUT_VERIFY = "1111";
+
 }

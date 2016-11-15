@@ -6,8 +6,6 @@ import android.util.JsonReader;
 
 import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelableThisPlease;
-import com.moffcomm.slothstay.Constants;
-import com.moffcomm.slothstay.util.Utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -56,6 +54,11 @@ public class Reservation implements Parcelable {
     String itinerary;
     @ParcelableThisPlease
     Book book;
+    @ParcelableThisPlease
+    Date checkInVerifiedDate;
+    @ParcelableThisPlease
+    Date checkOutVerifiedDate;
+
 
     public String getHotelName() {
         return hotelName;
@@ -151,6 +154,22 @@ public class Reservation implements Parcelable {
 
     public void setBook(Book book) {
         this.book = book;
+    }
+
+    public Date getCheckOutVerifiedDate() {
+        return checkOutVerifiedDate;
+    }
+
+    public void setCheckOutVerifiedDate(Date checkOutVerifiedDate) {
+        this.checkOutVerifiedDate = checkOutVerifiedDate;
+    }
+
+    public Date getCheckInVerifiedDate() {
+        return checkInVerifiedDate;
+    }
+
+    public void setCheckInVerifiedDate(Date checkInVerifiedDate) {
+        this.checkInVerifiedDate = checkInVerifiedDate;
     }
 
     public static List<Reservation> fromJsonReader(JsonReader jsonReader) {

@@ -36,4 +36,6 @@
 
     <dimen name="partner_circle">84dp</dimen>
 
+    <dimen name="lock_size">55dp</dimen>
+
 </resources>

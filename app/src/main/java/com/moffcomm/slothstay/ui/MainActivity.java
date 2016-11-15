@@ -20,6 +20,7 @@ import android.view.View;
 
 import com.moffcomm.slothstay.R;
 import com.moffcomm.slothstay.SlothStayApplication;
+import com.moffcomm.slothstay.WebViewInterface;
 import com.moffcomm.slothstay.customtabs.CustomTabActivityHelper;
 import com.moffcomm.slothstay.model.Book;
 import com.moffcomm.slothstay.model.Reservation;
@@ -33,7 +34,7 @@ import com.moffcomm.slothstay.util.Utils;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements WebViewInterface {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
     private int selectedReservationIndex;
 
+    private CustomTabActivityHelper customTabActivityHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(null);
+
+        customTabActivityHelper = new CustomTabActivityHelper();
 
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -83,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         ((SlothStayApplication) getApplication()).setUser(user);
 
         mayRequestPermissions();
-
     }
 
     @Override
@@ -95,6 +99,19 @@ public class MainActivity extends AppCompatActivity {
             getMyReservationFragment().refresh();
             mViewPager.setCurrentItem(1);
         }
+
+    }
+
+    @Override
+    protected void onStart() {
+        customTabActivityHelper.bindCustomTabsService(this);
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        customTabActivityHelper.unbindCustomTabsService(this);
+        super.onStop();
 
     }
 
@@ -194,7 +211,27 @@ public class MainActivity extends AppCompatActivity {
             reservation.setBook(book);
             reservation.setCheckInDate(book.getCheckInDate());
             reservation.setCheckOutDate(book.getCheckOutDate());
+        } else if (requestCode == MyReservationFragment.REQUEST_CODE_VERIFY && resultCode == RESULT_OK) {
+            Reservation newReservation = data.getParcelableExtra("reservation");
+            Reservation reservation = ((SlothStayApplication) getApplication())
+                    .getReservationList().get(selectedReservationIndex);
+            reservation.setCheckInVerifiedDate(newReservation.getCheckInVerifiedDate());
+            reservation.setCheckOutVerifiedDate(newReservation.getCheckOutVerifiedDate());
         }
+    }
+
+    public CustomTabActivityHelper getCustomTabActivityHelper() {
+        return customTabActivityHelper;
+    }
+
+    @Override
+    public void mayShowWebView(String url) {
+        customTabActivityHelper.mayLaunchUrl(Uri.parse(url), null, null);
+    }
+
+    @Override
+    public void showWebView(String url) {
+        Utils.goUrl(this, customTabActivityHelper, url);
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
